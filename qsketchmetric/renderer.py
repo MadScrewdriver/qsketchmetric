@@ -55,7 +55,7 @@ class Renderer:
         self.points = {}
         self.new_entities = []
 
-    def render(self):
+    def render(self) -> dict:
         """
             Render the input DXF to produce an  output DXF with the applied transformations.
 
@@ -89,7 +89,7 @@ class Renderer:
 
         return self.points
 
-    def get_bounding_box(self):
+    def get_bounding_box(self) -> tuple[float, float]:
         """
         Get the bounding box of the output DXF.
 
@@ -192,7 +192,6 @@ class Renderer:
         """
             Constructs the remaining part of the DXF file based on the graph data.
         """
-
 
         for node, v in self.graph.items():
             for line in [l for l in v if
