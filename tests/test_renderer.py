@@ -239,7 +239,6 @@ class TestRenderer(unittest.TestCase):
         self.assertTrue(renderer.visited_graph[self.point2] == [('line_layer', self.point3)])
         self.assertTrue(renderer.visited_graph[self.point3] == [('line_layer', self.point2)])
 
-    @patch('ezdxf.readfile')
     def test_construct_rest_of_dxf(self, mock_readfile):
         """
         Test the _construct_rest_of_dxf method of the Renderer class to ensure it processes and
