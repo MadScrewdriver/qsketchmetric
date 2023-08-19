@@ -10,7 +10,7 @@ name: Upload Python Package
 
 on:
   workflow_run:
-    workflows: ["Release Workflow]
+    workflows: ["Release Workflow"]
     types:
       - completed
 
