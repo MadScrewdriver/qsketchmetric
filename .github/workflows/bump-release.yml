@@ -38,7 +38,7 @@ jobs:
       
 
       - name: Bump version
-        run: bumpversion patch  # Adjust as needed
+        run: bumpversion patch --verbose --commit -tag # Adjust as needed
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
