@@ -2,8 +2,7 @@ name: Release Workflow
 
 on:
   release:
-    types:
-      - created
+    types: [published]
 
 jobs:
   bump-version:
