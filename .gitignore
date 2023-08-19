@@ -1,0 +1,27 @@
+.venv
+.idea
+build
+dist
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+_build
+ qsketchmetric/__pycache__/
+ tests/__pycache__/
+ */__pycache__/
+ __pycache__/*
+tests/__pycache__/*
+qsketchmetric/__pycache__/*
