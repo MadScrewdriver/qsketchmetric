@@ -3,11 +3,14 @@ import string
 from copy import deepcopy
 from pathlib import Path
 from random import choice
+from typing import Optional, Dict
 
 import ezdxf
 from ezdxf import units, bbox
+from ezdxf.entities import DXFGraphic
+from ezdxf.layouts import Modelspace
 from ezdxf.math import Vec3
-from py_expression_eval import Parser
+from py_expression_eval import Parser  # type: ignore
 from ezdxf.document import Drawing
 
 
@@ -16,8 +19,10 @@ class Renderer:
     Class for rendering parametric 2D dxf drawings
     """
 
-    def __init__(self, input_parametric_path: Path, output_rendered_object: Drawing, extra_variables: dict = None,
-                 offset_drawing: tuple = (0, 0)):
+    def __init__(self, input_parametric_path: Path,
+                 output_rendered_object: Drawing,
+                 extra_variables: Optional[dict[str, float]] = None,
+                 offset_drawing: tuple[int, int] = (0, 0)):
         """
         Initializes a new instance of the class.
 
@@ -36,24 +41,24 @@ class Renderer:
         if extra_variables is None:
             extra_variables = dict()
 
-        self.new_points = {}
-        self.input_parametric_path = input_parametric_path
+        self.new_points: Dict[Vec3, tuple[int, int]] = {}
+        self.input_parametric_path: Path = input_parametric_path
 
-        self.input_dxf = ezdxf.readfile(self.input_parametric_path)
-        self.input_msp = self.input_dxf.modelspace()
+        self.input_dxf: Drawing = ezdxf.readfile(self.input_parametric_path)
+        self.input_msp: Modelspace = self.input_dxf.modelspace()
 
-        self.output_dxf = output_rendered_object
-        self.output_msp = self.output_dxf.modelspace()
+        self.output_dxf: Drawing = output_rendered_object
+        self.output_msp: Modelspace = self.output_dxf.modelspace()
 
-        self.offset_drawing_x = offset_drawing[0]
-        self.offset_drawing_y = offset_drawing[1]
+        self.offset_drawing_x: float = offset_drawing[0]
+        self.offset_drawing_y: float = offset_drawing[1]
 
-        self.variables = {} | extra_variables
+        self.variables: Dict[str, float] = {} | extra_variables
 
-        self.graph = {}
-        self.visited_graph = {}
-        self.points = {}
-        self.new_entities = []
+        self.graph: Dict[Vec3, list[tuple[str, Vec3, float, dict]]] = {}
+        self.visited_graph: Dict[Vec3, list[tuple[str, Vec3]]] = {}
+        self.points: Dict[str, Vec3] = {}
+        self.new_entities: list[DXFGraphic] = []
 
     def render(self) -> dict:
         """
@@ -73,10 +78,15 @@ class Renderer:
         """
 
         self.input_dxf.units = units.MM
+        extracted_texts: filter = filter(None, self.input_dxf.query(
+            "MTEXT")[0].text.split("----- custom -----")[-1].split("\P"))
 
-        self.variables |= {
-            v.split(":")[0].strip(): float(Parser().parse(v.split(":")[1].strip()).evaluate(self.variables)) for v in
-            filter(None, self.input_dxf.query("MTEXT")[0].text.split("----- custom -----")[-1].split("\P"))}
+        extracted_variables: Dict[str, float] = {
+            v.split(":")[0].strip(): float(Parser().parse(v.split(":")[1].strip()).evaluate(self.variables))
+            for v in extracted_texts
+        }
+
+        self.variables |= extracted_variables
 
         self._prepare_graph()
 
@@ -98,7 +108,9 @@ class Renderer:
 
         Returns:
             A tuple containing the width and height of the bounding box. The width is calculated as the difference
-            between the x-coordinates of the top-right and bottom-left vertices of the bounding box. The height is calculated as the difference between the y-coordinates of the top-right and bottom-left vertices of the bounding box.
+            between the x-coordinates of the top-right and bottom-left vertices of the bounding box. The height is
+            calculated as the difference between the y-coordinates of the top-right and bottom-left vertices of the
+            bounding box.
         """
 
         bounding_box = bbox.extents(self.output_msp, cache=bbox.Cache())
@@ -110,7 +122,8 @@ class Renderer:
         """
             Prepares the graph by iterating through the entities in the input_msp entity space.
             For each entity, it extracts relevant information from the xdata and creates a new_length value.
-            If the entity is a LINE, it calculates the start and end points, adds the line type to the output_dxf linetypes,
+            If the entity is a LINE, it calculates the start and end points,
+            adds the line type to the output_dxf linetypes,
             and updates the graph and visited_graph dictionaries accordingly.
             If the entity is a CIRCLE, it calculates the center point and updates the graph dictionary.
             If the entity is an ARC, it calculates the center point and updates the graph dictionary.

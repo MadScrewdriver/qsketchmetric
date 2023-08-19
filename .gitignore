@@ -25,3 +25,4 @@ _build
  __pycache__/*
 tests/__pycache__/*
 qsketchmetric/__pycache__/*
+/qodana.yaml

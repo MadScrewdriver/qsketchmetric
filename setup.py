@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages  # type: ignore
 
 VERSION = '1.6.6'
 DESCRIPTION = 'Parametric 2D CAD'
@@ -10,6 +10,7 @@ setup(
     version=VERSION,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
+    url="https://github.com/MadScrewdriver/qsketchmetric",
     author="Franciszek Łajszczak",
     author_email="franciszek@lajszczak.dev",
     license='MIT',
@@ -18,10 +19,14 @@ setup(
     keywords='CAD, QCAD, 2D, parametric, drawing, renderer, python renderer, python CAD, python 2d CAD, p'
              'python 2d drawing, python parametric drawing, python parametric CAD, python QCAD, QCAD python, '
              'parametric QCAD python, parametric QCAD, QCAD parametric, QCAD python parametric, QCAD python 2d,',
+    python_requires=">=3.9",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
-        'License :: OSI Approved :: MIT License',
-        "Programming Language :: Python :: 3",
+        "Topic :: Software Development :: Libraries",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.9",
     ]
 )
