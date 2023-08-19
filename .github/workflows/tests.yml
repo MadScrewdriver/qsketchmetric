@@ -16,9 +16,12 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.9, 3.10, 3.11 ]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,10 +29,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: Set up Python ${{ matrix.python-version }}  # Use the matrix version here
         uses: actions/setup-python@v3
         with:
-          python-version: 3.9
+          python-version: ${{ matrix.python-version }}  # Use the matrix version here
 
       - name: Install dependencies
         run: |
@@ -38,6 +41,13 @@ jobs:
 
       - name: Run tests with coverage
         run: pytest --cov --cov-report=xml
+
+  upload-coverage:
+    needs: test  # This job needs the 'test' job to complete successfully first.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
