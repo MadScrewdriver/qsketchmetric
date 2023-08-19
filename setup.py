@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.6.3'
+VERSION = '1.6.4'
 DESCRIPTION = 'Parametric 2D CAD'
 LONG_DESCRIPTION = 'Parametric 2D drawings renderer using QCAD Professional'
 
