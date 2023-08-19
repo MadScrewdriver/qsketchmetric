@@ -43,11 +43,3 @@ jobs:
       - name: Commit changes
         run: |
           git push
-
-#            git add .bumpversion.cfg
-#            git commit -m "Bump version"
-
-#      - name: Commit changes
-#        uses: stefanzweifel/git-auto-commit-action@v4
-#        with:
-#          commit_message: Bump version
