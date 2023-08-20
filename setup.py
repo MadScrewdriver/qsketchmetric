@@ -12,6 +12,9 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     url="https://github.com/MadScrewdriver/qsketchmetric",
+    project_urls={
+        "Documentation": "https://qsketchmetric.readthedocs.io/",
+    },
     author="Franciszek Łajszczak",
     author_email="franciszek@lajszczak.dev",
     license='MIT',
