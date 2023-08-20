@@ -5,7 +5,7 @@ from unittest.mock import Mock, patch, ANY
 import ezdxf.entities
 from ezdxf.math import Vec3
 
-from qsketchmetric import Renderer
+from qsketchmetric.renderer import Renderer
 
 
 class TestRenderer(unittest.TestCase):
