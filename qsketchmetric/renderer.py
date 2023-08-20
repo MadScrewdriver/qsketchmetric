@@ -21,7 +21,8 @@ class Renderer:
 
     :param input_parametric_path: Path to the parametric file intended for rendering.
     :param output_rendered_object: A pre-initialized :class:`ezdxf.document.Drawing` drawing object.
-        You can initialize such an object using methods like :meth:`ezdxf.readfile() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.readfile>`_
+        You can initialize such an object using methods like
+        `ezdxf.readfile() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.readfile>`_
         or `ezdxf.new() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.new>`_
         By providing an already existing drawing, users can merge multiple visual elements into a singular
         representation.
@@ -67,10 +68,7 @@ class Renderer:
            Transforms the input parametric DXF drawing and produces a rendered output on the output DXF.
 
            :return: A dictionary containing rendered points marked in the parametric drawing.
-
-           .. note::
-              Ensure compatibility of the input DXF for a successful rendering process.
-           """
+        """
 
         self.input_dxf.units = units.MM
         extracted_texts: filter = filter(None,
@@ -111,7 +109,7 @@ class Renderer:
 
     def _prepare_graph(self):
         """
-            .. warning:: This method is private and not intended for external use.
+            .. note:: This method is private and not intended for external use.
 
             Prepares a graph representation of the entities.
 
@@ -196,7 +194,7 @@ class Renderer:
 
     def _construct_rest_of_dxf(self):
         """
-        .. warning:: This method is private and not intended for external use.
+        .. note:: This method is private and not intended for external use.
 
         Construct the DXF file's additional components.
 
@@ -217,7 +215,7 @@ class Renderer:
 
     def _dfs(self, node: Vec3, offset_x: float, offset_y: float):
         """
-            .. warning:: This method is private and not intended for external use.
+            .. note:: This method is private and not intended for external use.
 
             Executes a DFS traversal starting from the provided node and adds geometric entities to the output DXF.
 
@@ -268,7 +266,7 @@ class Renderer:
 
     def _center_drawing(self):
         """
-            .. warning:: This method is private and not intended for external use.
+            .. note:: This method is private and not intended for external use.
 
             Adjusts the drawing entities to compensate for offset introduced by hanging the entities
             off the origin node.
