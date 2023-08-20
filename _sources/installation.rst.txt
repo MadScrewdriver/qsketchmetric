@@ -1,0 +1,23 @@
+Installation
+============
+
+Supported Python Versions
+-------------------------
+QSketchMetric requires at least Python 3.9
+
+Basic Installation
+------------------
+The most common case is the installation by pip3::
+
+   $ pip3 install qsketchmetric
+
+Development Installation
+------------------------
+To install QSketchMetric for development, clone the repository::
+
+   $ git clone git@github.com:MadScrewdriver/qsketchmetric.git
+
+
+Install side-packages from ``requirements-dev.txt``::
+
+   $ pip3 install -r requirements-dev.txt
