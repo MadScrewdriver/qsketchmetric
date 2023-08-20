@@ -1,9 +1,8 @@
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath('..'))
-
-from setup import VERSION
-
+from qsketchmetric import __version__
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -16,8 +15,8 @@ from setup import VERSION
 project = 'qsketchmetric'
 copyright = '2023, Franciszek Łajszczak'
 author = 'Franciszek Łajszczak'
-version = VERSION
-release = VERSION
+version = __version__
+release = __version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
