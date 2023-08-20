@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages  # type: ignore
+from qsketchmetric import __version__
 
-VERSION = '1.6.7'
+VERSION = __version__
 DESCRIPTION = 'Parametric 2D CAD'
 LONG_DESCRIPTION = 'Parametric 2D drawings renderer using QCAD Professional'
 
