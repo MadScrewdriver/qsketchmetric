@@ -291,7 +291,7 @@ class TestRenderer(unittest.TestCase):
         self.assertEqual(self.new_points.keys(), renderer.visited_graph.keys())
 
     @patch('ezdxf.readfile')
-    def test_get_bounding_box_w_h(self, mock_readfile):
+    def test_get_bb_dimensions(self, mock_readfile):
         """
         Test the get_bounding_box method of the Renderer class to ensure it returns the correct width and height of all
         the entities in the output DXF.
@@ -310,7 +310,7 @@ class TestRenderer(unittest.TestCase):
             output_rendered_object=mock_output_dxf
         )
 
-        w, h = renderer.get_bounding_box()
+        w, h = renderer.get_bb_dimensions()
 
         self.assertEqual(w, 10)
         self.assertEqual(h, 10)
