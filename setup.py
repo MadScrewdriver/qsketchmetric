@@ -1,3 +1,4 @@
+from pkg_resources import parse_requirements
 from setuptools import setup, find_packages  # type: ignore
 from qsketchmetric import __version__
 
@@ -19,7 +20,7 @@ setup(
     author_email="franciszek@lajszczak.dev",
     license='MIT',
     packages=find_packages(),
-    install_requires=[],
+    install_requires=parse_requirements("requirements.txt"),
     keywords='CAD, QCAD, 2D, parametric, drawing, renderer, python renderer, python CAD, python 2d CAD, p'
              'python 2d drawing, python parametric drawing, python parametric CAD, python QCAD, QCAD python, '
              'parametric QCAD python, parametric QCAD, QCAD parametric, QCAD python parametric, QCAD python 2d,',

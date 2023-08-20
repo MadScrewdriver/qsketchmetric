@@ -26,7 +26,12 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.imgmath',
+    'sphinx.ext.intersphinx'
 ]
+
+intersphinx_mapping = {
+    'ezdxf': ('https://ezdxf.readthedocs.io/en/stable/', None),
+}
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

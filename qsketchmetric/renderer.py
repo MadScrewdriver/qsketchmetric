@@ -16,7 +16,22 @@ from ezdxf.document import Drawing
 
 class Renderer:
     """
-    Class for rendering parametric 2D dxf drawings
+    The :class:`Renderer` class interprets parametric files, transforming them into visual representations.
+    The primary emphasis is on the DXF format, but the architecture may be extended to other formats in the future.
+
+    :param input_parametric_path: Path to the parametric file intended for rendering.
+    :param output_rendered_object: A pre-initialized `ezdxf.document.Drawing` drawing object.
+        You can initialize such an object using methods like :meth:`ezdxf.readfile()
+        <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.readfile>`
+        or :meth:`ezdxf.new() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.new>`.
+        By providing an already existing drawing, users can merge multiple visual elements into a singular representation.
+    :param extra_variables: (Optional) Supplementary constant variables that can enhance the mathematical
+        representations used.Defaults to an empty dictionary.
+    :param offset_drawing: (Optional) Provides offsets for the parametric visualization. Defaults to (0, 0).
+
+    .. seealso::
+          `ezdxf Documentation <https://ezdxf.readthedocs.io/en/stable/>`_ - A comprehensive library to manage DXF drawings, allowing users
+          to read, write, and modify DXF content efficiently.
     """
 
     def __init__(self, input_parametric_path: Path,
@@ -24,18 +39,7 @@ class Renderer:
                  extra_variables: Optional[dict[str, float]] = None,
                  offset_drawing: tuple[int, int] = (0, 0)):
         """
-        Initializes a new instance of the class.
-
-        Args:
-            input_parametric_path (Path): The path to the input parametric file from which the drawing will be rendered.
-
-            output_rendered_object (Drawing): The output rendered ezdxf drawing object to which the drawing
-            will be rendered. Drawing object must be created beforehand using ezdxf.new(). Passing an existing object
-            allows to combine multiple drawings into one.
-
-            extra_variables (dict, optional): Extra constant variables to be used in the mathematics expressions.
-
-            offset_drawing (tuple, optional): The offset values for the parametric drawing. Defaults to (0, 0).
+            Instantiate a new :class:``Renderer`` object.
         """
 
         if extra_variables is None:
@@ -62,20 +66,16 @@ class Renderer:
 
     def render(self) -> dict:
         """
-            Render the input DXF to produce an  output DXF with the applied transformations.
+           Transforms the input DXF drawing and produces a rendered output.
 
-            The method executes the following steps:
-            1. Sets the units of the input DXF to millimeters.
-            2. Extracts and evaluates custom variables defined in the input DXF's MTEXT
-            3. Initiates a depth-first search (`_dfs`) starting from the root node, to traverse the graph and derive
-               new points based on the graph relationships.
-            4. Constructs the final output DXF based on the derived points using `_construct_rest_of_dxf`.
-            5. Adjusts the drawing to be centered using `_center_drawing`.
+           This method processes the input DXF, and generates an output DXF based on the parametric information
+           in the parametrized input DXF.
 
-            Returns:
-                dict: A dictionary containing the points used in the rendered output.
+           :return: A dictionary containing points used in the rendered drawing.
 
-        """
+           .. note::
+              Ensure compatibility of the input DXF for a successful rendering process.
+           """
 
         self.input_dxf.units = units.MM
         extracted_texts: filter = filter(None, self.input_dxf.query(
@@ -99,19 +99,15 @@ class Renderer:
 
         return self.points
 
-    def get_bounding_box(self) -> tuple[float, float]:
+    def get_bb_dimensions(self) -> tuple[float, float]:
         """
-        Get the bounding box of the output DXF.
+            Retrieve the bounding box dimensions of the output DXF.
 
-        This function calculates and returns the bounding box of the output DXF. The bounding box is a rectangle that
-        encloses all the entities in the DXF file.
+            This method determines the bounding box of the output DXF by calculating the width and height
+            of the rectangle that encompasses all entities within the DXF file.
 
-        Returns:
-            A tuple containing the width and height of the bounding box. The width is calculated as the difference
-            between the x-coordinates of the top-right and bottom-left vertices of the bounding box. The height is
-            calculated as the difference between the y-coordinates of the top-right and bottom-left vertices of the
-            bounding box.
-        """
+            :return: A tuple containing the width and height of the bounding box.
+            """
 
         bounding_box = bbox.extents(self.output_msp, cache=bbox.Cache())
 
@@ -120,14 +116,16 @@ class Renderer:
 
     def _prepare_graph(self):
         """
-            Prepares the graph by iterating through the entities in the input_msp entity space.
-            For each entity, it extracts relevant information from the xdata and creates a new_length value.
-            If the entity is a LINE, it calculates the start and end points,
-            adds the line type to the output_dxf linetypes,
-            and updates the graph and visited_graph dictionaries accordingly.
-            If the entity is a CIRCLE, it calculates the center point and updates the graph dictionary.
-            If the entity is an ARC, it calculates the center point and updates the graph dictionary.
-            If the entity is a POINT, it calculates the location point and updates the graph dictionary.
+            Prepares a graph representation of the ``input_msp`` entities.
+
+            This method processes entities, extracting their ``xdata`` to construct the graph. Supported entities include:
+
+            - **LINE**: Determines start and end points, assesses line types, and updates the graph.
+            - **CIRCLE**: Evaluates the center point and updates the graph.
+            - **ARC**: Evaluates the center point, accounting for start and end angles, and updates the graph.
+            - **POINT**: Evaluates the location point and updates the graph.
+
+            :note: Entities of type "MTEXT" are filtered out during processing.
         """
 
         for entity in filter(lambda x: x.dxftype() != "MTEXT", self.input_msp.entity_space.entities):
@@ -203,7 +201,10 @@ class Renderer:
 
     def _construct_rest_of_dxf(self):
         """
-            Constructs the remaining part of the DXF file based on the graph data.
+        Construct the DXF file's additional components.
+
+        This method iterates through the graph data. Identifies lines that were marked with '?' as their length,
+        and constructs them based on the already processed entities.
         """
 
         for node, v in self.graph.items():
@@ -219,19 +220,14 @@ class Renderer:
 
     def _dfs(self, node: Vec3, offset_x: float, offset_y: float):
         """
-            Performs a depth-first search (DFS) traversal on the graph starting from the given node.
+            Executes a DFS traversal starting from the provided node and adds geometric entities to the output DXF.
 
-            Args:
-                node (Vec3): The starting node for the DFS traversal. It is updated recursively for each node
+            This method traverses the graph representation of the DXF to generate new entities
+            based on the given node and offsets.
 
-                offset_x (float): The x-coordinate offset to be applied to the node and its connected entities.
-                It is updated recursively for each node depending on the length of the line connecting the node to its
-                connected entities.
-
-                offset_y (float): The y-coordinate offset to be applied to the node and its connected entities.
-                It is updated recursively for each node depending on the length of the line connecting the node to its
-                connected entities.
-
+            :param node: Starting node for DFS traversal. It updates automatically as the traversal progresses.
+            :param offset_x: X-coordinate offset for current node and its connected entities.
+            :param offset_y: Y-coordinate offset for current node and its connected entities.
         """
 
         for name, vector, length, data in [c for c in self.graph[node] if c[2] != "?"]:
@@ -273,9 +269,8 @@ class Renderer:
 
     def _center_drawing(self):
         """
-            Centers the drawing by calculating the bounding box of the output DXF and adjusting the coordinates of the
-            entities and points accordingly. The centering is done to compensate for the offset that was added to
-            the drawing by hanging the entities off the origin.
+            Adjusts the drawing entities to compensate for offset introduced by hanging the entities
+            off the origin node.
         """
 
         new_entities_copy = deepcopy(self.new_entities)
