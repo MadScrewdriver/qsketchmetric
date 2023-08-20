@@ -10,9 +10,9 @@ QSketchMetric's Documentation
    :maxdepth: 2
    :caption: Table of Contents:
 
-   introduction
-   installation
-   parametrization
-   modules
+   ./introduction
+   ./installation
+   ./parametrization
+   ./modules
 
 
