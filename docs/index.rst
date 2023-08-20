@@ -3,26 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to QSketchMetric's Documentation
-=======================================
+QSketchMetric's Documentation
+==============================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
    :hidden:
 
-   usage
-   modules
-   additional_docs/if_any
-
 Introduction
 ------------
-
 QSketchMetric is a tool designed to interpret parametric files and transform them into visual representations.
 The primary emphasis is on the DXF format, but the architecture is designed with the possibility of
 future extensions to other formats.
 
-How to Use QSketchMetric
+How to use QSketchMetric
 ------------------------
 
 It needs to be written.
@@ -34,11 +29,6 @@ Modules
    :members:
    :undoc-members:
    :show-inheritance:
+   :private-members:
 
-Indices and tables
-------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
