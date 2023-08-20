@@ -20,24 +20,22 @@ class Renderer:
     The primary emphasis is on the DXF format, but the architecture may be extended to other formats in the future.
 
     :param input_parametric_path: Path to the parametric file intended for rendering.
-    :param output_rendered_object: A pre-initialized `ezdxf.document.Drawing` drawing object.
-        You can initialize such an object using methods like :meth:`ezdxf.readfile()
-        <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.readfile>`
-        or :meth:`ezdxf.new() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.new>`.
-        By providing an already existing drawing, users can merge multiple visual elements into a singular representation.
-    :param extra_variables: (Optional) Supplementary constant variables that can enhance the mathematical
+    :param output_rendered_object: A pre-initialized :class:`ezdxf.document.Drawing` drawing object.
+        You can initialize such an object using methods like :meth:`ezdxf.readfile() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.readfile>`_
+        or `ezdxf.new() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.new>`_
+        By providing an already existing drawing, users can merge multiple visual elements into a singular
+        representation.
+    :param extra_variables: **(Optional)** Supplementary constant variables that can enhance the mathematical
         representations used.Defaults to an empty dictionary.
-    :param offset_drawing: (Optional) Provides offsets for the parametric visualization. Defaults to (0, 0).
+    :param offset_drawing: **(Optional)** Provides offsets for the parametric visualization. Defaults to (0, 0).
 
     .. seealso::
-          `ezdxf Documentation <https://ezdxf.readthedocs.io/en/stable/>`_ - A comprehensive library to manage DXF drawings, allowing users
-          to read, write, and modify DXF content efficiently.
+          `ezdxf Documentation <https://ezdxf.readthedocs.io/en/stable/>`_ - A comprehensive library to manage
+          DXF drawings, allowing users to read, write, and modify DXF content efficiently.
     """
 
-    def __init__(self, input_parametric_path: Path,
-                 output_rendered_object: Drawing,
-                 extra_variables: Optional[dict[str, float]] = None,
-                 offset_drawing: tuple[int, int] = (0, 0)):
+    def __init__(self, input_parametric_path: Path, output_rendered_object: Drawing,
+                 extra_variables: Optional[dict[str, float]] = None, offset_drawing: tuple[int, int] = (0, 0)):
         """
             Instantiate a new :class:``Renderer`` object.
         """
@@ -66,25 +64,22 @@ class Renderer:
 
     def render(self) -> dict:
         """
-           Transforms the input DXF drawing and produces a rendered output.
+           Transforms the input parametric DXF drawing and produces a rendered output on the output DXF.
 
-           This method processes the input DXF, and generates an output DXF based on the parametric information
-           in the parametrized input DXF.
-
-           :return: A dictionary containing points used in the rendered drawing.
+           :return: A dictionary containing rendered points marked in the parametric drawing.
 
            .. note::
               Ensure compatibility of the input DXF for a successful rendering process.
            """
 
         self.input_dxf.units = units.MM
-        extracted_texts: filter = filter(None, self.input_dxf.query(
-            "MTEXT")[0].text.split("----- custom -----")[-1].split("\P"))
+        extracted_texts: filter = filter(None,
+                                         self.input_dxf.query("MTEXT")[0].text.split("----- custom -----")[-1].split(
+                                             "\P"))
 
         extracted_variables: Dict[str, float] = {
-            v.split(":")[0].strip(): float(Parser().parse(v.split(":")[1].strip()).evaluate(self.variables))
-            for v in extracted_texts
-        }
+            v.split(":")[0].strip(): float(Parser().parse(v.split(":")[1].strip()).evaluate(self.variables)) for v in
+            extracted_texts}
 
         self.variables |= extracted_variables
 
@@ -116,9 +111,11 @@ class Renderer:
 
     def _prepare_graph(self):
         """
-            Prepares a graph representation of the ``input_msp`` entities.
+            .. warning:: This method is private and not intended for external use.
 
-            This method processes entities, extracting their ``xdata`` to construct the graph. Supported entities include:
+            Prepares a graph representation of the entities.
+
+            This method processes entities to construct the graph. Supported entities include:
 
             - **LINE**: Determines start and end points, assesses line types, and updates the graph.
             - **CIRCLE**: Evaluates the center point and updates the graph.
@@ -173,8 +170,7 @@ class Renderer:
 
                 new_length = Parser().parse(constant_xdata).evaluate(self.variables)
 
-                e_data = {"layer": entity.dxf.layer, "radius": entity.dxf.radius,
-                          "linetype": line_type}
+                e_data = {"layer": entity.dxf.layer, "radius": entity.dxf.radius, "linetype": line_type}
 
                 self.graph[center] = self.graph.get(center, []) + [("CIRCLE", center, new_length, e_data)]
 
@@ -185,8 +181,7 @@ class Renderer:
 
                 new_length = Parser().parse(constant_xdata).evaluate(self.variables)
 
-                e_data = {"layer": entity.dxf.layer, "radius": entity.dxf.radius,
-                          "start_angle": entity.dxf.start_angle,
+                e_data = {"layer": entity.dxf.layer, "radius": entity.dxf.radius, "start_angle": entity.dxf.start_angle,
                           "end_angle": entity.dxf.end_angle, "linetype": line_type}
 
                 self.graph[center] = self.graph.get(center, []) + [("ARC", center, new_length, e_data)]
@@ -201,6 +196,8 @@ class Renderer:
 
     def _construct_rest_of_dxf(self):
         """
+        .. warning:: This method is private and not intended for external use.
+
         Construct the DXF file's additional components.
 
         This method iterates through the graph data. Identifies lines that were marked with '?' as their length,
@@ -220,6 +217,8 @@ class Renderer:
 
     def _dfs(self, node: Vec3, offset_x: float, offset_y: float):
         """
+            .. warning:: This method is private and not intended for external use.
+
             Executes a DFS traversal starting from the provided node and adds geometric entities to the output DXF.
 
             This method traverses the graph representation of the DXF to generate new entities
@@ -269,6 +268,8 @@ class Renderer:
 
     def _center_drawing(self):
         """
+            .. warning:: This method is private and not intended for external use.
+
             Adjusts the drawing entities to compensate for offset introduced by hanging the entities
             off the origin node.
         """

@@ -25,6 +25,9 @@ It needs to be written.
 Modules
 -------------
 
+Renderer
+~~~~~~~~~~~~~~~
+
 .. automodule:: qsketchmetric.renderer
    :members:
    :undoc-members:
