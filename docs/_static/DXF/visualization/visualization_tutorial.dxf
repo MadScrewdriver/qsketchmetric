@@ -43,7 +43,7 @@ $EXTMAX
  10
 50.0
  20
-83.30713159999999
+88.97642599999999
  30
 0.0
   9
@@ -493,19 +493,19 @@ $SKPOLY
   9
 $TDCREATE
  40
-2460178.5346296295
+2460178.6445486112
   9
 $TDUCREATE
  40
-2460178.492327303
+2460178.602874722
   9
 $TDUPDATE
  40
-2460178.5346296295
+2460178.6445486112
   9
 $TDUUPDATE
  40
-2460178.492327373
+2460178.602874792
   9
 $TDINDWG
  40
@@ -933,11 +933,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{037D7939-B340-471E-B60E-D9AD0095010A}
+{1DC1B52B-F3A2-4145-BF43-8C8651287A90}
   9
 $VERSIONGUID
   2
-{202D8A7B-B455-4315-8FAF-89E93115586F}
+{4D501225-1855-439F-BA31-D98D64E25353}
   9
 $EXTNAMES
 290
@@ -1397,9 +1397,9 @@ AcDbViewportTableRecord
  21
 1.0
  12
-15.15997535437207
+-19.04513017402522
  22
-17.17352308309211
+30.76272458089561
  13
 0.0
  23
@@ -1425,7 +1425,7 @@ AcDbViewportTableRecord
  37
 0.0
  40
-72.46541794632333
+150.264290653496
  41
 1.966307277628032
  42
@@ -4891,7 +4891,7 @@ AcDbMText
  71
 7
   1
-Available variables: \P\P----- buld in -----\P\Pc: const\P?: undefined \P\Ph: chalice_height\P\P----- custom -----\Pchalice_foot_radius: h * 1/5\Pchalice_bowl_radius: h * 2/5\Pchalice_ornament_radius: h * 1/10\P\P
+Available variables: \P\P----- buld in -----\P\Pc: const\P?: undefined \P\Ph: chalice_height\P\P----- custom -----\P\Pchalice_foot_radius: h * 1/5\Pchalice_bowl_radius: h * 2/5\Pchalice_ornament_radius: h * 1/10\P\P
   7
 textstyle11
   0
@@ -6845,7 +6845,7 @@ Model
  15
 50.0
  25
-83.30713159999999
+88.97642599999999
  35
 0.0
 146
@@ -15833,7 +15833,7 @@ AcDbXrecord
 280
 1
  40
-72.46541794632333
+150.264290653496
   0
 XRECORD
   5
@@ -15851,7 +15851,7 @@ AcDbXrecord
 280
 1
  40
-142.4892786842126
+295.4657682795832
   0
 DICTIONARY
   5
@@ -16551,7 +16551,7 @@ DictionaryVariables
 280
 0
   1
-0.17.2 @ 2023-08-21T10:49:52.635796+00:00
+0.17.2 @ 2023-08-21T13:28:09.571451+00:00
   0
 ENDSEC
   0
