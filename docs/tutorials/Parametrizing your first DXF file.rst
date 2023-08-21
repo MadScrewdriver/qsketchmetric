@@ -100,7 +100,7 @@ In the ``Value`` field  add the expression describing the entity. According to t
   |      ``?``         | (undefined) Entity length will be calculated by the renderer.               |
   |                    | **Only if there is other path to the both end points of the line!**         |
   +--------------------+-----------------------------------------------------------------------------+
-  |  ``h * 2``         | (math expression) Entity length will be calculated from the math expression |
+  |  ``h*2``         | (math expression) Entity length will be calculated from the math expression |
   |                    |                                                                             |
   +--------------------+-----------------------------------------------------------------------------+
 
