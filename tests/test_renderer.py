@@ -1,6 +1,6 @@
 import unittest
 from pathlib import Path
-from unittest.mock import Mock, patch, ANY
+from unittest.mock import Mock, patch, ANY, MagicMock
 
 import ezdxf.entities
 from ezdxf.math import Vec3
@@ -114,8 +114,9 @@ class TestRenderer(unittest.TestCase):
         self.assertEqual(renderer.offset_drawing_x, self.offset_drawing_x)
         self.assertEqual(renderer.offset_drawing_y, self.offset_drawing_y)
 
+    @patch('qsketchmetric.renderer.Renderer._prepare_layers')
     @patch('ezdxf.readfile')
-    def test_prepare_graph(self, mock_readfile):
+    def test_prepare_graph(self, mock_readfile, mock_prepare_layers):
         """
             Test the _prepare_graph method to ensure that the graph and visited_graph dictionaries
             are constructed correctly.
@@ -126,7 +127,7 @@ class TestRenderer(unittest.TestCase):
 
         point_mock = Mock(dxftype=lambda: "POINT", get_xdata=lambda x: [(None, f"{self.dxf_attribs['name']}:"
                                                                                f"{self.dxf_attribs['name']}")])
-        point_mock.dxf = Mock(location=self.dxf_attribs["location"])
+        point_mock.dxf = Mock(location=self.dxf_attribs["location"], layer=self.dxf_attribs["layer"])
 
         self.mock_entities.append(point_mock)
         self.mock_entities.append(Mock(dxftype=lambda: "MTEXT"))
@@ -184,6 +185,8 @@ class TestRenderer(unittest.TestCase):
 
                 elif name == "POINT":
                     self.assertEqual(edata["name"], self.dxf_attribs["name"])
+
+        mock_prepare_layers.assert_called_once()
 
     @patch('ezdxf.readfile')
     def test_dfs(self, mock_readfile):
@@ -409,6 +412,32 @@ class TestRenderer(unittest.TestCase):
         renderer._center_drawing.assert_called_once()
 
         self.assertTrue(renderer.variables == {'var1': 25, 'var2': 5})
+
+    @patch('ezdxf.readfile')
+    def test_prepare_layers(self, mock_readfile):
+
+        """
+        Test the render method to ensure the graph is processed and the output DXF is populated.
+        """
+
+        mock_readfile.return_value = self.mock_input_dxf
+        self.mock_output_dxf.layers = MagicMock()
+
+        layer = Mock()
+        layer.dxf.name = 'layer'
+
+        self.mock_output_dxf.layers.__iter__.return_value = iter([layer])
+
+        renderer = Renderer(
+            input_parametric_path=Path('/path/to/input.dxf'),
+            output_rendered_object=self.mock_output_dxf
+        )
+
+        input_layers = {"layer": 1, "VIRTUAL_LAYER": 2, "CUSTOM_LAYER": 3}
+
+        renderer._prepare_layers(input_layers)
+        renderer.output_dxf.layers.new.assert_called_with(name="CUSTOM_LAYER", dxfattribs={'color': 3})
+        renderer.output_dxf.layers.new.assert_called_once()
 
 
 if __name__ == '__main__':

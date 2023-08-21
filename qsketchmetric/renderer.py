@@ -21,9 +21,7 @@ class Renderer:
 
     :param input_parametric_path: Path to the parametric file intended for rendering.
     :param output_rendered_object: A pre-initialized :class:`ezdxf.document.Drawing` drawing object.
-        You can initialize such an object using methods like
-        `ezdxf.readfile() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.readfile>`_
-        or `ezdxf.new() <https://ezdxf.readthedocs.io/en/stable/drawing/management.html#ezdxf.new>`_
+        You can initialize such an object using methods like :meth:`ezdxf.readfile` or :meth:`ezdxf.new`
         By providing an already existing drawing, users can merge multiple visual elements into a singular
         representation.
     :param extra_variables: **(Optional)** Supplementary constant variables that can enhance the mathematical
@@ -63,7 +61,7 @@ class Renderer:
         self.points: Dict[str, Vec3] = {}
         self.new_entities: list[DXFGraphic] = []
 
-    def render(self) -> dict:
+    def render(self) -> dict[str, tuple[float, float]]:
         """
            Transforms the input parametric DXF drawing and produces a rendered output on the output DXF.
 
@@ -71,9 +69,8 @@ class Renderer:
         """
 
         self.input_dxf.units = units.MM
-        extracted_texts: filter = filter(None,
-                                         self.input_dxf.query("MTEXT")[0].text.split("----- custom -----")[-1].split(
-                                             "\P"))
+        extracted_texts: filter = filter(None, self.input_dxf.query("MTEXT")[0].text.split(
+            "----- custom -----")[-1].split("\P"))
 
         extracted_variables: Dict[str, float] = {
             v.split(":")[0].strip(): float(Parser().parse(v.split(":")[1].strip()).evaluate(self.variables)) for v in
@@ -122,6 +119,7 @@ class Renderer:
 
             :note: Entities of type "MTEXT" are filtered out during processing.
         """
+        input_layers = dict()
 
         for entity in filter(lambda x: x.dxftype() != "MTEXT", self.input_msp.entity_space.entities):
             new_length = "?"
@@ -131,6 +129,9 @@ class Renderer:
             constant_xdata = xdata.get("c", False)
             line_xdata = xdata.get("line", False)
             line_type = "BYLAYER"
+            layer = entity.dxf.layer
+
+            input_layers[layer] = self.input_dxf.layers.get(entity.dxf.layer).color
 
             if line_xdata:
                 line, space = list(map(float, str(line_xdata).split()))
@@ -154,7 +155,7 @@ class Renderer:
                 else:
                     new_length = Parser().parse(constant_xdata).evaluate(self.variables)
 
-                e_data = {"layer": entity.dxf.layer, "linetype": line_type}
+                e_data = {"layer": layer, "linetype": line_type}
 
                 self.graph[end] = self.graph.get(end, []) + [("LINE", start, new_length, e_data)]
                 self.graph[start] = self.graph.get(start, []) + [("LINE", end, new_length, e_data)]
@@ -168,7 +169,7 @@ class Renderer:
 
                 new_length = Parser().parse(constant_xdata).evaluate(self.variables)
 
-                e_data = {"layer": entity.dxf.layer, "radius": entity.dxf.radius, "linetype": line_type}
+                e_data = {"layer": layer, "radius": entity.dxf.radius, "linetype": line_type}
 
                 self.graph[center] = self.graph.get(center, []) + [("CIRCLE", center, new_length, e_data)]
 
@@ -179,18 +180,28 @@ class Renderer:
 
                 new_length = Parser().parse(constant_xdata).evaluate(self.variables)
 
-                e_data = {"layer": entity.dxf.layer, "radius": entity.dxf.radius, "start_angle": entity.dxf.start_angle,
+                e_data = {"layer": layer, "radius": entity.dxf.radius, "start_angle": entity.dxf.start_angle,
                           "end_angle": entity.dxf.end_angle, "linetype": line_type}
 
                 self.graph[center] = self.graph.get(center, []) + [("ARC", center, new_length, e_data)]
 
-            elif entity.dxftype() == "POINT":
+            elif entity.dxftype() == "POINT" and layer == "VIRTUAL_LAYER":
                 location = entity.dxf.location
                 location = Vec3(round(location.x, 3), round(location.y, 3), 0)
 
                 e_data = {"name": list(xdata.values())[0]}
 
                 self.graph[location] = self.graph.get(location, []) + [("POINT", location, 0, e_data)]
+
+        self._prepare_layers(input_layers)
+
+    def _prepare_layers(self, input_layers: dict[str, int]):
+        output_layers = [layer.dxf.name for layer in self.output_dxf.layers]
+        print(output_layers)
+
+        for layer, color in input_layers.items():
+            if layer not in output_layers and layer != "VIRTUAL_LAYER":
+                self.output_dxf.layers.new(name=layer, dxfattribs={'color': color})
 
     def _construct_rest_of_dxf(self):
         """

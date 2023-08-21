@@ -4,7 +4,16 @@
    contain the root `toctree` directive.
 
 QSketchMetric's Documentation
-==============================
+=============================
+2D Parametric DXF Python Rendering Engine.
+
+.. tip::
+
+   The name QSketchMetric comes from the combination of three words:
+    * QCAD (reference to the CAD software)
+    * Sketch (reference to the process of DXF file parametrization)
+    * Parametric (reference to the parametric nature of the rendering engine)
+
 
 .. toctree::
    :maxdepth: 2
@@ -12,6 +21,7 @@ QSketchMetric's Documentation
 
    introduction
    installation
+   tutorials/Rendering your first parametric DXF file.rst
    parametrization
    modules
 

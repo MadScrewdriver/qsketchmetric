@@ -1,12 +1,10 @@
-Introduction
-============
+Getting started
+===============
 
 QSketchMetric is a tool designed to interpret parametric DXF files and render them. Parametrizing of a DXF file happens
 through **QCAD Professional's** CAD software, which is a commercial software. The parametrized DXF file is then interpreted
 by QSketchMetric and rendered according to the provided variables.
 
-`The primary emphasis is on the DXF format, but the architecture is designed with the possibility of
-future extensions to other formats.`
 
 Why QSketchMetric?
 ------------------
