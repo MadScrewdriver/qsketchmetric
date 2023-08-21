@@ -30,7 +30,7 @@ Rendering a custom line style is easy with QSketchMetric. All you need to do is 
 Select the entitie where you want a custom line format and scroll down the ``Property Editor`` to the ``Custom``
 section. Click on the red plus button and add the parameter.
 
-    * ``Name`` should be: ``line``.
+    * **``Name`` should be: ``line``.**
     * ``Value`` should be a custom line style in the format: ``<dash_width> <space_width>`` seperated by a space.
         - ``dash_width`` is the length of the dash.
         - ``space_width`` is the length of the space between dashes.
