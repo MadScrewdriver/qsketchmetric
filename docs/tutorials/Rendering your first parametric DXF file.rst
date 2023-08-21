@@ -1,5 +1,5 @@
 Tutorial - Rendering your first parametric DXF file
-========================================
+===================================================
 
 **Let’s learn by example.**
 
@@ -11,7 +11,7 @@ First download the `tutorial.dxf <https://raw.githubusercontent.com/MadScrewdriv
 file from the `QSketchMetric repository <https://github.com/MadScrewdriver/qsketchmetric>`_. It is an example of a
 parametric DXF file that we will use in a tutorial.
 
-To do so, open it and click `Ctrl+S` to save it to your computer.
+To do so, open it and click ``Ctrl+S`` to save it to your computer.
 As a convention, we’ll assume you saved it in a file called ``tutorial.dxf``.
 
 Now, create a new file called ``render.py`` and place it in the same directory as ``tutorial.dxf``.

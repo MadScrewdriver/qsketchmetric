@@ -22,6 +22,7 @@ QSketchMetric's Documentation
    introduction
    installation
    tutorials/Rendering your first parametric DXF file.rst
+   tutorials/Parametrizing your first DXF file.rst
    parametrization
    modules
 
