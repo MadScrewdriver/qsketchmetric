@@ -42,7 +42,7 @@ Added point should look like this:
 
    Added point
 
-That is all! Now you can save the file and render it with :meth:`qsketchmetric.renderer.Renderer.render` method::
+That is all! Now you can save the file and render it with :meth:`qsketchmetric.Renderer.render` method::
 
     from qsketchmetric.renderer import Renderer
     from ezdxf import new
@@ -63,4 +63,4 @@ Variable ``variables`` will be a dictionary with the following content::
 
 **(20, 10)** is the rendered coordinate of the point.
 
-**Congratulation you renderer your first point using :meth:`qsketchmetric.renderer.Renderer.render` method!**
+**Congratulation you renderer your first point using :meth:`qsketchmetric.Renderer.render` method!**

@@ -46,7 +46,7 @@ Added parameter should look like this:
    ``tutorial.dxf`` with added ``line`` parameters
 
 
-That is all! Now you can save the file and render it with :meth:`qsketchmetric.renderer.Renderer.render` method::
+That is all! Now you can save the file and render it with :meth:`qsketchmetric.Renderer.render` method::
 
     from qsketchmetric.renderer import Renderer
     from ezdxf import new
