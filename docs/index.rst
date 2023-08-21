@@ -21,12 +21,7 @@ QSketchMetric's Documentation
 
    introduction
    installation
-   tutorials/Rendering your first parametric DXF file.rst
-   tutorials/Parametrizing your first DXF file.rst
-   tutorials/Semi-automatic parametrization of a DXF file.rst
-   tutorials/Rendering a point.rst
-   tutorials/Rendering a custom line style.rst
-
+   tutorials/index
    parametrization
    modules
 
