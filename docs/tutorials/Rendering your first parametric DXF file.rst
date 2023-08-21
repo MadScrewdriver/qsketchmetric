@@ -12,7 +12,7 @@ file from the `QSketchMetric repository <https://github.com/MadScrewdriver/qsket
 parametric DXF file that we will use in a tutorial.
 
 To do so, open it and click `Ctrl+S` to save it to your computer.
-As a convention, we’ll assume you saved it in a file called ``example.dxf``.
+As a convention, we’ll assume you saved it in a file called ``tutorial.dxf``.
 
 Now, create a new file called ``render.py`` and place it in the same directory as ``example.dxf``.
 
