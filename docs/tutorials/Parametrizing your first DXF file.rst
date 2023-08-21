@@ -92,7 +92,7 @@ After adding the variables, everything should look like this:
 
 Now we can add parameters to the drawing. To do so select the entities one by one and scroll down the
 ``Property Editor`` to the ``Custom`` section. Click on the red plus button and add the parameter.
-For every entity parameter ``Name`` must be ``c``.
+**For every entity parameter ``Name`` must be ``c``**.
 In the ``Value`` field  add the expression describing the entity. According to this table:
 
   +--------------------+-----------------------------------------------------------------------------+

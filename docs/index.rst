@@ -25,6 +25,7 @@ QSketchMetric's Documentation
    tutorials/Parametrizing your first DXF file.rst
    tutorials/Semi-automatic parametrization of a DXF file.rst
    tutorials/Rendering a point.rst
+   tutorials/Rendering a custom line style.rst
 
    parametrization
    modules

@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2460178.6445486112
+2460178.890648148
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2460178.6445486112
+2460178.890648148
   9
 $TDUUPDATE
  40
@@ -549,7 +549,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-9B
+9E
   9
 $SURFTAB1
  70
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{D55D850D-9DFD-43CA-98FD-4655DEFAEB4F}
+{2D2855FC-F6BF-4286-A211-F27DEDA21710}
   9
 $VERSIONGUID
   2
-{E3169A55-2591-494B-9068-85EB56CD2A49}
+{64CB685A-242C-4250-9416-4809FFDC21FA}
   9
 $EXTNAMES
 290
@@ -1323,9 +1323,9 @@ ISM
   0
 CLASS
   1
-ACDBPLACEHOLDER
+LAYOUT
   2
-AcDbPlaceHolder
+AcDbLayout
   3
 ObjectDBX Classes
  90
@@ -1339,9 +1339,9 @@ ObjectDBX Classes
   0
 CLASS
   1
-LAYOUT
+ACDBPLACEHOLDER
   2
-AcDbLayout
+AcDbPlaceHolder
   3
 ObjectDBX Classes
  90
@@ -1469,7 +1469,7 @@ LTYPE
 100
 AcDbSymbolTable
  70
-22
+25
   0
 LTYPE
   5
@@ -2248,6 +2248,96 @@ ISO dash space __    __    __    __    __    __
 0
  49
 -3.0
+ 74
+0
+  0
+LTYPE
+  5
+93
+330
+2
+100
+AcDbSymbolTableRecord
+100
+AcDbLinetypeTableRecord
+  2
+10.0_5.0_lnzlrjqu
+ 70
+0
+  3
+- - - - - -
+ 72
+65
+ 73
+2
+ 40
+15.0
+ 49
+10.0
+ 74
+0
+ 49
+-5.0
+ 74
+0
+  0
+LTYPE
+  5
+94
+330
+2
+100
+AcDbSymbolTableRecord
+100
+AcDbLinetypeTableRecord
+  2
+10.0_5.0_eaoglosh
+ 70
+0
+  3
+- - - - - -
+ 72
+65
+ 73
+2
+ 40
+15.0
+ 49
+10.0
+ 74
+0
+ 49
+-5.0
+ 74
+0
+  0
+LTYPE
+  5
+95
+330
+2
+100
+AcDbSymbolTableRecord
+100
+AcDbLinetypeTableRecord
+  2
+10.0_5.0_hinaujrb
+ 70
+0
+  3
+- - - - - -
+ 72
+65
+ 73
+2
+ 40
+15.0
+ 49
+10.0
+ 74
+0
+ 49
+-5.0
  74
 0
   0
@@ -3307,7 +3397,7 @@ ACAD
   0
 APPID
   5
-98
+9B
 330
 3
 100
@@ -3321,7 +3411,7 @@ HATCHBACKGROUNDCOLOR
   0
 APPID
   5
-99
+9C
 330
 3
 100
@@ -5433,7 +5523,7 @@ ENTITIES
   0
 LINE
   5
-93
+96
 330
 17
 100
@@ -5457,7 +5547,7 @@ AcDbLine
   0
 ARC
   5
-94
+97
 330
 17
 100
@@ -5483,13 +5573,15 @@ AcDbArc
   0
 ARC
   5
-95
+98
 330
 17
 100
 AcDbEntity
   8
 CUTTING
+  6
+10.0_5.0_eaoglosh
 100
 AcDbCircle
  10
@@ -5509,13 +5601,15 @@ AcDbArc
   0
 CIRCLE
   5
-96
+99
 330
 17
 100
 AcDbEntity
   8
 CUTTING
+  6
+10.0_5.0_lnzlrjqu
 100
 AcDbCircle
  10
@@ -5529,13 +5623,15 @@ AcDbCircle
   0
 LINE
   5
-97
+9A
 330
 17
 100
 AcDbEntity
   8
 CUTTING
+  6
+10.0_5.0_hinaujrb
 100
 AcDbLine
  10
@@ -6645,7 +6741,7 @@ CREATED_BY_EZDXF
   3
 WRITTEN_BY_EZDXF
 350
-9A
+9D
   0
 DICTIONARYVAR
   5
@@ -6657,7 +6753,7 @@ DictionaryVariables
 280
 0
   1
-0.17.2 @ 2023-08-21T13:28:09.611478+00:00
+0.17.2 @ 2023-08-21T19:22:32.347702+00:00
   0
 VISUALSTYLE
   5
@@ -7361,7 +7457,7 @@ X-Ray
   0
 DICTIONARYVAR
   5
-9A
+9D
 330
 2D
 100
@@ -7369,7 +7465,7 @@ DictionaryVariables
 280
 0
   1
-0.17.2 @ 2023-08-21T13:28:09.638174+00:00
+0.17.2 @ 2023-08-21T19:22:32.387643+00:00
   0
 ENDSEC
   0
