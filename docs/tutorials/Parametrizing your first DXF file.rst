@@ -28,7 +28,7 @@ As you can see, it is a simple drawing of a chalice. With every entity placed on
 We would like to parametrize it depending on the given size of the
 chalice. We will call chalice height variable: ``h``.
 
-Let’s start by adding a :ref:`_MTEXT`. entity to the drawing and placing it at the left of the chalice. `(Draw -> Text)`
+Let’s start by adding a :ref:`MTEXT`. entity to the drawing and placing it at the left of the chalice. `(Draw -> Text)`
 To the text input field add the following text::
 
     Available variables:
@@ -52,7 +52,7 @@ Where:
 
     `tutorial_param.dxf`  with added `MTEXT` entity
 
-The next step will be adding a new layer called :ref:`_VIRTUAL_LAYER`_ `(Layer -> Add Layer)` and drawing `LINE` entities
+The next step will be adding a new layer called :ref:`VIRTUAL_LAYER`_ `(Layer -> Add Layer)` and drawing `LINE` entities
 on it. `(Draw -> Line -> Line from 2 Points)` With those lines join all the points of a chalice to each other
 to form a cohesive graph.
     * CIRCLE - by their center point
@@ -67,7 +67,8 @@ After you are done, you should have something like this:
     `tutorial_param.dxf`  with connected entities
 
 We are nearly finished. The last step is to add parameters to the drawing. But first, let’s make our job easier
-by defining a few helper variables. In the --- custom --- section of the `MTEXT` entity add the following variables::
+by defining a few helper variables. In the --- custom --- section of the :ref:`MTEXT` entity add the
+following variables::
 
     ----- custom -----
 
