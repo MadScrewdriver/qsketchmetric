@@ -7,7 +7,7 @@ In this tutorial you will render a parametric DXF file using the :class:`qsketch
 
 We’ll assume you have :ref:`QSketchMetric installed <installation-section>` already.
 
-First download the `example.dxf <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_
+First download the `tutorial.dxf <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_
 file from the `QSketchMetric repository <https://github.com/MadScrewdriver/qsketchmetric>`_. It is an example of a
 parametric DXF file that we will use in a tutorial.
 
