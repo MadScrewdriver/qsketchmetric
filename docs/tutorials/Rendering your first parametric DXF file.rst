@@ -23,7 +23,7 @@ as well as the :meth:`ezdxf.new` method::
         from ezdxf import new
 
 The first one will be used to render the parametric DXF file, the second one to create output
-:class:`qsketchmetric.document.Drawing`.
+:class:`ezdxf.document.Drawing`.
 
 Create an output :class:`qsketchmetric.document.Drawing` object using :meth:`ezdxf.new module::
 
