@@ -196,7 +196,6 @@ class Renderer:
 
     def _prepare_layers(self, input_layers: dict[str, int]):
         output_layers = [layer.dxf.name for layer in self.output_dxf.layers]
-        print(output_layers)
 
         for layer, color in input_layers.items():
             if layer not in output_layers and layer != "VIRTUAL_LAYER":
