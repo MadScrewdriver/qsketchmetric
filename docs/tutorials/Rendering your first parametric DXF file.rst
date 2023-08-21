@@ -14,7 +14,7 @@ parametric DXF file that we will use in a tutorial.
 To do so, open it and click `Ctrl+S` to save it to your computer.
 As a convention, we’ll assume you saved it in a file called ``tutorial.dxf``.
 
-Now, create a new file called ``render.py`` and place it in the same directory as ``example.dxf``.
+Now, create a new file called ``render.py`` and place it in the same directory as ``tutorial.dxf``.
 
 Open ``render.py`` in your favorite text editor and import the :class:`qsketchmetric.renderer.Renderer` module
 as well as the :meth:`ezdxf.new module`::
