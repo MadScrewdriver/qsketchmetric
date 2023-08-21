@@ -33,7 +33,7 @@ Before we will render ``example.dxf`` let's check it out in the `QCAD Profession
 CAD software to see briefly what it looks like. Open ``example.dxf`` in ``QCAD Professional``.
 This is what you should see:
 
-.. figure:: docs/_static/Media/tutorial1.png
+.. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/tutorial1.png
    :alt: tutorial.dxf opened in QCAD Professional
 
    tutorial.dxf opened in QCAD Professional
@@ -72,7 +72,7 @@ Now run the code::
 
 Finally open ``rendered_tutorial.dxf`` in ``QCAD Professional``. This is what you should see:
 
-.. figure:: docs/_static/Media/tutorial2.png
+.. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/tutorial2.png
    :alt: rendered_tutorial.dxf opened in QCAD Professional
 
    rendered_tutorial.dxf opened in QCAD Professional
