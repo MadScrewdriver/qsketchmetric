@@ -39,7 +39,7 @@ This is what you should see:
    tutorial.dxf opened in QCAD Professional
 
 .. note::
-    To see how to parametrize a drawing like this, see :ref:`parametrization-section`.
+    To see how to parametrize a drawing, see :ref:`parametrization-section`.
 
 We can see it is a parametric drawing of chalice. To render it needs variable ``h`` that stands for height of the
 chalice. Let's set it to ``50``::

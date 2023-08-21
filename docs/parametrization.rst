@@ -1,5 +1,4 @@
-.. _parametrization-section-label:
-
+.. _parametrization-section:
 
 Parametrizing a DXF file
 ========================
