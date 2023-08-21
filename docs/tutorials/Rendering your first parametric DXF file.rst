@@ -40,7 +40,7 @@ CAD software to see briefly what it looks like `(File -> Open)`. This is what yo
 .. note::
     To see how to parametrize a drawing, see :ref:`parametrization-section`.
 
-We can see it is a parametric drawing of a chalice. To render it needs variable ``h`` that stands for height of the
+We can see it is a parametric drawing of a chalice. To render, it needs variable ``h`` that stands for height of the
 chalice. Let's set it to ``50``::
 
         variables = {'h': 50}
