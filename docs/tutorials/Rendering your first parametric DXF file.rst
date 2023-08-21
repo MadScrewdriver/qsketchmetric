@@ -17,7 +17,7 @@ As a convention, we’ll assume you saved it in a file called ``tutorial.dxf``.
 Now, create a new file called ``render.py`` and place it in the same directory as ``tutorial.dxf``.
 
 Open ``render.py`` in your favorite text editor and import the :class:`qsketchmetric.renderer.Renderer` module
-as well as the :meth:`ezdxf.new module`::
+as well as the :meth:`ezdxf.new` method::
 
         from qsketchmetric.renderer import Renderer
         from ezdxf import new
