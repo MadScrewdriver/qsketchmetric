@@ -120,7 +120,7 @@ Visual representation of the parametrized drawing:
 
 .. warning::
     It is just a visual representation of the parametrized drawing. It does not represent the actual look of the
-    parametrized drawing. Actual look of the parametrized drawing doesn't change after parametrization!
+    parametrized drawing. Actual look of the parametrized drawing doesn't change after the parametrization!
 
 Now we can save the parametrized DXF file `(File -> Save)` and render it.
 
