@@ -30,8 +30,8 @@ other entities!**
 Next you need to add a parameter to the point. To do so select the point and scroll down the
 ``Property Editor`` to the ``Custom`` section. Click on the red plus button and add the parameter.
 
-    *``Name`` should be: ``name``.
-    *``Value`` should be: ``variable name``.
+    * ``Name`` should be: `name`.
+    * ``Value`` should be: `variable name` you desire.
 
 ``variable name`` will be returned by the renderer with new rendered coordination of the point.
 
