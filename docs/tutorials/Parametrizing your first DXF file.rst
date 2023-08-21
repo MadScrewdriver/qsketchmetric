@@ -123,5 +123,10 @@ Visual representation of the parametrized drawing:
     parametrized drawing. Actual look of the parametrized drawing doesn't change after the parametrization!
 
 Now we can save the parametrized DXF file `(File -> Save)` and render it.
+Finished file should be simulat to
+`tutorial.dxf <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_
+file, that you can
+`download <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_ from the
+`QSketchMetric repository <https://github.com/MadScrewdriver/qsketchmetric>`_.
 
 **Congratulation you created your first parametric DXF file!**
