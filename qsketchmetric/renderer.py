@@ -13,7 +13,6 @@ from ezdxf.math import Vec3
 from py_expression_eval import Parser  # type: ignore
 from ezdxf.document import Drawing
 
-
 class Renderer:
     """
     The :class:`Renderer` class interprets parametric files, transforming them into visual representations.

@@ -17,7 +17,7 @@ As a convention, we’ll assume you saved it in a file called ``tutorial.dxf``.
 Now, create a new file called ``render.py`` and place it in the same directory as ``tutorial.dxf``.
 
 Open ``render.py`` in your favorite text editor and import the :class:`qsketchmetric.renderer.Renderer` module
-as well as the :meth:`ezdxf.new` method::
+as well as the :meth:`ezdxf.filemanagement.new` method::
 
         from qsketchmetric.renderer import Renderer
         from ezdxf import new
@@ -25,7 +25,7 @@ as well as the :meth:`ezdxf.new` method::
 The first one will be used to render the parametric DXF file, the second one to create output
 :class:`ezdxf.document.Drawing`.
 
-Create an output :class:`ezdxf.document.Drawing` object using :meth:`ezdxf.new module::
+Create an output :class:`ezdxf.document.Drawing` object using :meth:`ezdxf.filemanagement.new` module::
 
         dxf = new()
 
