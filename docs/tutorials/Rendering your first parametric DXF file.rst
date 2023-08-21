@@ -1,3 +1,5 @@
+.. _rendering-tutorial:
+
 Tutorial - Rendering your first parametric DXF file
 ===================================================
 
@@ -61,7 +63,7 @@ The whole code should look like this::
 
         dxf = new()
         variables = {'h': 50}
-        renderer = Renderer('example.dxf', dxf, variables)
+        renderer = Renderer('tutorial.dxf', dxf, variables)
         renderer.render()
         dxf.saveas('rendered_tutorial.dxf')
 

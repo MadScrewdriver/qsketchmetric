@@ -1,3 +1,5 @@
+.. _parametrization-tutorial:
+
 Tutorial - Manual parametrizing your first DXF file
 ===================================================
 
@@ -52,7 +54,7 @@ Where:
 
     `tutorial_param.dxf`  with added `MTEXT` entity
 
-The next step will be adding a new layer called :ref:`VIRTUAL_LAYER`_ `(Layer -> Add Layer)` and drawing `LINE` entities
+The next step will be adding a new layer called :ref:`VIRTUAL_LAYER` `(Layer -> Add Layer)` and drawing `LINE` entities
 on it. `(Draw -> Line -> Line from 2 Points)` With those lines join all the points of a chalice to each other
 to form a cohesive graph.
     * CIRCLE - by their center point
