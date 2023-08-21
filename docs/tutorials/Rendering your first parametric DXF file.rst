@@ -47,7 +47,7 @@ chalice. Let's set it to ``50``::
 
 Now we are ready to roll. Let's render the parametric DXF file::
 
-        renderer = Renderer('example.dxf', dxf, variables)
+        renderer = Renderer('tutorial.dxf', dxf, variables)
         renderer.render()
 
 Finally, save the output drawing::
