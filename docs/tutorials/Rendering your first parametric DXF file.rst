@@ -29,7 +29,7 @@ Create an output :class:`qsketchmetric.document.Drawing` object using :meth:`ezd
 
         dxf = new()
 
-Before we will render ``example.dxf`` let's check it out in the `QCAD Professional <https://qcad.org/en/download>`_
+Before we will render ``tutorial.dxf`` let's check it out in the `QCAD Professional <https://qcad.org/en/download>`_
 CAD software to see briefly what it looks like. Open ``example.dxf`` in ``QCAD Professional``.
 This is what you should see:
 
