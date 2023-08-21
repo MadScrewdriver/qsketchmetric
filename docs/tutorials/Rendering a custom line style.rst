@@ -3,7 +3,7 @@ Tutorial - Rendering a custom line style
 
 **Let’s learn by example.**
 
-In this tutorial, we will learn how to render a point using the :class:`qsketchmetric.renderer.Renderer` module.
+In this tutorial, we will learn how to render a custom lines style using the :class:`qsketchmetric.renderer.Renderer` module.
 
 We’ll assume you have :ref:`QSketchMetric installed <installation-section>` already as well as
 `QCAD Professional <https://qcad.org/en/download>`_ and have already done the
@@ -46,7 +46,7 @@ Added parameter should look like this:
    ``tutorial.dxf`` with added ``line`` parameters
 
 
-That is all! Now you can save the file and render it with :meth:`qsketchmetric.Renderer.render` method::
+That is all! Now you can save the file and render it with :meth:`qsketchmetric.renderer.Renderer.render` method::
 
     from qsketchmetric.renderer import Renderer
     from ezdxf import new

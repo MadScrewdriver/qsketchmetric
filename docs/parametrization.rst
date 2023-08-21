@@ -96,7 +96,7 @@ VIRTUAL_LAYER
 VIRTUAL_LAYER will not be rendered in the final DXF file. It is used to store the virtual entities, which are needed
 to parametrize the DXF file. Virtual layer will contain LINES and POINTS entities.
 
-* POINT entities will be rendered and returned as a ``dict`` by :meth:`qsketchmetric.Renderer.render` method.
+* POINT entities will be rendered and returned as a ``dict`` by :meth:`qsketchmetric.renderer.Renderer.render` method.
   There are many reasons why one would want new position of a point to be returned.
 * LINE entities will be used to parametrize the DXF file. They will be used to join entities together. To form one
   coherent graph.
