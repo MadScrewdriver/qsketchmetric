@@ -30,8 +30,7 @@ Create an output :class:`ezdxf.document.Drawing` object using :meth:`ezdxf.new m
         dxf = new()
 
 Before we will render ``tutorial.dxf`` let's check it out in the `QCAD Professional <https://qcad.org/en/download>`_
-CAD software to see briefly what it looks like. Open ``example.dxf`` in ``QCAD Professional``.
-This is what you should see:
+CAD software to see briefly what it looks like `(File -> Open)`. This is what you should see:
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/tutorial1.png
    :alt: tutorial.dxf opened in QCAD Professional
