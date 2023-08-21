@@ -5,7 +5,7 @@ Tutorial - Rendering your first parametric DXF file
 
 In this tutorial you will render a parametric DXF file using the :class:`qsketchmetric.renderer.Renderer` module.
 
-We’ll assume you have `QSketchMetric installed`_ already.
+We’ll assume you have :ref:`QSketchMetric installed <installation-section>` already.
 
 First download the `example.dxf <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_
 file from the `QSketchMetric repository <https://github.com/MadScrewdriver/qsketchmetric>`_. It is an example of a
@@ -80,6 +80,3 @@ Finally open ``rendered_tutorial.dxf`` in ``QCAD Professional``. This is what yo
 As you can see, the parametric DXF file was rendered successfully and the chalice height is ``50``.
 
 **Congratulation you renderer your first parametric DXF file!**
-
-
-.. _QSketchMetric installed: installation.rst
