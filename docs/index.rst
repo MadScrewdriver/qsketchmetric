@@ -7,6 +7,12 @@ QSketchMetric's Documentation
 =============================
 2D Parametric DXF Python Rendering Engine.
 
+---------------------------------------------
+
+`GitHub page <https://github.com/MadScrewdriver/qsketchmetric>`_
+
+`Pypi package <https://pypi.org/project/qsketchmetric/>`_
+
 .. tip::
 
    The name QSketchMetric comes from the combination of three words:

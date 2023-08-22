@@ -7,4 +7,4 @@
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 
 # qsketchmetric
-Parametric 2D Python dxf renderer
+2D parametric DXF Python rendering engine.
