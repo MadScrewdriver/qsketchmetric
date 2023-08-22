@@ -16,3 +16,19 @@ like **plotters**.
 Typical Use Cases
    Consider a box's cutting layout: with ``qsketchmetric``, it can be dynamically rendered to adapt
    based on its desired size.
+
+How the documentation is organized?
+-----------------------------------
+Documentation follows `diataxis https://diataxis.fr`_ structure.
+It is divided into the following parts:
+
+* Tutorials take you by the hand through a series of steps to start using QSketchMetric.
+  Start here if you’re new to QSketchMetric.
+
+* How-to guides are recipes. They guide you through the steps involved in addressing key problems and use-cases.
+  They are more advanced than tutorials and assume some knowledge of how QSketchMetric works.
+
+* Explanation guides discuss key topics and concepts of QSketchMetric.
+
+* Reference guides contain technical reference for all aspects of QSketchMetric’s machinery.
+  They describe how it works but assume that you have a basic understanding of key concepts.
