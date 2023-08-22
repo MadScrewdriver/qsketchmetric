@@ -22,7 +22,8 @@ QSketchMetric's Documentation
    introduction
    installation
    tutorials/index
-   parametrization
-   modules
+   how_to_guide/index
+   explanation/index
+   reference/index
 
 

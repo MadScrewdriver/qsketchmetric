@@ -92,8 +92,9 @@ After adding the variables, everything should look like this:
 
 Now we can add parameters to the drawing. To do so select the entities one by one and scroll down the
 ``Property Editor`` to the ``Custom`` section. Click on the red plus button and add the parameter.
-**For every entity parameter ``Name`` must be ``c``**.
-In the ``Value`` field  add the expression describing the entity. According to this table:
+
+    * ``Name`` must be: `c`.
+    * ``Value`` contains the expression describing the entity. According to this table below
 
   +--------------------+-----------------------------------------------------------------------------+
   |    Value           | Description                                                                 |
@@ -111,7 +112,7 @@ In the ``Value`` field  add the expression describing the entity. According to t
     Remember that our goal is to parametrize the drawing depending on the chalice height.
 
 To parametrize the drawing depending on the chalice height, the ``Value`` for the virtual line on the right side
-of the chalice must be ``h`` and for the chalice leg line must be ``?``. By doing so, we are telling the renderer
+of the chalice must be `h` and for the chalice leg line must be `?`. By doing so, we are telling the renderer
 to calculate the length of the chalice leg line from two end points of the line.
 
 Visual representation of the parametrized drawing:
@@ -126,7 +127,7 @@ Visual representation of the parametrized drawing:
     parametrized drawing. Actual look of the parametrized drawing doesn't change after the parametrization!
 
 Now we can save the parametrized DXF file `(File -> Save)` and render it.
-Finished file should be simulat to
+Finished file should be simular to
 `tutorial.dxf <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_
 file, that you can
 `download <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_ from the
