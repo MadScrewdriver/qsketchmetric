@@ -10,8 +10,9 @@ QSketchMetric's Documentation
 ---------------------------------------------
 
 `GitHub page <https://github.com/MadScrewdriver/qsketchmetric>`_
+`Pypi package page <https://pypi.org/project/qsketchmetric/>`_
 
-`Pypi package <https://pypi.org/project/qsketchmetric/>`_
+---------------------------------------------
 
 .. tip::
 
