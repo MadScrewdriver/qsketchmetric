@@ -64,5 +64,6 @@ QSketchMetric's Documentation
    how_to_guide/index
    explanation/index
    reference/index
+   How to contribute
 
 
