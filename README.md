@@ -23,7 +23,7 @@ input_parametric_dxf_path = 'tutorial.dxf'
 variables = {"h": 50}
 
 renderer = Renderer(input_parametric_dxf_path, output_dxf,
-                    extra_variables=variables)
+                    variables=variables)
 renderer.render()
 
 output_dxf.saveas('tutorial_rendered.dxf')

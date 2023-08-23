@@ -25,9 +25,9 @@ class TestRenderer(unittest.TestCase):
         self.line1_length = 3
         self.line2_length = 4
 
-        self.offset_drawing_x = 10
-        self.offset_drawing_y = 10
-        self.offset_drawing = Vec3(self.offset_drawing_x, self.offset_drawing_y)
+        self.offset_x = 10
+        self.offset_y = 10
+        self.offset = Vec3(self.offset_x, self.offset_y)
 
         self.point1 = Vec3(0, 0)
         self.point2 = Vec3(0, 1)
@@ -43,9 +43,9 @@ class TestRenderer(unittest.TestCase):
             self.point3: self.new_point3,
         }
 
-        self.new_point1_off = self.new_point1 + self.offset_drawing
-        self.new_point2_off = self.new_point2 + self.offset_drawing
-        self.new_point3_off = self.new_point3 + self.offset_drawing
+        self.new_point1_off = self.new_point1 + self.offset
+        self.new_point2_off = self.new_point2 + self.offset
+        self.new_point3_off = self.new_point3 + self.offset
 
         self.new_points_off = {
             self.point1: self.new_point1_off,
@@ -105,14 +105,14 @@ class TestRenderer(unittest.TestCase):
         renderer = Renderer(
             input_parametric_path=Path('/path/to/input.dxf'),
             output_rendered_object=self.mock_output_dxf,
-            extra_variables={'var1': 10, 'var2': 5},
-            offset_drawing=(self.offset_drawing_x, self.offset_drawing_y)
+            variables={'var1': 10, 'var2': 5},
+            offset=(self.offset_x, self.offset_y)
         )
         self.assertEqual(renderer.input_parametric_path, Path('/path/to/input.dxf'))
         self.assertEqual(renderer.output_dxf, self.mock_output_dxf)
         self.assertEqual(renderer.variables, {'var1': 10, 'var2': 5})
-        self.assertEqual(renderer.offset_drawing_x, self.offset_drawing_x)
-        self.assertEqual(renderer.offset_drawing_y, self.offset_drawing_y)
+        self.assertEqual(renderer.offset_x, self.offset_x)
+        self.assertEqual(renderer.offset_y, self.offset_y)
 
     @patch('qsketchmetric.renderer.Renderer._prepare_layers')
     @patch('ezdxf.readfile')
@@ -213,8 +213,8 @@ class TestRenderer(unittest.TestCase):
             self.point1: self.new_point1,
         }
 
-        renderer.offset_drawing_x = self.offset_drawing_x
-        renderer.offset_drawing_y = self.offset_drawing_y
+        renderer.offset_x = self.offset_x
+        renderer.offset_y = self.offset_y
 
         # Call the _dfs method with the mocked values
         renderer._dfs(self.point1, 0, 0)
@@ -273,8 +273,8 @@ class TestRenderer(unittest.TestCase):
             self.point3: [("line_layer", self.point2)],
         }
 
-        renderer.offset_drawing_x = self.offset_drawing_x
-        renderer.offset_drawing_y = self.offset_drawing_y
+        renderer.offset_x = self.offset_x
+        renderer.offset_y = self.offset_y
 
         # Call the _construct_rest_of_dxf method
         renderer._construct_rest_of_dxf()
@@ -351,15 +351,15 @@ class TestRenderer(unittest.TestCase):
             output_rendered_object=self.mock_output_dxf
         )
 
-        renderer.offset_drawing_x = self.offset_drawing_x
-        renderer.offset_drawing_y = self.offset_drawing_y
+        renderer.offset_x = self.offset_x
+        renderer.offset_y = self.offset_y
 
         renderer.new_entities = new_entities
 
         renderer._center_drawing()
 
-        expected_offset_x = self.offset_drawing_x + self.circle_radius
-        expected_offset_y = self.offset_drawing_y + self.circle_radius
+        expected_offset_x = self.offset_x + self.circle_radius
+        expected_offset_y = self.offset_y + self.circle_radius
         expected_offset = Vec3(expected_offset_x, expected_offset_y)
 
         # Validate if each entity was translated correctly
