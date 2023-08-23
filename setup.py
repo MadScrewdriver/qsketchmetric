@@ -12,6 +12,10 @@ def readme():
         return f.read()
 
 
+def requirements():
+    with open("requirements.txt", "r") as f:
+        return f.read().splitlines()
+
 setup(
     name="qsketchmetric",
     version=VERSION,
@@ -25,7 +29,7 @@ setup(
     author_email="franciszek@lajszczak.dev",
     license='MIT',
     packages=find_packages(),
-    install_requires=parse_requirements("requirements.txt"),
+    install_requires=requirements(),
     keywords='CAD, QCAD, 2D, parametric, drawing, renderer, python renderer, python CAD, python 2d CAD, p'
              'python 2d drawing, python parametric drawing, python parametric CAD, python QCAD, QCAD python, '
              'parametric QCAD python, parametric QCAD, QCAD parametric, QCAD python parametric, QCAD python 2d,',
