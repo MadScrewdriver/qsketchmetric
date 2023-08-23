@@ -50,10 +50,10 @@ class Renderer:
         self.output_dxf: Drawing = output_rendered_object
         self.output_msp: Modelspace = self.output_dxf.modelspace()
 
-        self.offset_drawing_x: float = offset_drawing[0]
-        self.offset_drawing_y: float = offset_drawing[1]
+        self.offset_x: float = offset[0]
+        self.offset_y: float = offset[1]
 
-        self.variables: Dict[str, float] = {} | extra_variables
+        self.variables: Dict[str, float] = {} | variables
 
         self.graph: Dict[Vec3, list[tuple[str, Vec3, float, dict]]] = {}
         self.visited_graph: Dict[Vec3, list[tuple[str, Vec3]]] = {}
@@ -215,9 +215,9 @@ class Renderer:
             for line in [l for l in v if
                          l[0] == "LINE" and l[2] == "?" and (l[3]["layer"], l[1]) in self.visited_graph[node]]:
                 self.new_entities.append(self.output_msp.add_line((
-                    self.new_points[node][0] + self.offset_drawing_x, self.new_points[node][1] + self.offset_drawing_y),
-                    (self.new_points[line[1]][0] + self.offset_drawing_x,
-                     self.new_points[line[1]][1] + self.offset_drawing_y),
+                    self.new_points[node][0] + self.offset_x, self.new_points[node][1] + self.offset_y),
+                    (self.new_points[line[1]][0] + self.offset_x,
+                     self.new_points[line[1]][1] + self.offset_y),
                     dxfattribs={"layer": line[3]["layer"], "linetype": line[3]["linetype"]}))
                 self.visited_graph[line[1]].remove((line[3]["layer"], node))
                 self.visited_graph[node].remove((line[3]["layer"], line[1]))
@@ -240,12 +240,12 @@ class Renderer:
 
             if name == "CIRCLE":
                 self.new_entities.append(self.output_msp.add_circle(
-                    (node.x + offset_x + self.offset_drawing_x, node.y + offset_y + self.offset_drawing_y), length,
+                    (node.x + offset_x + self.offset_x, node.y + offset_y + self.offset_y), length,
                     dxfattribs={"layer": data["layer"], "linetype": data["linetype"]}))
 
             elif name == "ARC":
                 self.new_entities.append(self.output_msp.add_arc(
-                    (node.x + offset_x + self.offset_drawing_x, node.y + offset_y + self.offset_drawing_y), length,
+                    (node.x + offset_x + self.offset_x, node.y + offset_y + self.offset_y), length,
                     data["start_angle"], data["end_angle"],
                     dxfattribs={"layer": data["layer"], "linetype": data["linetype"]}))
 
@@ -260,9 +260,9 @@ class Renderer:
 
                     if data["layer"] != "VIRTUAL_LAYER":
                         self.new_entities.append(self.output_msp.add_line(
-                            (node.x + offset_x + self.offset_drawing_x, node.y + offset_y + self.offset_drawing_y), (
-                                vector.x + offset_x + new_offset_x + self.offset_drawing_x,
-                                vector.y + offset_y + new_offset_y + self.offset_drawing_y),
+                            (node.x + offset_x + self.offset_x, node.y + offset_y + self.offset_y), (
+                                vector.x + offset_x + new_offset_x + self.offset_x,
+                                vector.y + offset_y + new_offset_y + self.offset_y),
                             dxfattribs={"layer": data["layer"], "linetype": data["linetype"]}))
 
                     self.visited_graph[node].remove((data["layer"], vector))
@@ -287,12 +287,12 @@ class Renderer:
             if e.dxftype() == "LINE":
                 start = e.dxf.start
                 end = e.dxf.end
-                e.update_dxf_attribs({"start": Vec3(start.x - self.offset_drawing_x, start.y - self.offset_drawing_y),
-                                      "end": Vec3(end.x - self.offset_drawing_x, end.y - self.offset_drawing_y)})
+                e.update_dxf_attribs({"start": Vec3(start.x - self.offset_x, start.y - self.offset_y),
+                                      "end": Vec3(end.x - self.offset_x, end.y - self.offset_y)})
             else:
                 center = e.dxf.center
                 e.update_dxf_attribs(
-                    {"center": Vec3(center.x - self.offset_drawing_x, center.y - self.offset_drawing_y)})
+                    {"center": Vec3(center.x - self.offset_x, center.y - self.offset_y)})
 
         bounding_box = bbox.extents(new_entities_copy, cache=bbox.Cache())
 
