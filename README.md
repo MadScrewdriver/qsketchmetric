@@ -38,7 +38,7 @@ The most common case is the installation by [**pip package manager**](https://pi
 ## 🎯 Features
 
 -  Parametric **DXF** rendering
--  Easy parametrization using [**QCAD Professional software**](https://qcad.org/en/download)
+-  Easy dxf files parametrization using [**QCAD Professional software**](https://qcad.org/en/download)
 -  Support for `LINE`,`CIRCLE`,`ARC`, `POINTS` entities
 -  Open source and daily maintained
 
