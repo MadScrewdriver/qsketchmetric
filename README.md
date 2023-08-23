@@ -9,7 +9,7 @@
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 
 **QSketchMetric** is a Python 2D **parametric DXF** rendering engine. Parametrization is done using 
-[**QCAD Commercially Software**](https://qcad.org/en/download)
+[**QCAD Professional software**](https://qcad.org/en/download)
 
 ## ⚡️ Quickstart
 
@@ -28,3 +28,28 @@ output_dxf.saveas('rendered_parametric.dxf')
 ```
 
 ## ⚙️ Installation
+
+The most common case is the installation by [**pip package manager**](https://pip.pypa.io/en/stable/installation/):
+
+```bash
+  pip install qsketchmetric
+```
+
+## 🎯 Features
+
+-  Parametric **DXF** rendering
+-  Easy parametrization using [**QCAD Professional software**](https://qcad.org/en/download)
+-  Support for `LINE`,`CIRCLE`,`ARC`, `POINTS` entities
+-  Open source and daily maintained
+
+## 📚 Documentation
+Documentation is available at [**QSketchMetric docs**](https://qsketchmetric.readthedocs.io/en/latest/)
+
+## 📈 Roadmap
+Support for more entities is planned in the future. If you have any suggestions, please create an issue.
+If you want to contribute, see `How to contribute` section in the documentation. I am open to any suggestions
+and waiting for your pull requests!
+
+## ⚠️ License
+QSketchMetric is licensed under the [**MIT**](https://opensource.org/licenses/MIT) license. 
+When using the QSketchMetric in your open-source project I would be grateful for a reference to the repository.
