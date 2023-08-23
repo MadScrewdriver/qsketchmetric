@@ -1,20 +1,24 @@
-from pkg_resources import parse_requirements
+import os
+
 from setuptools import setup, find_packages  # type: ignore
 from qsketchmetric import __version__
 
 VERSION = __version__
 DESCRIPTION = 'Python 2D parametric DXF rendering engine.'
-LONG_DESCRIPTION = 'Python 2D parametric DXF rendering engine.'
+
+# Get the directory containing this file.
+here = os.path.abspath(os.path.dirname(__file__))
 
 
 def readme():
-    with open('README.md') as f:
+    with open(os.path.join(here, 'README.md')) as f:
         return f.read()
 
 
 def requirements():
-    with open("requirements.txt", "r") as f:
+    with open(os.path.join(here, "requirements.txt"), "r") as f:
         return f.read().splitlines()
+
 
 setup(
     name="qsketchmetric",
