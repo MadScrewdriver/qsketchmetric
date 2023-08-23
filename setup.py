@@ -7,11 +7,16 @@ DESCRIPTION = 'Python 2D parametric DXF rendering engine.'
 LONG_DESCRIPTION = 'Python 2D parametric DXF rendering engine.'
 
 
+def readme():
+    with open('README.md') as f:
+        return f.read()
+
+
 setup(
     name="qsketchmetric",
     version=VERSION,
     description=DESCRIPTION,
-    long_description=LONG_DESCRIPTION,
+    long_description=readme(),
     url="https://github.com/MadScrewdriver/qsketchmetric",
     project_urls={
         "Documentation": "https://qsketchmetric.readthedocs.io/",
