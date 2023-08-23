@@ -45,7 +45,7 @@ CAD software to see briefly what it looks like `(File -> Open)`. This is what yo
 We can see it is a parametric drawing of a chalice. To render, it needs variable ``h`` that stands for height of the
 chalice. Let's set it to ``50``::
 
-        variables = {'h': 50}
+        input_variables = {'h': 50}
 
 Now we are ready to roll. Let's render the parametric DXF file::
 
@@ -62,8 +62,8 @@ The whole code should look like this::
         from ezdxf import new
 
         output_dxf = new()
-        variables = {'h': 50}
-        renderer = Renderer('tutorial.dxf', output_dxf, variables)
+        input_variables = {'h': 50}
+        renderer = Renderer('tutorial.dxf', output_dxf, input_variables)
         renderer.render()
         output_dxf.saveas('rendered_tutorial.dxf')
 

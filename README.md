@@ -59,3 +59,8 @@ and waiting for your pull requests!
 ## ⚠️ License
 QSketchMetric is licensed under the [**MIT**](https://opensource.org/licenses/MIT) license. 
 When using the QSketchMetric in your open-source project I would be grateful for a reference to the repository.
+
+## 🏆 Hall of fame
+This project exists thanks to all the people who contribute. Thank you!
+
+![GitHub Contributors Image](https://contrib.rocks/image?repo=MadScrewdriver/qsketchmetric)
