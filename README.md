@@ -1,4 +1,4 @@
-# QSketchMetric
+![QSketchMetric logo](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo.svg)
 
 [![CI](https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml/badge.svg)](https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml)
 [![Documentation Status](https://readthedocs.org/projects/qsketchmetric/badge/?version=latest)](https://qsketchmetric.readthedocs.io/en/latest/?badge=latest)
@@ -31,7 +31,7 @@ output_dxf.saveas('tutorial_rendered.dxf')
 
 ## 📷 Demo showcase
 
-![Example GIF](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/readme.gif)
+![Demo GIF](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/readme.gif)
 
 ## ⚙️ Installation
 
