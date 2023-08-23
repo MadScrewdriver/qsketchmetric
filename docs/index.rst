@@ -7,7 +7,7 @@
 .. image:: https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo_QSM.svg
 
 
-Documentation
+QSketchMetric Documentation
 =============================
 **Python 2D parametric DXF rendering engine.**
 
