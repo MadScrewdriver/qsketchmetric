@@ -12,14 +12,3 @@ Basic Installation
 The most common case is the installation by pip::
 
    pip install qsketchmetric
-
-Development Installation
-------------------------
-To install QSketchMetric for development, clone the repository::
-
-   git clone git@github.com:MadScrewdriver/qsketchmetric.git
-
-
-Install side-packages from ``requirements-dev.txt``::
-
-   pip install -r requirements-dev.txt

@@ -3,8 +3,8 @@ from setuptools import setup, find_packages  # type: ignore
 from qsketchmetric import __version__
 
 VERSION = __version__
-DESCRIPTION = 'Parametric 2D CAD'
-LONG_DESCRIPTION = 'Parametric 2D drawings renderer using QCAD Professional'
+DESCRIPTION = 'Python 2D parametric DXF rendering engine.'
+LONG_DESCRIPTION = 'Python 2D parametric DXF rendering engine.'
 
 
 setup(

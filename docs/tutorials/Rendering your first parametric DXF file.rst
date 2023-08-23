@@ -54,18 +54,18 @@ Now we are ready to roll. Let's render the parametric DXF file::
 
 Finally, save the output drawing::
 
-        dxf.saveas('rendered_tutorial.dxf')
+        output_dxf.saveas('rendered_tutorial.dxf')
 
 The whole code should look like this::
 
         from qsketchmetric.renderer import Renderer
         from ezdxf import new
 
-        dxf = new()
+        output_dxf = new()
         variables = {'h': 50}
         renderer = Renderer('tutorial.dxf', output_dxf, variables)
         renderer.render()
-        dxf.saveas('rendered_tutorial.dxf')
+        output_dxf.saveas('rendered_tutorial.dxf')
 
 Now run the code::
 
