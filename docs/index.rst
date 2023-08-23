@@ -3,7 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-QSketchMetric's Documentation
+
+.. image:: https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo_QSM.svg
+
+
+Documentation
 =============================
 **Python 2D parametric DXF rendering engine.**
 

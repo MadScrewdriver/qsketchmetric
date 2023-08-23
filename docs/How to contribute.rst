@@ -2,7 +2,7 @@ How to contribute
 =================
 
 Thank you for investing your time in contributing to our project! Any contribution you make will
-be reflected on `QSketchMetric docs <https://qsketchmetric.readthedocs.io/>`_ Hall of Fame ✨.
+be reflected on `QSketchMetric GitHub Page <https://github.com/MadScrewdriver/qsketchmetric>`_ Hall of Fame 🏆.
 In this guide you will get an overview of the
 contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
@@ -76,5 +76,5 @@ Your PR is merged!
 
 Congratulations! QSketchMetric develops thanks to people like you. Thank you for your contribution!
 Once your PR is merged, your contributions will be publicly visible on the
-`QSketchMetric docs <https://qsketchmetric.readthedocs.io/>`_ Hall of Fame ✨.
+`QSketchMetric GitHub Page <https://github.com/MadScrewdriver/qsketchmetric>`_ Hall of Fame 🏆.
 
