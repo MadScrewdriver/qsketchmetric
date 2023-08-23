@@ -38,7 +38,7 @@ jobs:
       
 
       - name: Bump version
-        run: bumpversion patch --verbose --commit
+        run: bumpversion patch --verbose --commit --no-tag
 
       - name: Commit changes
         run: |
