@@ -11,10 +11,10 @@ QSketchMetric's Documentation
 
 .. raw:: html
 
-   <ul>
-   <li><a href="https://github.com/MadScrewdriver/qsketchmetric"><i class="fab fa-github"></i> GitHub page</a></li>
-   <li><a href="https://pypi.org/project/qsketchmetric/"><i class="fab fa-python"></i> Pypi package page</a></li>
-   </ul>
+   <a href="https://github.com/MadScrewdriver/qsketchmetric"><i class="fab fa-github"></i> GitHub page</a></li></br>
+   <a href="https://pypi.org/project/qsketchmetric/"><i class="fab fa-python"></i> Pypi package page</a></li>
+
+---------------------------------------------
 
 .. image:: https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml/badge.svg
    :target: https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml
