@@ -39,7 +39,7 @@ The most common case is the installation by [**pip package manager**](https://pi
 
 -  Parametric **DXF** rendering
 -  Easy dxf files parametrization using [**QCAD Professional software**](https://qcad.org/en/download)
--  Support for `LINE`,`CIRCLE`,`ARC`, `POINTS` entities
+-  Support for `LINE`,`CIRCLE`,`ARC` and `POINT` entities
 -  Open source and daily maintained
 
 ## 📚 Documentation
