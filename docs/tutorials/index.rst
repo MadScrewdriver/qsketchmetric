@@ -4,7 +4,7 @@ Tutorials
 =========
 
 :ref:`Tutorials <tutorials>` take you by the hand through a series of steps to start using QSketchMetric.
-  Start here if you’re new to QSketchMetric.
+Start here if you’re new to QSketchMetric.
 
 .. toctree::
    :maxdepth: 1
