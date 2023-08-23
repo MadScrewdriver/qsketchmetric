@@ -27,6 +27,10 @@ renderer.render()
 output_dxf.saveas('rendered_parametric.dxf')
 ```
 
+## 📷 Demo showcase
+
+![Example GIF](docs/_static/Media/readme.gif)
+
 ## ⚙️ Installation
 
 The most common case is the installation by [**pip package manager**](https://pip.pypa.io/en/stable/installation/):
