@@ -12,7 +12,7 @@ QSketchMetric's Documentation
 .. raw:: html
 
    <a href="https://github.com/MadScrewdriver/qsketchmetric"><i class="fab fa-github"></i> GitHub page</a></li></br>
-   <a href="https://pypi.org/project/qsketchmetric/"><i class="fab fa-python"></i> Pypi package page</a></li>
+   </br><a href="https://pypi.org/project/qsketchmetric/"><i class="fab fa-python"></i> Pypi package page</a></li>
 
 ---------------------------------------------
 
