@@ -26,7 +26,7 @@ you. You can narrow down the search using labels as filters. See
 As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a
 PR with a fix.
 
-Make Changes
+Make changes
 ------------
 
 1. `Fork the repo <https://docs.github.com/en/get-started/quickstart/fork-a-repo#fork-an-example-repository>`_
