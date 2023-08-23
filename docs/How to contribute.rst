@@ -13,7 +13,7 @@ Issues / Feature requests
 
 Create a new issue
 ~~~~~~~~~~~~~~~~~~
-If you spot a problem with the package, you have a questions or want to request a new feature,
+If you spot a problem with the package, you have a question or want to request a new feature,
 it's a good idea to add it as an issue.
 `Search if an issue already exists <https://github.com/MadScrewdriver/qsketchmetric/issues>`_.
 If a related issue doesn't exist, you can open a new issue using a relevant issue form.
