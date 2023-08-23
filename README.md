@@ -19,12 +19,14 @@ from qsketchmetric.renderer import Renderer
 from ezdxf import new
 
 output_dxf = new()
-input_parametric_dxf_path = 'parametric.dxf'
+input_parametric_dxf_path = 'tutorial.dxf'
+variables = {"h": 50}
 
-renderer = Renderer(input_parametric_dxf_path, output_dxf)
+renderer = Renderer(input_parametric_dxf_path, output_dxf,
+                    extra_variables=variables)
 renderer.render()
 
-output_dxf.saveas('rendered_parametric.dxf')
+output_dxf.saveas('tutorial_rendered.dxf')
 ```
 
 ## 📷 Demo showcase
