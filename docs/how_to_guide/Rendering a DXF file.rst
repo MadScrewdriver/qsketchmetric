@@ -25,8 +25,8 @@ Rendering a DXF file
         renderer = Renderer(
                             path,
                             output_dxf,
-                            extra_variables=variables,
-                            offset_drawing=offset
+                            variables=variables,
+                            offset=offset
                             )
         rendered_points = renderer.render()
 

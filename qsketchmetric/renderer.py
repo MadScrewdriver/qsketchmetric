@@ -23,9 +23,9 @@ class Renderer:
         You can initialize such an object using methods like :meth:`ezdxf.readfile` or :meth:`ezdxf.new`
         By providing an already existing drawing, users can merge multiple visual elements into a singular
         representation.
-    :param extra_variables: **(Optional)** Supplementary constant variables that can enhance the mathematical
+    :param variables: **(Optional)** Supplementary constant variables that can enhance the mathematical
         representations used.Defaults to an empty dictionary.
-    :param offset_drawing: **(Optional)** Provides offsets for the parametric visualization. Defaults to (0, 0).
+    :param offset: **(Optional)** Provides offsets for the parametric visualization. Defaults to (0, 0).
 
     .. seealso::
           `ezdxf Documentation <https://ezdxf.readthedocs.io/en/stable/>`_ - A comprehensive library to manage
@@ -33,13 +33,13 @@ class Renderer:
     """
 
     def __init__(self, input_parametric_path: Path, output_rendered_object: Drawing,
-                 extra_variables: Optional[dict[str, float]] = None, offset_drawing: tuple[int, int] = (0, 0)):
+                 variables: Optional[dict[str, float]] = None, offset: tuple[int, int] = (0, 0)):
         """
             Instantiate a new :class:``Renderer`` object.
         """
 
-        if extra_variables is None:
-            extra_variables = dict()
+        if variables is None:
+            variables = dict()
 
         self.new_points: Dict[Vec3, tuple[int, int]] = {}
         self.input_parametric_path: Path = input_parametric_path
