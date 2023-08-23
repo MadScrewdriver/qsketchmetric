@@ -39,6 +39,13 @@ Make changes
 
 4. Create a working branch and start with your changes!
 
+Tests
+-----
+
+We use `pytest <https://docs.pytest.org/en/stable/>`_ for testing. You can run the tests using::
+
+    pytest
+
 Commit your update
 ------------------
 
