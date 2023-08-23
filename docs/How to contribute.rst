@@ -53,7 +53,7 @@ Here are some tips for self-review:
   `mypy <https://mypy-lang.org/>`_ .
 * If there are any failing checks in your PR, troubleshoot them until they're all passing.
 
-Pull Request
+Pull request
 ------------
 
 When you're finished with the changes, create a pull request, also known as a PR.
