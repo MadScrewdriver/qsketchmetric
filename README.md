@@ -31,7 +31,7 @@ output_dxf.saveas('tutorial_rendered.dxf')
 
 ## 📷 Demo showcase
 
-![Example GIF](docs/_static/Media/readme.gif)
+![Example GIF](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/readme.gif)
 
 ## ⚙️ Installation
 
