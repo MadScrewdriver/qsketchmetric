@@ -20,6 +20,7 @@ setup(
     version=VERSION,
     description=DESCRIPTION,
     long_description=readme(),
+    long_description_content_type="text/markdown",
     url="https://github.com/MadScrewdriver/qsketchmetric",
     project_urls={
         "Documentation": "https://qsketchmetric.readthedocs.io/",
