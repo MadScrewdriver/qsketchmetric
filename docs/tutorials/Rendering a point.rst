@@ -24,16 +24,17 @@ Open ``tutorial.dxf`` in QCAD Professional, the result should look like this:
    tutorial.dxf opened in QCAD Professional
 
 Rendering a point is dead simple with QSketchMetric. All you need to do is to create a ``POINT``
-entity on the :ref:`VIRTUAL_LAYER`. `(Draw -> Point -> Single Point)` **The ``POINT`` must be connected to the
-other entities!**
+entity on the :ref:`VIRTUAL_LAYER`. `(Draw -> Point -> Single Point)`
+**The ``POINT`` must be connected to the other entities!**
+
 
 Next you need to add a parameter to the point. To do so select the point and scroll down the
 ``Property Editor`` to the ``Custom`` section. Click on the red plus button and add the parameter.
 
     * ``Name`` should be: `name`.
-    * ``Value`` should be: ``variable_name`` you desire.
+    * ``Value`` should be: `variable_name` you desire.
 
-``variable_name`` will be returned by the renderer with new rendered coordination of the point.
+`variable_name` will be returned by the renderer with new rendered coordination of the point.
 
 Added point should look like this:
 
@@ -47,15 +48,16 @@ That is all! Now you can save the file and render it with :meth:`qsketchmetric.r
     from qsketchmetric.renderer import Renderer
     from ezdxf import new
 
-    dxf = new()
+    output_dxf = new()
     variables = {'h': 50}
-    renderer = Renderer('tutorial.dxf', dxf, variables)
+    renderer = Renderer('tutorial.dxf', output_dxf, variables)
     variables = renderer.render()
     print(variables)
 
-    dxf.saveas('rendered_tutorial.dxf')
+    output_dxf.saveas('rendered_tutorial.dxf')
 
-Variable ``variables`` will be a dictionary with the following content::
+``tutorial.dxf`` will be rendered on to the ``output_dxf`` :class:`ezdxf.document.Drawing` and rendered variable
+from the :ref:`VIRTUAL_LAYER` will be contained in the ``variables`` dictionary with the following content::
 
     {
         "foot_point": (20, 10)

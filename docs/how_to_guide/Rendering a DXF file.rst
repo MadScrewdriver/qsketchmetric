@@ -6,9 +6,9 @@ Rendering a DXF file
    will render::
 
     from ezdxf import new
-    dxf = new()
+    output_dxf = new()
 
-2. **(Optional)** Define the variables that are described in "---- build in -----" section of :ref:`MTEXT` entity::
+2. **(Optional)** Define the variables that are described in ``---- build in -----`` section of :ref:`MTEXT` entity::
 
         variables = {'variable_name': 100}
 
@@ -24,7 +24,7 @@ Rendering a DXF file
 
         renderer = Renderer(
                             path,
-                            dxf,
+                            output_dxf,
                             extra_variables=variables,
                             offset_drawing=offset
                             )
@@ -32,4 +32,5 @@ Rendering a DXF file
 
 
 .. note::
-    :meth:`qsketchmetric.renderer.Renderer.render` method returns rendered points as Dictionary
+    :meth:`qsketchmetric.renderer.Renderer.render` method renders parametric DXF on to the output_dxf and returns
+    rendered points from :ref:`VIRTUAL_LAYER` as a Dictionary

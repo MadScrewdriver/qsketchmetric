@@ -16,8 +16,7 @@ from ezdxf.document import Drawing
 
 class Renderer:
     """
-    The :class:`Renderer` class interprets parametric files, transforming them into visual representations.
-    The primary emphasis is on the DXF format, but the architecture may be extended to other formats in the future.
+    The :class:`Renderer` class interprets parametric DXF files, transforming them into visual representations.
 
     :param input_parametric_path: Path to the parametric file intended for rendering.
     :param output_rendered_object: A pre-initialized :class:`ezdxf.document.Drawing` drawing object.

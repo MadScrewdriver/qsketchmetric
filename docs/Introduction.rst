@@ -3,7 +3,7 @@ Getting started
 
 QSketchMetric is a tool designed to interpret parametric DXF files and render them. Parametrizing of a DXF file happens
 through **QCAD Professional's** CAD software, which is a commercial software. The parametrized DXF file is then interpreted
-by QSketchMetric and rendered according to the provided variables.
+by QSketchMetric and rendered according to the mathematical expressions.
 
 
 Why QSketchMetric?
@@ -19,16 +19,16 @@ Typical Use Cases
 
 How the documentation is organized?
 -----------------------------------
-Documentation follows `diataxis https://diataxis.fr`_ structure.
+Documentation follows `diataxis <https://diataxis.fr>`_ structure.
 It is divided into the following parts:
 
-* Tutorials take you by the hand through a series of steps to start using QSketchMetric.
+* :ref:`Tutorials <tutorials>` take you by the hand through a series of steps to start using QSketchMetric.
   Start here if you’re new to QSketchMetric.
 
-* How-to guides are recipes. They guide you through the steps involved in addressing key problems and use-cases.
+* :ref:`How-to guides <how-to-guides>` are recipes. They guide you through the steps involved in addressing key problems and use-cases.
   They are more advanced than tutorials and assume some knowledge of how QSketchMetric works.
 
-* Explanation guides discuss key topics and concepts of QSketchMetric.
+* :ref:`Explanation <explanation>` guides discuss key topics and concepts of QSketchMetric.
 
-* Reference guides contain technical reference for all aspects of QSketchMetric’s machinery.
+* :ref:`Reference guides <reference>` contain technical reference for all aspects of QSketchMetric’s machinery.
   They describe how it works but assume that you have a basic understanding of key concepts.

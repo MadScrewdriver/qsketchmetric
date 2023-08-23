@@ -42,6 +42,10 @@ master_doc = 'index'
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+html_js_files = [
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js',
+]
+
 
 # -- Options for todo extension ----------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/extensions/todo.html#configuration

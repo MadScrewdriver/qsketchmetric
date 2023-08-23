@@ -20,7 +20,7 @@ Variables in the build in section are the variables that are passed to the rende
 for better readability of parametrized DXF file. Custom variables can be also added to the custom
 section. Those variables might come in handy during the parametrization process - to simplify the expressions describing
 the entities. During parametrization variables can be used from the ``----- build in -----`` section
-as well as from the ----- custom ----- section.
+as well as from the ``----- custom -----`` section.
 
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/tutorial11.png

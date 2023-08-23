@@ -19,7 +19,7 @@ As a convention, we’ll assume you saved it in a file called ``tutorial.dxf``.
 Now, create a new file called ``render.py`` and place it in the same directory as ``tutorial.dxf``.
 
 Open ``render.py`` in your favorite text editor and import the :class:`qsketchmetric.renderer.Renderer` module
-as well as the :func:`ezdxf.filemanagement.new` function::
+as well as the :func:`ezdxf.new` function::
 
         from qsketchmetric.renderer import Renderer
         from ezdxf import new
@@ -29,7 +29,7 @@ The first one will be used to render the parametric DXF file, the second one to 
 
 Create an output :class:`ezdxf.document.Drawing` object using :func:`ezdxf.filemanagement.new` module::
 
-        dxf = new()
+        output_dxf = new()
 
 Before we will render ``tutorial.dxf`` let's check it out in the `QCAD Professional <https://qcad.org/en/download>`_
 CAD software to see briefly what it looks like `(File -> Open)`. This is what you should see:
@@ -49,7 +49,7 @@ chalice. Let's set it to ``50``::
 
 Now we are ready to roll. Let's render the parametric DXF file::
 
-        renderer = Renderer('tutorial.dxf', dxf, variables)
+        renderer = Renderer('tutorial.dxf', output_dxf, variables)
         renderer.render()
 
 Finally, save the output drawing::
@@ -63,7 +63,7 @@ The whole code should look like this::
 
         dxf = new()
         variables = {'h': 50}
-        renderer = Renderer('tutorial.dxf', dxf, variables)
+        renderer = Renderer('tutorial.dxf', output_dxf, variables)
         renderer.render()
         dxf.saveas('rendered_tutorial.dxf')
 

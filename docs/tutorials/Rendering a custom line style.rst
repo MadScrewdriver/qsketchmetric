@@ -41,9 +41,9 @@ So the value should be: `10 5` we will do it for the bowl, ornament and the leg 
 Added parameter should look like this:
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/tutorial9.png
-   :alt: ``tutorial.dxf`` with added ``line`` parameters
+   :alt: ``tutorial.dxf`` with added `line` parameters
 
-   ``tutorial.dxf`` with added ``line`` parameters
+   ``tutorial.dxf`` with added `line` parameters
 
 
 That is all! Now you can save the file and render it with :meth:`qsketchmetric.renderer.Renderer.render` method::
@@ -51,11 +51,11 @@ That is all! Now you can save the file and render it with :meth:`qsketchmetric.r
     from qsketchmetric.renderer import Renderer
     from ezdxf import new
 
-    dxf = new()
+    output_dxf = new()
     variables = {'h': 50}
-    renderer = Renderer('tutorial.dxf', dxf, variables)
+    renderer = Renderer('tutorial.dxf', output_dxf, variables)
     renderer.render()
-    dxf.saveas('rendered_custom_line_tutorial.dxf')
+    output_dxf.saveas('rendered_custom_line_tutorial.dxf')
 
 Rendered file should look like this:
 
