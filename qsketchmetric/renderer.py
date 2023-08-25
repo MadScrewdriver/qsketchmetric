@@ -16,16 +16,16 @@ from ezdxf.document import Drawing
 
 class Renderer:
     """
-    The :class:`Renderer` class interprets parametric DXF files, transforming them into visual representations.
-
     :param input_parametric_path: Path to the parametric file intended for rendering.
     :param output_rendered_object: A pre-initialized :class:`ezdxf.document.Drawing` drawing object.
         You can initialize such an object using methods like :meth:`ezdxf.readfile` or :meth:`ezdxf.new`
         By providing an already existing drawing, users can merge multiple visual elements into a singular
         representation.
     :param variables: **(Optional)** Supplementary constant variables that can enhance the mathematical
-        representations used.Defaults to an empty dictionary.
+        representations used. Defaults to an empty dictionary.
     :param offset: **(Optional)** Provides offsets for the parametric visualization. Defaults to (0, 0).
+
+    The :class:`Renderer` class interprets parametric DXF files, transforming them into visual representations.
 
     .. seealso::
           `ezdxf Documentation <https://ezdxf.readthedocs.io/en/stable/>`_ - A comprehensive library to manage
@@ -62,7 +62,8 @@ class Renderer:
 
     def render(self) -> dict[str, tuple[float, float]]:
         """
-           Transforms the input parametric DXF drawing and produces a rendered output on the output DXF.
+            The main method of the :class:`Renderer` class.
+            Transforms the input parametric DXF drawing and produces a rendered output on the output DXF.
 
            :return: A dictionary containing rendered points marked in the parametric drawing.
         """
@@ -296,21 +297,21 @@ class Renderer:
 
         bounding_box = bbox.extents(new_entities_copy, cache=bbox.Cache())
 
-        center_x = -bounding_box.rect_vertices()[0].x
-        center_y = -bounding_box.rect_vertices()[0].y
+        bb_x = -bounding_box.rect_vertices()[0].x
+        bb_y = -bounding_box.rect_vertices()[0].y
 
         for e in self.new_entities:
             if e.dxftype() in ["ARC", "CIRCLE"]:
                 center = e.dxf.center
 
-                e.update_dxf_attribs({"center": (center[0] + center_x, center[1] + center_y)})
+                e.update_dxf_attribs({"center": (center[0] + bb_x, center[1] + bb_y)})
 
             elif e.dxftype() == "LINE":
                 start = e.dxf.start
                 end = e.dxf.end
 
-                e.update_dxf_attribs({"start": (start[0] + center_x, start[1] + center_y)})
-                e.update_dxf_attribs({"end": (end[0] + center_x, end[1] + center_y)})
+                e.update_dxf_attribs({"start": (start[0] + bb_x, start[1] + bb_y)})
+                e.update_dxf_attribs({"end": (end[0] + bb_x, end[1] + bb_y)})
 
         for k, v in self.points.items():
-            self.points[k] = (round(v[0] + center_x, 3), round(v[1] + center_y, 3))
+            self.points[k] = (round(v[0] + bb_x, 3), round(v[1] + bb_y, 3))

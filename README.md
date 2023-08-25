@@ -20,10 +20,10 @@ from ezdxf import new
 
 output_dxf = new()
 input_parametric_dxf_path = 'tutorial.dxf'
-variables = {"h": 50}
+input_variables = {"h": 50}
 
 renderer = Renderer(input_parametric_dxf_path, output_dxf,
-                    variables=variables)
+                    variables=input_variables)
 renderer.render()
 
 output_dxf.saveas('tutorial_rendered.dxf')
