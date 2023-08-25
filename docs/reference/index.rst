@@ -11,3 +11,4 @@ They describe how it works but assume that you have a basic understanding of key
    :caption: Table of Contents:
 
    Renderer
+   SemiAutomaticParametrization
