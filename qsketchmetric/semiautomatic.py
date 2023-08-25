@@ -14,8 +14,8 @@ class SemiAutomaticParameterization:
     :param input_dxf_path: Path to the DXF file to be parameterized.
     :param default_value: **(Optional)** Default expression describing the entities. Defaults to "c".
     :param output_dxf_path: **(Optional)** Path for the output parameterized DXF file. If not provided, the
-        output file will be saved in the "parametric" directory, in the same directory
-        as the input file. With the name "parametric_" + input_file_name.
+        output file will be saved in the `parametric` directory, in the same directory
+        as the input file. With the name `parametric\_` + input_file_name.
 
     The :class:`SemiAutomaticParameterize` class is used to semi-automatic parameterize a DXF file.
     By semi-automatic, it means that the user has to manually define the parameters of each entity after
