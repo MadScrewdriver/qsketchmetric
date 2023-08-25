@@ -10,23 +10,26 @@ from typing import Optional
 
 
 class SemiAutomaticParameterization:
+    """
+    :param input_dxf_path: Path to the DXF file to be parameterized.
+    :param default_value: **(Optional)** Default expression describing the entities. Defaults to "c".
+    :param output_dxf_path: **(Optional)** Path for the output parameterized DXF file. If not provided, the
+        output file will be saved in the "parametric" directory, in the same directory
+        as the input file. With the name "parametric_" + input_file_name.
+
+    The :class:`SemiAutomaticParameterize` class is used to semi-automatic parameterize a DXF file.
+    By semi-automatic, it means that the user has to manually define the parameters of each entity after
+    the parameterization process. Process includes:
+
+    * Adding :ref:`MTEXT` entity.
+    * Adding :ref:`VIRTUAL_LAYER` layer.
+    * Adding default expression to each entity.
+    * Joining entities with virtual lines in to the one coherent graph.
+    """
 
     def __init__(self, input_dxf_path: Path, default_value: str = "c", output_dxf_path: Optional[Path] = None):
         """
-        :param input_dxf_path: Path to the DXF file to be parameterized.
-        :param default_value: **(Optional)** Default expression describing the entities. Defaults to "c".
-        :param output_dxf_path: **(Optional)** Path for the output parameterized DXF file. If not provided, the
-            output file will be saved in the "parametric" directory, in the same directory
-            as the input file. With the name "parametric_" + input_file_name.
-
-        The :class:`SemiAutomaticParameterize` class is used to semi-automatic parameterize a DXF file.
-        By semi-automatic, it means that the user has to manually define the parameters of each entity after
-        the parameterization process. Process includes:
-
-        * Adding :ref:`MTEXT` entity.
-        * Adding :ref:`VIRTUAL_LAYER` layer.
-        * Adding default expression to each entity.
-        * Joining entities with virtual lines in to the one coherent graph.
+        Initializes the :class:`SemiAutomaticParameterize` class.
         """
 
         self.graph_lines: dict[Vec3, list[Vec3]] = {}
