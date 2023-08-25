@@ -71,7 +71,7 @@ class SemiAutomaticParameterization:
             if not os.path.exists(self.output_dxf_path.parent):
                 os.mkdir(self.output_dxf_path.parent)
 
-        if os.path.exists(self.output_dxf_path):
+        if os.path.exists(self.output_dxf_path) and self.output_dxf_path.is_file():
             shutil.move(self.output_dxf_path, self.output_dxf_path.parent /
                         (".backup_parametric_" + self.input_dxf_path.name))
 
