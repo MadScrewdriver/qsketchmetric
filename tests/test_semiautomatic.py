@@ -97,11 +97,12 @@ class TestSemiAutomaticParameterize(unittest.TestCase):
 
         obj.input_dxf.saveas.assert_called_once_with(obj.output_dxf_path)
 
+    @patch("pathlib.Path.is_file", return_value=True)
     @patch("ezdxf.readfile")
     @patch('os.path.exists', side_effect=[False, True])
     @patch('os.mkdir')
     @patch('shutil.move')
-    def test_handle_output_path(self, mock_move, mock_mkdir, mock_exists, mock_readfile):
+    def test_handle_output_path(self, mock_move, mock_mkdir, mock_exists, mock_readfile, mock_path):
         obj = SemiAutomaticParameterization(self.mock_input_dxf_path)
 
         expected_output_path = self.mock_input_dxf_path.parent / "parametric" / "parametric_input.dxf"
