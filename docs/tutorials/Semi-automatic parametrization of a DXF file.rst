@@ -1,5 +1,4 @@
 Tutorial - Semi-automatic parametrization of a DXF file
 ============================================
 
-.. todo:: This is a feature that is not yet implemented. It is planned to
-    implement it in the future.
+.. todo:: Feature  implemented. Lacking documentation. Will de done for the next release.
