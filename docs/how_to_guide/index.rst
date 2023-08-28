@@ -12,3 +12,4 @@ They are more advanced than tutorials and assume some knowledge of how QSketchMe
 
    Manual parametrization
    Rendering a DXF file
+   Semi-automatic parametrization

@@ -73,7 +73,7 @@ To do so select the entities one by one and scroll down the
   +--------------------+-----------------------------------------------------------------------------+
 
 You can change the value of the parameter to any of the above. For example, let's change the value of the
-``c`` parameter of the chalice leg line to `2*c`. This will make the leg line 2 times longer.
+ chalice leg line to `2*c`. This will make the leg line 2 times longer.
 
 That is it! You have successfully parametrized a DXF file. As you can see semi-automatic parametrization is
 much faster and easier than manual parametrization.
