@@ -42,7 +42,7 @@ class Renderer:
             variables = dict()
 
         self.new_points: Dict[Vec3, tuple[int, int]] = {}
-        self.input_parametric_path: Path = input_parametric_path
+        self.input_parametric_path: Path = Path(input_parametric_path)
 
         self.input_dxf: Drawing = ezdxf.readfile(self.input_parametric_path)
         self.input_msp: Modelspace = self.input_dxf.modelspace()

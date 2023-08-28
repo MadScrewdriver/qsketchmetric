@@ -104,7 +104,7 @@ Now we can add parameters to the drawing. To do so select the entities one by on
   |      ``?``         | (undefined) Entity length will be calculated by the renderer.               |
   |                    | **Only if there is other path to the both end points of the line!**         |
   +--------------------+-----------------------------------------------------------------------------+
-  |  ``h*2``         | (math expression) Entity length will be calculated from the math expression |
+  |  ``c/h*2``         | (math expression) Entity length will be calculated from the math expression |
   |                    |                                                                             |
   +--------------------+-----------------------------------------------------------------------------+
 

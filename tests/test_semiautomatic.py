@@ -190,13 +190,13 @@ class TestSemiAutomaticParameterize(unittest.TestCase):
         for e in self.mock_entities:
             if e.dxftype() == "LINE":
                 e.discard_xdata.assert_called_once_with(obj.APPID)
-                e.set_xdata.assert_called_once_with(obj.APPID, [(1000, "c")])
+                e.set_xdata.assert_called_once_with(obj.APPID, [(1000, "c:c")])
                 e.update_dxf_attribs.assert_any_call({"start": self.point1})
                 e.update_dxf_attribs.assert_any_call({"end": self.point2})
 
             elif e.dxftype() in ["ARC", "CIRCLE"]:
                 e.discard_xdata.assert_called_once_with(obj.APPID)
-                e.set_xdata.assert_called_once_with(obj.APPID, [(1000, "c")])
+                e.set_xdata.assert_called_once_with(obj.APPID, [(1000, "c:c")])
                 e.update_dxf_attribs.assert_called_once_with({"center": self.point3})
 
             else:

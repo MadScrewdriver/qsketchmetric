@@ -72,7 +72,7 @@ Manual parametrization
       |                    | **Only if there is other path to the both end points of the line!**         |
       +--------------------+-----------------------------------------------------------------------------+
       |  ``v*10*sin(2)``   | (math expression) Entity length will be calculated from the math expression |
-      |                    | (``v`` is a variable)                                                       |
+      |                    | (``v`` is a variable). YOu can use `c` variable as well.                     |
       +--------------------+-----------------------------------------------------------------------------+
 
       Variables from the :ref:`MTEXT` entity can be used, as well as math expressions provided by

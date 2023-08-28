@@ -15,11 +15,11 @@ class SemiAutomaticParameterization:
     :param default_value: **(Optional)** Default expression describing the entities. Defaults to "c".
     :param output_dxf_path: **(Optional)** Path for the output parameterized DXF file. If not provided, the
         output file will be saved in the `parametric` directory, in the same directory
-        as the input file. With the name `parametric\_` + input_file_name.
+        as the input file. With the name `input_file_name + _param`.
 
     The :class:`SemiAutomaticParameterize` class is used to semi-automatic parameterize a DXF file.
-    By semi-automatic, it means that the user has to manually define the parameters of each entity after
-    the parameterization process. Process includes:
+    By semi-automatic, it means that the user has to manually customize the parameters of each entity after
+    the automatic parameterization process. Process includes:
 
     * Adding :ref:`MTEXT` entity.
     * Adding :ref:`VIRTUAL_LAYER` layer.
@@ -37,8 +37,11 @@ class SemiAutomaticParameterization:
         self.available_parents: set[Vec3] = set()
         self.APPID: str = "QCAD"
         self.value: str = default_value
-        self.input_dxf_path: Path = input_dxf_path
+        self.input_dxf_path: Path = Path(input_dxf_path)
         self.output_dxf_path: Optional[Path] = output_dxf_path
+
+        if self.output_dxf_path:
+            self.output_dxf_path = Path(self.output_dxf_path)
 
         self._handle_output_path()
 
@@ -158,7 +161,7 @@ class SemiAutomaticParameterization:
                 end = Vec3(round(e.dxf.end.x, 3), round(e.dxf.end.y, 3))
 
                 e.discard_xdata(self.APPID)
-                e.set_xdata(self.APPID, [(1000, self.value)])
+                e.set_xdata(self.APPID, [(1000, f"c:{self.value}")])
 
                 e.update_dxf_attribs({"start": start})
                 e.update_dxf_attribs({"end": end})
@@ -170,7 +173,7 @@ class SemiAutomaticParameterization:
                 center = Vec3(round(e.dxf.center.x, 3), round(e.dxf.center.y, 3))
 
                 e.discard_xdata(self.APPID)
-                e.set_xdata(self.APPID, [(1000, self.value)])
+                e.set_xdata(self.APPID, [(1000, f"c:{self.value}")])
 
                 e.update_dxf_attribs({"center": center})
                 self.graph_lines[center] = self.graph_lines.get(center, [])
@@ -214,12 +217,12 @@ class SemiAutomaticParameterization:
         if delta_x:
             line = self.input_msp.add_line(subgraph_point, (join_point.x, subgraph_point.y),
                                            dxfattribs={"layer": "VIRTUAL_LAYER"})
-            line.set_xdata(self.APPID, [(1000, self.value)])
+            line.set_xdata(self.APPID, [(1000, f"c:{self.value}")])
 
         if delta_y:
             line = self.input_msp.add_line(join_point, (join_point.x, subgraph_point.y),
                                            dxfattribs={"layer": "VIRTUAL_LAYER"})
-            line.set_xdata(self.APPID, [(1000, self.value)])
+            line.set_xdata(self.APPID, [(1000, f"c:{self.value}")])
 
     def _draw_variables(self):
         """
