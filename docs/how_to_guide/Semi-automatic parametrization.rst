@@ -1,7 +1,7 @@
 
 Semi-automatic parametrization
 ===============================
-The :class:`qsketchmetric.semiautomatic.SemiAutomaticParameterize` module is used to semi-automatic parameterize
+The :class:`qsketchmetric.semiautomatic.SemiAutomaticParameterization` module is used to semi-automatic parameterize
 a DXF file. By semi-automatic, it means that the user has to manually customize the parameters of each entity after
 the automatic parameterization process. Process includes:
 

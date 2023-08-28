@@ -28,7 +28,7 @@ Let’s start by firing up command line and starting the python interpreter::
             source .venv/bin/activate
 
 
-Next we need to import the :class:`qsketchmetric.semiautomatic.SemiAutomaticParameterize` module::
+Next we need to import the :class:`qsketchmetric.semiautomatic.SemiAutomaticParameterization` module::
 
     from qsketchmetric.semiautomatic import SemiAutomaticParameterization
 
