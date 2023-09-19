@@ -22,6 +22,7 @@ from ezdxf import units
 
 output_dxf = new()
 output_dxf.units = units.MM
+
 input_parametric_dxf_path = 'tutorial.dxf'
 input_variables = {"h": 50}
 
