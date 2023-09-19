@@ -219,6 +219,7 @@ class Renderer:
                     importer.import_block(entity.dxf.name, rename=False)
                     importer.finalize()
 
+                xscale, yscale = None, None
                 org_w, org_h = self.get_bb_dimensions(entity.block())
                 raw_new_w, raw_new_h = map(lambda x: x.strip(), constant_xdata.split("@"))
 
