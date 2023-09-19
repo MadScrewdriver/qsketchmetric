@@ -16,6 +16,8 @@ class SemiAutomaticParameterization:
     :param output_dxf_path: **(Optional)** Path for the output parameterized DXF file. If not provided, the
         output file will be saved in the `parametric` directory, in the same directory
         as the input file. With the name `input_file_name + _param`.
+    :param accuracy: **(Optional)** The precision used for calculations, represented by the number of
+        decimal places. Defaults to 3.
 
     The :class:`SemiAutomaticParameterize` class is used to semi-automatic parameterize a DXF file.
     By semi-automatic, it means that the user has to manually customize the parameters of each entity after
@@ -27,10 +29,13 @@ class SemiAutomaticParameterization:
     * Joining entities with virtual lines in to the one coherent graph.
     """
 
-    def __init__(self, input_dxf_path: Path, default_value: str = "c", output_dxf_path: Optional[Path] = None):
+    def __init__(self, input_dxf_path: Path, default_value: str = "c", output_dxf_path: Optional[Path] = None,
+                 accuracy: int = 3):
         """
         Initializes the :class:`SemiAutomaticParameterize` class.
         """
+
+        self.accuracy = accuracy
 
         self.graph_lines: dict[Vec3, list[Vec3]] = {}
         self.parents: dict[Vec3, Vec3] = {}
@@ -149,7 +154,6 @@ class SemiAutomaticParameterization:
             Sets the XData and the graph of the entities.
         """
 
-
         try:
             self.input_dxf.appids.new(self.APPID)
         except DXFTableEntryError:
@@ -157,8 +161,8 @@ class SemiAutomaticParameterization:
 
         for e in self.input_msp.entity_space.entities:
             if e.dxftype() == "LINE":
-                start = Vec3(round(e.dxf.start.x, 3), round(e.dxf.start.y, 3))
-                end = Vec3(round(e.dxf.end.x, 3), round(e.dxf.end.y, 3))
+                start = Vec3(round(e.dxf.start.x, self.accuracy), round(e.dxf.start.y, self.accuracy))
+                end = Vec3(round(e.dxf.end.x, self.accuracy), round(e.dxf.end.y, self.accuracy))
 
                 e.discard_xdata(self.APPID)
                 e.set_xdata(self.APPID, [(1000, f"c:{self.value}")])
@@ -170,7 +174,7 @@ class SemiAutomaticParameterization:
                 self.graph_lines[end] = self.graph_lines.get(end, []) + [start]
 
             elif e.dxftype() in ["ARC", "CIRCLE"]:
-                center = Vec3(round(e.dxf.center.x, 3), round(e.dxf.center.y, 3))
+                center = Vec3(round(e.dxf.center.x, self.accuracy), round(e.dxf.center.y, self.accuracy))
 
                 e.discard_xdata(self.APPID)
                 e.set_xdata(self.APPID, [(1000, f"c:{self.value}")])

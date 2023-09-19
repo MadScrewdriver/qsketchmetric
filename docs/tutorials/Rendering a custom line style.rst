@@ -50,12 +50,19 @@ That is all! Now you can save the file and render it with :meth:`qsketchmetric.r
 
     from qsketchmetric.renderer import Renderer
     from ezdxf import new
+    from ezdxf import units
 
     output_dxf = new()
     variables = {'h': 50}
+    output_dxf.units = units.MM
     renderer = Renderer('tutorial.dxf', output_dxf, variables)
     renderer.render()
     output_dxf.saveas('rendered_custom_line_tutorial.dxf')
+
+
+.. note::
+        Remember to make sure that the output and input DXF files are configured in the same units. That is why we
+        set the units of the output DXF file to ``MM``.
 
 Rendered file should look like this:
 

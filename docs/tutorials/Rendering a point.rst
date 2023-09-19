@@ -47,8 +47,10 @@ That is all! Now you can save the file and render it with :meth:`qsketchmetric.r
 
     from qsketchmetric.renderer import Renderer
     from ezdxf import new
+    from ezdxf import units
 
     output_dxf = new()
+    output_dxf.units = units.MM
     variables = {'h': 50}
     renderer = Renderer('tutorial.dxf', output_dxf, variables)
     variables = renderer.render()

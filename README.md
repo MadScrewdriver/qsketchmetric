@@ -3,6 +3,7 @@
 [![CI](https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml/badge.svg)](https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml)
 [![Documentation Status](https://readthedocs.org/projects/qsketchmetric/badge/?version=latest)](https://qsketchmetric.readthedocs.io/en/latest/?badge=latest)
 [![codecov](https://codecov.io/gh/MadScrewdriver/qsketchmetric/graph/badge.svg?token=OBMRQRRHUQ)](https://codecov.io/gh/MadScrewdriver/qsketchmetric)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/qsketchmetric)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI](https://img.shields.io/pypi/v/qsketchmetric.svg)](https://pypi.org/project/qsketchmetric/)
 [![Python 3](https://img.shields.io/badge/python-3.9_|_3.10_|_3.11-blue.svg)](https://www.python.org/downloads/release/python-3114/)
@@ -17,8 +18,10 @@
 
 from qsketchmetric.renderer import Renderer
 from ezdxf import new
+from ezdxf import units
 
 output_dxf = new()
+output_dxf.units = units.MM
 input_parametric_dxf_path = 'tutorial.dxf'
 input_variables = {"h": 50}
 
@@ -45,14 +48,15 @@ The most common case is the installation by [**pip package manager**](https://pi
 
 -  Parametric **DXF** rendering
 -  Easy dxf files parametrization using [**QCAD Professional software**](https://qcad.org/en/download)
--  Support for `LINE`,`CIRCLE`,`ARC` and `POINT` entities
+-  Explicit support for parametrization of `LINE`,`CIRCLE`,`ARC`, `POINT` entities
+-  Support for parametrization of `LWPOLYLINE`, `POLYLINE`, `SPLINE`, `ELLIPSE`, `MTEXT`, `TEXT` **etc.** entities using `INSERT` entity.
 -  Open source and daily maintained
 
 ## 📚 Documentation
 Documentation is available at [**QSketchMetric docs**](https://qsketchmetric.readthedocs.io/en/latest/)
 
 ## 📈 Roadmap
-Support for more entities is planned in the future. If you have any suggestions, please create an issue.
+Explicit support for more entities is planned in the future. If you have any suggestions, please create an issue.
 If you want to contribute, see `How to contribute` section in the documentation. I am open to any suggestions
 and waiting for your pull requests!
 

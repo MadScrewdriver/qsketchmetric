@@ -32,6 +32,7 @@ class TestRenderer(unittest.TestCase):
         self.point1 = Vec3(0, 0)
         self.point2 = Vec3(0, 1)
         self.point3 = Vec3(1, 0)
+        self.point4 = Vec3(1, 1)
 
         self.new_point1 = Vec3(0, 0)
         self.new_point2 = Vec3(0, self.line1_length)
@@ -54,21 +55,29 @@ class TestRenderer(unittest.TestCase):
         }
 
         self.graph = {
-            self.point1: [("LINE", self.point2, self.line1_length, {"layer": "VIRTUAL_LAYER", "linetype": "line_linetype"}),
-                     ("LINE", self.point3, self.line2_length, {"layer": "line_layer", "linetype": "line_linetype"}),
-                     ("ARC", self.point1, self.arc_radius, {"layer": "arc_layer", "linetype": "arc_linetype",
-                                         "radius": self.arc_radius, "start_angle": self.start_angle, "end_angle": self.end_angle})],
+            self.point1: [
+                ("LINE", self.point2, self.line1_length, {"layer": "VIRTUAL_LAYER", "linetype": "line_linetype"}),
+                ("LINE", self.point3, self.line2_length, {"layer": "line_layer", "linetype": "line_linetype"}),
+                ("ARC", self.point1, self.arc_radius, {"layer": "arc_layer", "linetype": "arc_linetype",
+                                                       "radius": self.arc_radius, "start_angle": self.start_angle,
+                                                       "end_angle": self.end_angle})],
 
             self.point2: [("LINE", self.point3, "?", {"layer": "line_layer", "linetype": "line_linetype"}),
-                     ("LINE", self.point1, self.line1_length, {"layer": "VIRTUAL_LAYER", "linetype": "line_linetype"}),
-                     ("CIRCLE", self.point2, self.circle_radius, {"layer": "circle_layer", "linetype": "circle_linetype", "radius": self.circle_radius})],
+                          ("LINE", self.point1, self.line1_length,
+                           {"layer": "VIRTUAL_LAYER", "linetype": "line_linetype"}),
+                          ("CIRCLE", self.point2, self.circle_radius,
+                           {"layer": "circle_layer", "linetype": "circle_linetype", "radius": self.circle_radius})],
 
             self.point3: [("LINE", self.point2, "?", {"layer": "line_layer", "linetype": "line_linetype"}),
-                         ("LINE", self.point1, self.line2_length, {"layer": "circle_layer", "linetype": "circle_linetype"}),
-                         ("POINT", self.point3, 0, {"name": "mock"})],
+                          ("LINE", self.point1, self.line2_length,
+                           {"layer": "circle_layer", "linetype": "circle_linetype"}),
+                          ("POINT", self.point3, 0, {"name": "mock"}),
+                          ("INSERT", self.point3, 0,
+                          {"layer": "insert_layer", "linetype": "insert_linetype", "name": "insert",
+                           "xscale": 1.5, "yscale": 1})],
         }
 
-        self.entities = ['LINE', 'CIRCLE', 'ARC']
+        self.entities = ['LINE', 'CIRCLE', 'ARC', 'INSERT']
 
         self.dxf_attribs = {
             "start": self.point1,
@@ -79,6 +88,7 @@ class TestRenderer(unittest.TestCase):
             "start_angle": self.start_angle,
             "end_angle": self.end_angle,
             "location": self.point3,
+            "insert": self.point4,
             "name": "mock"
         }
 
@@ -93,6 +103,7 @@ class TestRenderer(unittest.TestCase):
                 radius=self.dxf_attribs["radius"],
                 start_angle=self.dxf_attribs["start_angle"],
                 end_angle=self.dxf_attribs["end_angle"],
+                insert=self.dxf_attribs["insert"],
             )
             self.mock_entities.append(mock)
 
@@ -124,6 +135,11 @@ class TestRenderer(unittest.TestCase):
 
         for mock_entity in self.mock_entities:
             mock_entity.get_xdata = lambda x: [(None, "c:2*100"), (None, "line:10 5")]
+            mock_entity.dxf.name = f"{self.dxf_attribs['name']}"
+            mock_entity.block().entity_space.entities = self.mock_entities
+
+            if mock_entity.dxftype() == "INSERT":
+                mock_entity.get_xdata = lambda x: [(None, "c:2*100@?"), (None, "line:10 5")]
 
         point_mock = Mock(dxftype=lambda: "POINT", get_xdata=lambda x: [(None, f"{self.dxf_attribs['name']}:"
                                                                                f"{self.dxf_attribs['name']}")])
@@ -133,12 +149,15 @@ class TestRenderer(unittest.TestCase):
         self.mock_entities.append(Mock(dxftype=lambda: "MTEXT"))
 
         self.mock_input_dxf.modelspace().entity_space.entities = self.mock_entities
+        self.mock_output_dxf.blocks = ["mock"]
 
         mock_readfile.return_value = self.mock_input_dxf
         renderer = Renderer(
             input_parametric_path=Path('/path/to/input.dxf'),
             output_rendered_object=self.mock_output_dxf
         )
+
+        renderer.get_bb_dimensions = Mock(return_value=(10, 5))
 
         renderer._prepare_graph()
 
@@ -157,6 +176,10 @@ class TestRenderer(unittest.TestCase):
 
         # Check for POINT entities
         self.assertIn(self.point3, renderer.graph)
+
+        # Check for INSERT entities
+        self.assertIn(self.point4, renderer.graph)
+
 
         self.assertIn((self.dxf_attribs["layer"], self.point2), renderer.visited_graph[self.point1])
         self.assertIn((self.dxf_attribs["layer"], self.point1), renderer.visited_graph[self.point2])
@@ -180,11 +203,12 @@ class TestRenderer(unittest.TestCase):
                 elif name == "CIRCLE":
                     self.assertEqual(edata["radius"], self.dxf_attribs["radius"])
 
-                elif name == "CIRCLE":
-                    self.assertEqual(edata["radius"], self.dxf_attribs["radius"])
-
                 elif name == "POINT":
                     self.assertEqual(edata["name"], self.dxf_attribs["name"])
+
+                elif name == "INSERT":
+                    self.assertEqual(edata["xscale"], 20,
+                    self.assertEqual(edata["yscale"], 20))
 
         mock_prepare_layers.assert_called_once()
 
@@ -229,9 +253,11 @@ class TestRenderer(unittest.TestCase):
         self.mock_output_dxf.modelspace().add_arc.assert_called_with(
             self.new_point1_off, self.arc_radius, self.start_angle, self.end_angle,
             dxfattribs={'layer': 'arc_layer', 'linetype': 'arc_linetype'})
+        self.mock_output_dxf.modelspace().add_blockref.assert_called_with('insert', self.new_point3_off,
+            dxfattribs={'layer': 'insert_layer', 'linetype': 'insert_linetype', 'xscale': 1.5, 'yscale': 1})
 
         self.assertEqual(renderer.output_dxf.modelspace().add_point.call_count, 0)
-        self.assertEqual(len(renderer.new_entities), 3)
+        self.assertEqual(len(renderer.new_entities), 4)
 
         # Assertions for new_points dictionary
         self.assertEqual(renderer.new_points, self.new_points)
@@ -262,6 +288,7 @@ class TestRenderer(unittest.TestCase):
             Mock().modelspace().add_line(),
             Mock().modelspace().add_circle(),
             Mock().modelspace().add_arc(),
+            Mock().modelspace().add_blockref(),
         ]
 
         renderer.new_points = self.new_points
@@ -287,9 +314,10 @@ class TestRenderer(unittest.TestCase):
         self.mock_output_dxf.modelspace().add_arc.assert_not_called()
         self.mock_output_dxf.modelspace().add_point.assert_not_called()
         self.mock_output_dxf.modelspace().add_circle.assert_not_called()
+        self.mock_output_dxf.modelspace().add_blockref.assert_not_called()
 
         # Optionally, if the method modifies the new_entities list
-        self.assertEqual(len(renderer.new_entities), 4)
+        self.assertEqual(len(renderer.new_entities), 5)
         self.assertTrue(all(value == [] for value in renderer.visited_graph.values()))
         self.assertEqual(self.new_points.keys(), renderer.visited_graph.keys())
 
@@ -301,12 +329,17 @@ class TestRenderer(unittest.TestCase):
         """
 
         mock_output_dxf = ezdxf.new('R2010')
+        insert = mock_output_dxf.blocks.new(name='insert')
+        insert.add_line((0, 0), (5, 0))
+
         mock_output_msp = mock_output_dxf.modelspace()
 
         mock_output_msp.add_line(self.new_point1_off, self.new_point2_off),
         mock_output_msp.add_line(self.new_point1_off, self.new_point3_off),
         mock_output_msp.add_circle(self.new_point1_off, self.circle_radius),
         mock_output_msp.add_arc(self.new_point2_off, self.arc_radius, self.start_angle, self.end_angle)
+        mock_output_msp.add_blockref('insert', self.new_point3_off,
+                                     dxfattribs={'xscale': 2, 'yscale': 1})
 
         renderer = Renderer(
             input_parametric_path=Path('/path/to/input.dxf'),
@@ -315,7 +348,7 @@ class TestRenderer(unittest.TestCase):
 
         w, h = renderer.get_bb_dimensions()
 
-        self.assertEqual(w, 10)
+        self.assertEqual(w, 19)
         self.assertEqual(h, 10)
 
     @patch('ezdxf.readfile')

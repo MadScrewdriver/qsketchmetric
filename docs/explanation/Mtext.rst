@@ -16,8 +16,8 @@ The format of the text in the entity is as follows::
    ----- custom -----
    <variable_name>: <variable_value>
 
-Variables in the build in section are the variables that are passed to the renderer. They can be added
-for better readability of parametrized DXF file. Custom variables can be also added to the custom
+Variables in the ``----- build in -----`` in section are the variables that are passed to the renderer. They can be
+added for better readability of parametrized DXF file. Custom variables can be also added to the ``----- custom -----``
 section. Those variables might come in handy during the parametrization process - to simplify the expressions describing
 the entities. During parametrization variables can be used from the ``----- build in -----`` section
 as well as from the ``----- custom -----`` section.
@@ -29,7 +29,8 @@ as well as from the ``----- custom -----`` section.
    QCAD Professional with MTEXT dialog window opened
 
 .. warning::
-    For the current version of QSketchMetric only **ONE** MTEXT entity is allowed in the DXF file
+    Only **ONE** explicit MTEXT entity is allowed in the DXF file. If there is a need to add more MTEXT entities
+    they need to be packed into ``INSERT`` entity as a part of a block and then parametrized.
 
 .. warning::
    MTEXT entity must be in a exact format as described above. Otherwise the parametrization process will fail.

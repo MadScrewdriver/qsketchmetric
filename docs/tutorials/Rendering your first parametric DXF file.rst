@@ -23,13 +23,16 @@ as well as the :func:`ezdxf.new` function::
 
         from qsketchmetric.renderer import Renderer
         from ezdxf import new
+        from ezdxf import units
 
 The first one will be used to render the parametric DXF file, the second one to create output
-:class:`ezdxf.document.Drawing`.
+:class:`ezdxf.document.Drawing` and the third one to set the units of the output drawing.
 
-Create an output :class:`ezdxf.document.Drawing` object using :func:`ezdxf.filemanagement.new` module::
+Create an output :class:`ezdxf.document.Drawing` object using :func:`ezdxf.filemanagement.new` module. Remember to
+set the units of the output drawing to millimeters as the parametric DXF file defaults to meters.::
 
         output_dxf = new()
+        output_dxf.units = units.MM
 
 Before we will render ``tutorial.dxf`` let's check it out in the `QCAD Professional <https://qcad.org/en/download>`_
 CAD software to see briefly what it looks like `(File -> Open)`. This is what you should see:

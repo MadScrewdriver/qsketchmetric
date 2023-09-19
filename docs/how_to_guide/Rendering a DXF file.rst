@@ -8,6 +8,14 @@ Rendering a DXF file
     from ezdxf import new
     output_dxf = new()
 
+.. warning::
+        Remember to make sure that the output and input DXF files are configured in the same units. If not, you can
+        change the units of the output DXF file by::
+
+            output_dxf.units = units.MM
+
+        `ezdxf <https://ezdxf.readthedocs.io/en/stable/>`_ by default uses meters as the unit of measurement.
+
 2. **(Optional)** Define the variables that are described in ``---- build in -----`` section of :ref:`MTEXT` entity::
 
         variables = {'variable_name': 100}
