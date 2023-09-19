@@ -220,18 +220,14 @@ class Renderer:
                     importer.finalize()
 
                 org_w, org_h = self.get_bb_dimensions(entity.block())
-                raw_new_w, raw_new_h = constant_xdata.split("@")
+                raw_new_w, raw_new_h = map(lambda x: x.strip(), constant_xdata.split("@"))
 
-                raw_new_w = raw_new_w.strip()
-                raw_new_h = raw_new_h.strip()
-
-                xscale = 1 if raw_new_w == "c" else None
-                yscale = 1 if raw_new_h == "c" else None
-
-                if raw_new_w not in ["?", "c"]:
+                if raw_new_w != "?":
+                    self.variables["c"] = org_w
                     xscale = Parser().parse(raw_new_w).evaluate(self.variables) / org_w
 
-                if raw_new_h not in ["?", "c"]:
+                if raw_new_h != "?":
+                    self.variables["c"] = org_h
                     yscale = Parser().parse(raw_new_h).evaluate(self.variables) / org_h
 
                 xscale = xscale or yscale
