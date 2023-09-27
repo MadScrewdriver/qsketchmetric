@@ -1,7 +1,9 @@
 import math
 import os
 import shutil
+import string
 from pathlib import Path
+from random import choice
 
 import ezdxf
 from ezdxf import DXFTableEntryError, bbox
@@ -181,6 +183,14 @@ class SemiAutomaticParameterization:
 
                 e.update_dxf_attribs({"center": center})
                 self.graph_lines[center] = self.graph_lines.get(center, [])
+
+            elif e.dxftype() == "INSERT":
+                insert = Vec3(round(e.dxf.insert.x, self.accuracy), round(e.dxf.insert.y, self.accuracy))
+
+                e.discard_xdata(self.APPID)
+                e.set_xdata(self.APPID, [(1000, f"c:{self.value}@{self.value}")])
+                e.update_dxf_attribs({"insert": insert})
+                self.graph_lines[insert] = self.graph_lines.get(insert, [])
 
             else:
                 e.destroy()

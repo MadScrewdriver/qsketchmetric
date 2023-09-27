@@ -60,6 +60,8 @@ Manual parametrization
    Final step is to add parameters to the entities. To do so select the entity and scroll down the
    ``Property Editor`` to the ``Custom`` section. Click on the red plus button and add the parameter.
 
+   .. _explicit-section:
+
    * ``LINE``, ``CIRCLE`` and ``ARC``
       - ``Name`` must be: `c`.
       - ``Value`` contains the expression describing the entity. According to the table below.
@@ -88,6 +90,15 @@ Manual parametrization
           ``width@height``. Both width and height are math expressions (see above) where `?` is only allowed for the
           one of the dimensions. For example: `c*3@?` or `?@200*sqrt(20)`. For the `?` dimension the renderer will
           calculate the value to fit the aspect ratio of the entity.
+
+   ::note
+        Entities on :ref:`VIRTUAL_LAYER` contained in ``INSERT`` entity will not be rendered but they will be taken
+        into account while calculating the width and height of the ``INSERT`` entity. This is useful
+        to make calculations easier.
+
+        For example: To parametrize a part of the ellipse, full ellipse on the :ref:`VIRTUAL_LAYER`
+        can be drawn on top. This way by parametrizing the full ellipse the part
+        will be rendered according to the full ellipse size. In many scenarios it is easier to parametrize.
 
    * ``LWPOLILINE``, ``POLYLINE``, ``SPLINE``, ``ELLIPSE``, ``MTEXT`` **etc.**
         - Those entities must be packed into ``INSERT`` entity and parametrized as described above.

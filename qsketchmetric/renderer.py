@@ -8,7 +8,7 @@ from typing import Optional, Dict
 import ezdxf
 from ezdxf import units, bbox
 from ezdxf.addons import Importer
-from ezdxf.entities import DXFGraphic
+from ezdxf.entities import DXFGraphic, Insert
 from ezdxf.layouts import Modelspace
 from ezdxf.math import Vec3
 from py_expression_eval import Parser  # type: ignore
@@ -134,6 +134,7 @@ class Renderer:
             :note: Entities of type "MTEXT" are filtered out during processing.
         """
         input_layers = dict()
+        del_blocks = []
 
         for entity in filter(lambda x: x.dxftype() != "MTEXT", self.input_msp.entity_space.entities):
             new_length = "?"
@@ -211,9 +212,6 @@ class Renderer:
                 position = entity.dxf.insert
                 position = Vec3(round(position.x, self.accuracy), round(position.y, self.accuracy), 0)
 
-                for block_entity in entity.block().entity_space.entities:
-                    block_entity.dxf.linetype = line_type
-
                 if entity.dxf.name not in self.output_dxf.blocks:
                     importer = Importer(self.input_dxf, self.output_dxf)
                     importer.import_block(entity.dxf.name, rename=False)
@@ -234,15 +232,32 @@ class Renderer:
                 xscale = xscale or yscale
                 yscale = yscale or xscale
 
+                new_block_name = entity.dxf.name + "_" + ''.join(choice(string.ascii_lowercase) for _ in range(8))
+                new_block = self.output_dxf.blocks.new(name=new_block_name)
+
+                for copy_entity in entity.block().entity_space.entities:
+                    if copy_entity.dxf.layer != "VIRTUAL_LAYER":
+                        copy_entity.dxf.linetype = line_type
+                        new_block.add_entity(copy_entity.copy())
+
+                del_blocks.append(entity.dxf.name)
+                entity.dxf.name = new_block_name
+
                 e_data = {"layer": layer, "name": entity.dxf.name, "linetype": line_type,
                           "xscale": xscale, "yscale": yscale}
 
                 self.graph[position] = self.graph.get(position, []) + [("INSERT", position, 0, e_data)]
 
+        for block in del_blocks:
+            self.output_dxf.blocks.delete_block(block)
+
         self._prepare_layers(input_layers)
 
     def _prepare_layers(self, input_layers: dict[str, int]):
         output_layers = [layer.dxf.name for layer in self.output_dxf.layers]
+
+        if "VIRTUAL_LAYER" in output_layers:
+            self.output_dxf.layers.remove("VIRTUAL_LAYER")
 
         for layer, color in input_layers.items():
             if layer not in output_layers and layer != "VIRTUAL_LAYER":

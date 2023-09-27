@@ -1,3 +1,4 @@
+import re
 import unittest
 from pathlib import Path
 from unittest.mock import Mock, patch, ANY, MagicMock
@@ -149,7 +150,8 @@ class TestRenderer(unittest.TestCase):
         self.mock_entities.append(Mock(dxftype=lambda: "MTEXT"))
 
         self.mock_input_dxf.modelspace().entity_space.entities = self.mock_entities
-        self.mock_output_dxf.blocks = ["mock"]
+        self.mock_output_dxf.blocks.__contains__ = Mock(side_effect=["mock"])
+        self.mock_output_dxf.blocks.new = Mock()
 
         mock_readfile.return_value = self.mock_input_dxf
         renderer = Renderer(
@@ -207,6 +209,9 @@ class TestRenderer(unittest.TestCase):
                     self.assertEqual(edata["name"], self.dxf_attribs["name"])
 
                 elif name == "INSERT":
+                    pattern = r'^mock_[a-z]{8}$'
+                    self.assertTrue(re.match(pattern, edata["name"]))
+
                     self.assertEqual(edata["xscale"], 20,
                     self.assertEqual(edata["yscale"], 20))
 
