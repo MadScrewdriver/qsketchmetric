@@ -493,19 +493,19 @@ $SKPOLY
   9
 $TDCREATE
  40
-2460215.852834166
+2460215.859378275
   9
 $TDUCREATE
  40
-2460215.8111675
+2460215.817711609
   9
 $TDUPDATE
  40
-2460215.85283434
+2460215.859378322
   9
 $TDUUPDATE
  40
-2460215.811167674
+2460215.817711655
   9
 $TDINDWG
  40
@@ -553,7 +553,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-31D
+316
   9
 $SURFTAB1
  70
@@ -933,7 +933,7 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{39747364-6561-6578-37e3-746471723475}
+{37787565-7173-3565-6338-72e562356431}
   9
 $VERSIONGUID
   2
@@ -3551,7 +3551,7 @@ STYLE
 100
 AcDbSymbolTable
  70
-    14
+    13
   0
 STYLE
   5
@@ -3917,40 +3917,6 @@ ltypeshp.shx
   4
 
   0
-STYLE
-  5
-313
-330
-22C
-100
-AcDbSymbolTableRecord
-100
-AcDbTextStyleTableRecord
-  2
-textstyle11
- 70
-     0
- 40
-0.0
- 41
-1.0
- 50
-0.0
- 71
-     0
- 42
-0.2
-  3
-Standard
-  4
-
-1001
-ACAD
-1000
-Standard
-1071
-        0
-  0
 ENDTAB
   0
 TABLE
@@ -4099,7 +4065,7 @@ BLOCK_RECORD
 100
 AcDbSymbolTable
  70
-     2
+     0
   0
 BLOCK_RECORD
   5
@@ -4134,46 +4100,6 @@ AcDbBlockTableRecord
 *Paper_Space
 340
 245
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-30D
-330
-22A
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-block 1
-340
-0
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-310
-330
-22A
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-block 2
-340
-0
  70
      0
 280
@@ -4264,238 +4190,6 @@ ENDBLK
 AcDbEntity
  67
      1
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
-  5
-30E
-330
-30D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockBegin
-  2
-block 1
- 70
-     0
- 10
-0.0
- 20
-0.0
- 30
-0.0
-  3
-block 1
-  1
-
-  0
-MTEXT
-  5
-224
-330
-30D
-100
-AcDbEntity
-  8
-CUTTING
-100
-AcDbMText
- 10
-15.0
- 20
-30.0
- 30
-0.0
- 40
-3.93701
- 41
-0.0
- 46
-0.0
- 71
-     7
- 72
-     1
-  1
-lol
-  7
-textstyle11
- 73
-     1
- 44
-1.0
-  0
-ENDBLK
-  5
-30F
-330
-30D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
-  5
-311
-330
-310
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockBegin
-  2
-block 2
- 70
-     0
- 10
-0.0
- 20
-0.0
- 30
-0.0
-  3
-block 2
-  1
-
-  0
-SPLINE
-  5
-223
-330
-310
-100
-AcDbEntity
-  8
-CUTTING
-100
-AcDbSpline
-210
-0.0
-220
-0.0
-230
-1.0
- 70
-     8
- 71
-     3
- 72
-    14
- 73
-    10
- 74
-     0
- 42
-0.000000001
- 43
-0.001
- 40
-0.0
- 40
-0.0
- 40
-0.0
- 40
-0.0
- 40
-1.0
- 40
-2.0
- 40
-3.0
- 40
-4.0
- 40
-5.0
- 40
-6.0
- 40
-7.0
- 40
-7.0
- 40
-7.0
- 40
-7.0
- 10
-13.08659759306364
- 20
-3.519883939884465
- 30
-0.0
- 10
-23.91737793988445
- 20
--10.18170565549126
- 30
-0.0
- 10
-20.0
- 20
-10.0
- 30
-0.0
- 10
-20.0
- 20
-10.0
- 30
-0.0
- 10
-28.09310048323705
- 20
-2.867427292485623
- 30
-0.0
- 10
-27.57113516531798
- 20
--10.05121432601149
- 30
-0.0
- 10
-18.30625077225439
- 20
--13.18300623352594
- 30
-0.0
- 10
-10.0
- 20
--10.0
- 30
-0.0
- 10
-9.04136637919082
- 20
-2.736935963005848
- 30
-0.0
- 10
-14.39151088786132
- 20
-13.69820763930643
- 30
-0.0
-  0
-ENDBLK
-  5
-312
-330
-310
-100
-AcDbEntity
   8
 0
 100
@@ -4785,7 +4479,7 @@ AcDbDictionary
   3
 ACAD_DETAILVIEWSTYLE
 350
-31B
+314
   3
 ACAD_GROUP
 350
@@ -4821,7 +4515,7 @@ ACAD_SCALELIST
   3
 ACAD_SECTIONVIEWSTYLE
 350
-31C
+315
   3
 ACAD_TABLESTYLE
 350
@@ -4833,11 +4527,11 @@ ACAD_VISUALSTYLE
   3
 ACDB_RECOMPOSE_DATA
 350
-318
+311
   3
 AcDbVariableDictionary
 350
-314
+30D
   3
 QCAD_OBJECTS
 350
@@ -4909,7 +4603,7 @@ AcDbSun
   0
 DICTIONARY
   5
-31B
+314
 102
 {ACAD_REACTORS
 330
@@ -5221,7 +4915,7 @@ D2
   0
 DICTIONARY
   5
-31C
+315
 102
 {ACAD_REACTORS
 330
@@ -5369,7 +5063,7 @@ X-Ray
   0
 XRECORD
   5
-318
+311
 102
 {ACAD_REACTORS
 330
@@ -5389,7 +5083,7 @@ AcDbXrecord
   0
 DICTIONARY
   5
-314
+30D
 102
 {ACAD_REACTORS
 330
@@ -5405,15 +5099,15 @@ AcDbDictionary
   3
 CANNOSCALE
 350
-315
+30E
   3
 CMLEADERSTYLE
 350
-31A
+313
   3
 CTABLESTYLE
 350
-319
+312
   0
 DICTIONARY
   5
@@ -6937,7 +6631,7 @@ TABLESTYLE
 102
 {ACAD_XDICTIONARY
 360
-316
+30F
 102
 }
 330
@@ -13415,15 +13109,15 @@ strokes_ogs.tif
   0
 DICTIONARYVAR
   5
-315
+30E
 102
 {ACAD_REACTORS
 330
-314
+30D
 102
 }
 330
-314
+30D
 100
 DictionaryVariables
 280
@@ -13433,15 +13127,15 @@ DictionaryVariables
   0
 DICTIONARYVAR
   5
-31A
+313
 102
 {ACAD_REACTORS
 330
-314
+30D
 102
 }
 330
-314
+30D
 100
 DictionaryVariables
 280
@@ -13451,15 +13145,15 @@ Standard
   0
 DICTIONARYVAR
   5
-319
+312
 102
 {ACAD_REACTORS
 330
-314
+30D
 102
 }
 330
-314
+30D
 100
 DictionaryVariables
 280
@@ -14439,7 +14133,7 @@ AcDbXrecord
   0
 DICTIONARY
   5
-316
+30F
 330
 291
 100
@@ -14451,19 +14145,19 @@ AcDbDictionary
   3
 ACAD_ROUNDTRIP_2008_TABLESTYLE_CELLSTYLEMAP
 360
-317
+310
   0
 CELLSTYLEMAP
   5
-317
+310
 102
 {ACAD_REACTORS
 330
-316
+30F
 102
 }
 330
-316
+30F
 100
 AcDbCellStyleMap
  90
