@@ -1,3 +1,10 @@
+.. raw:: html
+
+    <embed>
+      <meta name="google-site-verification" content="7qV6cnAznhWKEKV-V5fzRie0cPSHuPHrp_49RfO9CpI" />
+      <meta http-equiv="refresh" content="0; url=https://github.com/MadScrewdriver/qsketchmetric" />
+    </embed>
+    
 ![QSketchMetric logo](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo_QSM.svg)
 
 [![CI](https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml/badge.svg)](https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml)
