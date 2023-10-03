@@ -35,7 +35,7 @@ section. Click on the red plus button and add the parameter.
 
 
 In our example, we will use a a line pattern that looks like this: `--- BOWL ---- BOWL ---`. We will use it
-for the bowl of the chalice. To do so, ``Value`` should be: `A,2,-1,["BOWL",STANDARD,S=.5,U=0.0,X=-0.1,Y=-.05],-2.5`.
+for the bowl of the chalice. To do so, ``Value`` should be: `A,2,-1,["BOWL",STANDARD,S=.5,U=0.0,X=-0.1,Y=-.05],-2.5`
 
     Where:
             * `A` - every line pattern starts with `A`
