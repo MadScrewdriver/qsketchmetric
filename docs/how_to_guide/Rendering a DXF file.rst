@@ -30,6 +30,16 @@ Rendering a DXF file
 
 5. Render the file::
 
+        from ezdxf import new
+        output_dxf = new()
+        output_dxf.units = units.MM
+
+        path = 'how_to_guide.dxf'
+
+        # Optional
+        variables = {'variable_name': 100}
+        offset = (50, 50)
+
         renderer = Renderer(
                             path,
                             output_dxf,

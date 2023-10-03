@@ -82,7 +82,9 @@ Manual parametrization
       `this list <https://github.com/AxiaCore/py-expression-eval/#available-operators-constants-and-functions>`_.
 
       There is an option to add **optional** ``line`` variable. This variables states the custom line style of the entity.
-      ``Value`` should be in a format `<dash_width> <space_width>` seperated by a space. For example `1 2`.
+      ``Value`` should be in a format of `ezdxf complex line pattern format <https://ezdxf.readthedocs.io/en/stable/tutorials/linetypes.html#removing-linetypes>`_.
+      See `ezdxf documentation <https://ezdxf.readthedocs.io/en/stable/tutorials/linetypes.html#removing-linetypes>`_ for more information about the format.
+      ``Value`` example: `A,2,-1,["BOWL",STANDARD,S=.5,U=0.0,X=-0.1,Y=-.05],-2.5`
 
    * ``INSERT``
         - ``Name`` must be: `c`.

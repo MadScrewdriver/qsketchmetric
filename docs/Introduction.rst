@@ -17,6 +17,15 @@ Typical Use Cases
    Consider a box's cutting layout: with ``qsketchmetric``, it can be dynamically rendered to adapt
    based on its desired size.
 
+What is DXF file?
+-----------------
+DXF (Drawing Interchange Format, or Drawing Exchange Format) is a CAD data file format developed by Autodesk for
+enabling data interoperability between AutoCAD and other programs.
+
+DXF file versions supported
+----------------------------
+QSketchMetric supports DXF files newer or equal to **R13** (Introduced in 1994).
+
 How the documentation is organized?
 -----------------------------------
 Documentation follows `diataxis <https://diataxis.fr>`_ structure.

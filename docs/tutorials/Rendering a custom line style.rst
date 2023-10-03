@@ -31,14 +31,24 @@ Select the entitie where you want a custom line format and scroll down the ``Pro
 section. Click on the red plus button and add the parameter.
 
     * ``Name`` should be: `line`.
-    * ``Value`` should be a custom line style in the format: `<dash_width> <space_width>` seperated by a space.
-        - ``dash_width`` is the length of the dash.
-        - ``space_width`` is the length of the space between dashes.
+    * ``Value`` should be a custom line pattern
 
-In our example, we will use a line style with a dash width of 10 and a space width of 5.
-So the value should be: `10 5` we will do it for the bowl, ornament and the leg of the chalice.
+**Line pattern**
+QSketchMetric line pattern follows
+`ezdxf copmplex line pattern format <https://ezdxf.readthedocs.io/en/stable/tutorials/linetypes.html#removing-linetypes>`_.
 
-Added parameter should look like this:
+In our example, we will use a a line pattern that looks like this: `--- BOWL ---- BOWL ---` for the bowl of the chalice.
+To do so,``Value`` should be: `A,2,-1,["BOWL",STANDARD,S=.5,U=0.0,X=-0.1,Y=-.05],-2.5`.
+
+Where:
+        * `A` - every line pattern starts with `A`
+        * `2` - line length
+        * `-1` - space length
+        * `["BOWL",STANDARD,S=.5,U=0.0,X=-0.1,Y=-.05]` - `BOWL` part definition
+        * `-2.5` - space length after the `BOWL` part
+
+.. note::
+        Remember to add a comma after every parameter and do not use whitespaces.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/tutorial9.png
    :alt: ``tutorial.dxf`` with added `line` parameters
@@ -71,4 +81,4 @@ Rendered file should look like this:
 
    rendered_custom_line_tutorial.dxf opened in QCAD Professional
 
-**Congratulation you renderer your first custom lines!**
+**Congratulation you renderer your first custom line!**

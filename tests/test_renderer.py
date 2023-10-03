@@ -140,7 +140,9 @@ class TestRenderer(unittest.TestCase):
             mock_entity.block().entity_space.entities = self.mock_entities
 
             if mock_entity.dxftype() == "INSERT":
-                mock_entity.get_xdata = lambda x: [(None, "c:2*100@?"), (None, "line:10 5")]
+                mock_entity.get_xdata = lambda x: [
+                    (None, "c:2*100@?"),
+                    (None, 'line:A,0.5,-0.2,["GAS",STANDARD,S=.1,U=0.0,X=-0.1,Y=-.05],-.25')]
 
         point_mock = Mock(dxftype=lambda: "POINT", get_xdata=lambda x: [(None, f"{self.dxf_attribs['name']}:"
                                                                                f"{self.dxf_attribs['name']}")])
@@ -165,8 +167,8 @@ class TestRenderer(unittest.TestCase):
 
         renderer.output_dxf.linetypes.add.assert_called_with(
             name=ANY,
-            pattern=ANY,
-            description="- - - - - -",
+            pattern='A,0.5,-0.2,["GAS",STANDARD,S=.1,U=0.0,X=-0.1,Y=-.05],-.25',
+            description="- - custom - -",
         )
 
         # Check for LINE entities
@@ -182,7 +184,6 @@ class TestRenderer(unittest.TestCase):
         # Check for INSERT entities
         self.assertIn(self.point4, renderer.graph)
 
-
         self.assertIn((self.dxf_attribs["layer"], self.point2), renderer.visited_graph[self.point1])
         self.assertIn((self.dxf_attribs["layer"], self.point1), renderer.visited_graph[self.point2])
 
@@ -193,9 +194,11 @@ class TestRenderer(unittest.TestCase):
                 new_length = item[2]
                 edata = item[3]
 
+                pattern = r'^[a-z]{8}$'
+                self.assertTrue(re.match(pattern, edata["linetype"]))
+
                 if name != "POINT":
                     self.assertEqual(edata["layer"], self.dxf_attribs["layer"])
-                    self.assertTrue(edata["linetype"].startswith(f"10.0_5.0_"))
 
                 if name == "ARC":
                     self.assertEqual(edata["radius"], self.dxf_attribs["radius"])

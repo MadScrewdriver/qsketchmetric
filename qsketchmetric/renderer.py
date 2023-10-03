@@ -149,11 +149,8 @@ class Renderer:
             input_layers[layer] = self.input_dxf.layers.get(entity.dxf.layer).color
 
             if line_xdata:
-                line, space = list(map(float, str(line_xdata).split()))
-                line_type = f"{line}_{space}_" + ''.join(choice(string.ascii_lowercase) for _ in range(8))
-
-                self.output_dxf.linetypes.add(name=line_type, pattern=[line + space, line, -space],
-                                              description="- - - - - -", )
+                line_type = ''.join(choice(string.ascii_lowercase) for _ in range(8))
+                self.output_dxf.linetypes.add(name=line_type, pattern=line_xdata, description="- - custom - -", )
 
             if entity.dxftype() == "LINE":
 

@@ -36,6 +36,13 @@ the automatic parameterization process. Process includes:
 6. Parametrize the DXF file::
 
     from qsketchmetric.semiautomatic import SemiAutomaticParameterization
+
+    input_dxf_file = 'path/to/dxf/file.dxf'
+
+    # Optional
+    output_dxf = 'path/to/output/parametrized_dxf/file.dxf'
+    expression = '?'
+
     sap = SemiAutomaticParameterization(input_dxf_file, default_value=expression, output_dxf_path=output_dxf)
     sap.parametrize()
 
