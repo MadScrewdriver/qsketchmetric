@@ -93,6 +93,7 @@ Manual parametrization
           one of the dimensions. For example: `c*3@?` or `?@200*sqrt(20)`. For the `?` dimension the renderer will
           calculate the value to fit the aspect ratio of the entity.
 
+
         .. note::
          Entities on :ref:`VIRTUAL_LAYER` contained in ``INSERT`` entity will not be rendered but they will be taken
          into account while calculating the width and height of the ``INSERT`` entity. This is useful
