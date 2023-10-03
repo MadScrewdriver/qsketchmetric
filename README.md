@@ -9,7 +9,7 @@
 [![Python 3](https://img.shields.io/badge/python-3.9_|_3.10_|_3.11_|_3.12_-blue.svg)](https://www.python.org/downloads/release/python-3114/)
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 
-**QSketchMetric** is a Python 2D **parametric DXF** rendering engine. Parametrization is done using 
+**QSketchMetric** is a Python 2D **parametric DXF** CAD rendering engine. Parametrization is done using 
 [**QCAD Professional software**](https://qcad.org/en/download)
 
 ## ⚡️ Quickstart
