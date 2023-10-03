@@ -50,7 +50,7 @@ for the bowl of the chalice. To do so, ``Value`` should be: `A,2,-1,["BOWL",STAN
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/tutorial9.png
    :alt: ``tutorial.dxf`` with added `line` parameters
 
-   ``tutorial.dxf`` with added `line` parameters
+   ``tutorial.dxf`` with added `line` parameter
 
 
 That is all! Now you can save the file and render it with :meth:`qsketchmetric.renderer.Renderer.render` method::
