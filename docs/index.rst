@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 
-.. image:: https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo_QSM.svg
+.. image:: https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo_QSM.png
 
 
 QSketchMetric Documentation
