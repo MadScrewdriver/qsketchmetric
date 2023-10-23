@@ -37,11 +37,6 @@ output_dxf.saveas('tutorial_rendered.dxf')
 
 ![Demo GIF](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/readme.gif)
 
-## ✅ QSketchMetric Validator
-You can verify the proper parametrization of your DXF file by utilizing the [QSketchMetric Validator](https://qsketchmetricvalidator.eu.pythonanywhere.com/).
-
-![Validator](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/validator.png)
-
 ## ⚙️ Installation
 
 The most common case is the installation by [**pip package manager**](https://pip.pypa.io/en/stable/installation/):
@@ -49,6 +44,11 @@ The most common case is the installation by [**pip package manager**](https://pi
 ```bash
   pip install qsketchmetric
 ```
+## ✅ QSketchMetric Validator
+You can verify the proper parametrization of your DXF file by utilizing the [QSketchMetric Validator](https://qsketchmetricvalidator.eu.pythonanywhere.com/).
+
+![Validator](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/validator.png)
+
 
 ## 🎯 Features
 
