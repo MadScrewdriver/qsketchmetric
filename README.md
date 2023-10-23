@@ -39,7 +39,8 @@ output_dxf.saveas('tutorial_rendered.dxf')
 
 ## ✅ QSketchMetric Validator
 You can verify the proper parametrization of your DXF file by utilizing the [QSketchMetric Validator](https://qsketchmetricvalidator.eu.pythonanywhere.com/).
-![Demo GIF](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/validator.png
+
+![Validator](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/validator.png)
 
 ## ⚙️ Installation
 
