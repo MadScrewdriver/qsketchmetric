@@ -85,8 +85,8 @@ In the `name` field, type `h` and in the `value` field, type `50`.
     QSketchMetric Validator variables modal window
 
 Close the modal window and click the `Validate` button. **A success!**
-Entities, Variables and Cohesion are all green and we are presented with a success message as well as a download button
-for rendered DXF file.
+
+Entities, Variables and Cohesion checks are all green and we are presented with a success message.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/success.gif
    :alt: QSketchMetric Validator with success message
