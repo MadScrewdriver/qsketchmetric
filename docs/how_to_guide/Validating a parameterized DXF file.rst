@@ -101,7 +101,7 @@ Widgets
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/questionmark.png
    :alt: question mark button
-   :width: 20%
+   :width: 10%
 
 - **Increase entities limit** - button that tooltip  with a `Increase entities limit`_ section.
 
