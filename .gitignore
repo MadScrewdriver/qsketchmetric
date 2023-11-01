@@ -26,3 +26,4 @@ _build
 tests/__pycache__/*
 qsketchmetric/__pycache__/*
 /qodana.yaml
+/QSketchMetricFrontend/
