@@ -60,14 +60,15 @@ place where the error occurred in the DXF file and the error message.
 [See docs to learn more.](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Validator.html)
 
 
+
+
+
+<table>
 <style>
 table, tr, td {
    border: none!important;
 }
 </style>
-
-
-<table>
 <tr>
 <td>
 <img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/success.gif" alt="success" width="100%"/>
