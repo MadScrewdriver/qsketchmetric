@@ -1,3 +1,9 @@
+<style>
+table, tr, td {
+   border: none!important;
+}
+</style>
+
 ![QSketchMetric logo](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo_QSM.png)
 
 [![CI](https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml/badge.svg)](https://github.com/MadScrewdriver/qsketchmetric/actions/workflows/tests.yml)
@@ -64,11 +70,7 @@ place where the error occurred in the DXF file and the error message.
 
 
 <table>
-<style>
-table, tr, td {
-   border: none!important;
-}
-</style>
+
 <tr>
 <td>
 <img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/success.gif" alt="success" width="100%"/>
