@@ -9,7 +9,6 @@ Explanation
    :maxdepth: 1
    :caption: Table of Contents:
 
+   Debug report
    Mtext
    Virtual layer
-   Debug report
-
