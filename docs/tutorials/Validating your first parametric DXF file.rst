@@ -16,7 +16,7 @@ file from the `QSketchMetric repository <https://github.com/MadScrewdriver/qsket
 DXF file that we will validate in this tutorial.
 
 To do so, open it and click `Ctrl+S` to save it to your computer.
-As a convention, we’ll assume you saved it in a file called ``tutorial.dxf``.
+As a convention, we’ll assume you saved it in a file called `tutorial.dxf`.
 
 First, let’s open the file in QCAD Professional. `(File -> Open)`
 
