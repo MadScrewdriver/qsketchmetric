@@ -31,6 +31,8 @@ Validation process
 3. Provide a variables needed for the parametrization. This are the variables on upon which the file is rendered.
    To do so utilize the **set vars** button and add as many variables as needed.
 
+   Here the precision of the calculations can be set up as well. Default precision is 3 decimal places.
+
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/variables.png
    :alt: set vars
    :width: 50%
@@ -60,6 +62,15 @@ Validation process
     3. If the DXF file contains more entities than your user account allows, the app will display an **error message**
        saying that the file contains more entities than the account allows.
        In this case, see the `Increase entities limit`_ section.
+
+
+.. _Increase entities limit:
+Increase entities limit
+-----------------------
+Should your project require a higher entity count, kindly reach out to
+`franciszek@lajszczak.dev <mailto:franciszek@lajszczak.dev?subject=Increase%20entities%20limit&body=Username%3A%20%0ADesired%20entities%20limit%3A%20%0ANumber%20of%20tokens%3A%20>`_ .
+Please provide your desired **entity limit**, your account **username**, and the number of validations **(tokens)**
+needed.
 
 
 .. _Widgets:
@@ -111,11 +122,3 @@ Widgets
 
 
 
-
-.. _Increase entities limit:
-Increase entities limit
------------------------
-Should your project require a higher entity count, kindly reach out to
-`franciszek@lajszczak.dev <mailto:franciszek@lajszczak.dev?subject=Increase%20entities%20limit&body=Username%3A%20%0ADesired%20entities%20limit%3A%20%0ANumber%20of%20tokens%3A%20>`_ .
-Please provide your desired **entity limit**, your account **username**, and the number of validations **(tokens)**
-needed.
