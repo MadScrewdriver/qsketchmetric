@@ -97,17 +97,19 @@ Widgets
    :alt: tokens field
    :width: 20%
 
-- **question mark** - button that displays a tooltip with a help center.
-
-.. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/questionmark.png
-   :alt: question mark button
-   :width: 10%
-
 - **Increase entities limit** - button that tooltip  with a `Increase entities limit`_ section.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/increase_entities_limit.png
    :alt: increase entities limit button
    :width: 20%
+
+- **question mark** - button that displays a tooltip with a help center.
+
+.. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/questionmark.png
+   :alt: question mark button
+   :width: 7%
+
+
 
 
 .. _Increase entities limit:
