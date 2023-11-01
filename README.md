@@ -60,11 +60,7 @@ place where the error occurred in the DXF file and the error message.
 [See docs to learn more.](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Validator.html)
 
 
-
-
-
 <table>
-
 <tr>
 <td>
 <img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/success.gif" alt="success" width="100%"/>
@@ -88,7 +84,9 @@ Documentation is available at [**QSketchMetric docs**](https://qsketchmetric.rea
 
 ## 📈 Roadmap
 Explicit support for more entities is planned in the future. If you have any suggestions, please create an issue.
-If you want to contribute, see `How to contribute` section in the documentation. I am open to any suggestions
+If you want to contribute, see 
+[**How to contribute**](https://qsketchmetric.readthedocs.io/en/latest/How%20to%20contribute.html) 
+section in the documentation. I am open to any suggestions
 and waiting for your pull requests!
 
 ## ⚠️ License
