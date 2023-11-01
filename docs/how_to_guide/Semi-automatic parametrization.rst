@@ -48,3 +48,7 @@ the automatic parameterization process. Process includes:
 
 7. Open the parametrized file in `QCAD Professional <https://qcad.org/en/download>`_, and customize the parameters.
 Same as in the :ref:`manual parametrization <parametrization-section>` process.
+
+8. Validate the file. This can be done by using the
+`QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_. See
+:ref:`Validating a parameterized DXF file <validator>` for more information.

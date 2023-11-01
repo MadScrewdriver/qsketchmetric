@@ -117,3 +117,7 @@ Manual parametrization
    :alt: LINE entity with parameters
 
    LINE entity with parameters
+
+6. Validate the file. This can be done by using the
+   `QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_. See
+   :ref:`Validating a parameterized DXF file <validator>` for more information.
