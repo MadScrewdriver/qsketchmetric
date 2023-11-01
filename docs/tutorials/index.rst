@@ -13,6 +13,6 @@ Start here if you’re new to QSketchMetric.
    Rendering your first parametric DXF file
    Parametrizing your first DXF file
    Semi-automatic parametrization of a DXF file
+   Validating your first parametric DXF file
    Rendering a point
    Rendering a custom line style
-   Validating your first parametric DXF file
