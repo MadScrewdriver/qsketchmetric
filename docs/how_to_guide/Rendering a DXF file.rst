@@ -2,7 +2,11 @@
 Rendering a DXF file
 ====================
 
-0. Consider validating the DXF file before rendering it. This can be done by using the `QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_.
+0. Consider validating the DXF file before rendering it. This can be done by using the
+`QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_. See
+:ref:`<Validating a parameterized DXF file validator>` for more information.
+
+1. If don't have already, create a :class:`ezdxf.document.Drawing` object to which the renderer
    will render::
 
     from ezdxf import new
