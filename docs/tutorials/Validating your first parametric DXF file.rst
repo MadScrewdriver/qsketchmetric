@@ -30,7 +30,7 @@ Changing the chalice height ``h`` variable will render the drawing accordingly.
 
 Let’s validate the drawing. To do so, open the
 `QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_ and login using your **GitHub** account.
-It is as simple as clicking the `GitHub` button. The first time you login, you will be asked to authorize the application to access your GitHub account.
+It is as simple as clicking the `**GitHub**` button. The first time you login, you will be asked to authorize the application to access your GitHub account.
 
 After logging in, you will see the following screen:
 
