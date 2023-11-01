@@ -50,6 +50,7 @@ Next, click the `Validate` button. **And what this! An error!**
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/error.gif
    :alt: QSketchMetric Validator with error message
+   :width: 50%
 
     QSketchMetric Validator with error message
 
@@ -76,6 +77,7 @@ In the `name` field, type `h` and in the `value` field, type `50`.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/variables.png
    :alt: QSketchMetric Validator variables modal window
+   :width: 50%
 
     QSketchMetric Validator variables modal window
 
@@ -85,6 +87,7 @@ for rendered DXF file.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/success.gif
    :alt: QSketchMetric Validator with success message
+   :width: 50%
 
     QSketchMetric Validator with success message
 
