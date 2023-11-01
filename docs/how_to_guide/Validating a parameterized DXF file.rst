@@ -15,8 +15,8 @@ the app will provide full debug report. Including place where the error occurred
 Validation process
 ------------------
 
-1. Go to `QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_ . For widgets and fields
-   explanation (for example: tokens) see the `Widgets`_ section.
+1. Go to `QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_ and login using your
+   **GitHub** account. For widgets and fields explanation (for example: tokens) see the `Widgets`_ section.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/validator.png
    :alt: validator
