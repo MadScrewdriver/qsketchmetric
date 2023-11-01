@@ -52,8 +52,8 @@ Validation process
        :width: 50%
 
 
-    2. If the file is not properly parametrized, the app will display an **error message** and a **debug report** will
-       be available for download.
+    2. If the file is not properly parametrized, the app will display an :ref:`error message <error-messages>` and a
+       :ref:`debug report <debug>`  will be available for download.
 
     .. figure:: https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/error.gif
        :alt: validation success

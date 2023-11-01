@@ -11,3 +11,5 @@ Explanation
 
    Mtext
    Virtual layer
+   Debug report
+

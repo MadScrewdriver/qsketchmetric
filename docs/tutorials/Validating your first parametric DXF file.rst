@@ -58,7 +58,7 @@ The error is telling us that the `h` variable is not defined.
 This is because the validator does not know what the `h` variable is while
 calculating the ``chalice_foot_radius`` variable.
 
-Download the debug report by clicking the `Debug report` button and open it in QCAD Professional.
+Download the debug report by clicking the :ref:`Debug report <debug>` button and open it in QCAD Professional.
 
 We can see that every entity got greyed out accept of the MTEXT entity. It is because the MTEXT entity is the
 place where the error occurred while calculating the ``chalice_foot_radius`` variable.
