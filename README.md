@@ -59,8 +59,16 @@ The app does not store your files. In the event of an error, the app will give y
 place where the error occurred in the DXF file and the error message.
 [See docs to learn more.](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Validator.html)
 
-![success](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/success.gif) ![error](https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/error.gif)
-
+<table>
+<tr style="border:none;">
+<td style="border:none;">
+<img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/success.gif" alt="success" width="400"/>
+</td>
+<td style="border:none;">
+<img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/error.gif" alt="error" width="400"/>
+</td>
+</tr>
+</table>
 
 ## 🎯 Features
 
