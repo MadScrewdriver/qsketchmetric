@@ -49,7 +49,7 @@ The most common case is the installation by [**pip package manager**](https://pi
 Parametrization is done using [**QCAD Professional software**](https://qcad.org/en/download). 
 You can download the [**free trial**](https://qcad.org/en/download) version of the software and use it for parametrization of your DXF files.
 We need to use it because it is the only software that supports adding custom data to DXF entities. 
-[See docs to learn more.](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Manual%20parametrization.html)
+[**See docs to learn more...**](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Manual%20parametrization.html)
 
 ## ✅ QSketchMetric Validator
 To verify the proper parametrization of a DXF file during parametrization process, you can use the 
@@ -57,7 +57,7 @@ To verify the proper parametrization of a DXF file during parametrization proces
 allows you to upload DXF file and check if it is properly parametrized. 
 In the event of an error, the app will give you full debug report. Including
 place where the error occurred in the DXF file and the error message.
-[See docs to learn more.](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Validating%20a%20parameterized%20DXF%20file.html)
+[**See docs to learn more...**](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Validating%20a%20parameterized%20DXF%20file.html)
 
 
 <table>
