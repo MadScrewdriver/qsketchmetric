@@ -99,7 +99,7 @@ Widgets
 
 - **question mark** - button that displays a tooltip with a help center.
 
-.. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/question_mark.png
+.. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/questionmark.png
    :alt: question mark button
    :width: 20%
 
