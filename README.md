@@ -47,7 +47,7 @@ The most common case is the installation by [**pip package manager**](https://pi
 
 ##  📐 DXF Parametrization
 Parametrization is done using [**QCAD Professional software**](https://qcad.org/en/download). 
-You can download the **free trial** version of the software and use it for parametrization of your DXF files.
+You can download the [**free trial**](https://qcad.org/en/download) version of the software and use it for parametrization of your DXF files.
 We need to use it because it is the only software that supports adding custom data to DXF entities. 
 [See docs to learn more.](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Manual%20parametrization.html)
 
