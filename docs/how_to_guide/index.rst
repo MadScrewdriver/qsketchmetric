@@ -11,5 +11,6 @@ They are more advanced than tutorials and assume some knowledge of how QSketchMe
    :caption: Table of Contents:
 
    Manual parametrization
-   Rendering a DXF file
    Semi-automatic parametrization
+   Validating a parameterized DXF file
+   Rendering a DXF file

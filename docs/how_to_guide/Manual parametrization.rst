@@ -3,7 +3,7 @@
 Manual parametrization
 ======================
 
-Supported DXF Entities
+Supported DXF entities
 ----------------------
 QSketchMetric explicit supports the following DXF entities:
 ``LINE``, ``CIRCLE``, ``ARC``, ``POINT``, ``INSERT`` entities. Other entities such as
