@@ -7,7 +7,7 @@ Validating a parametrized DXF file
 QSketchMetric Validator
 -----------------------
 To verify the proper parametrization of a DXF file, use the
-[**QSketchMetric Validator**](https://qsketchmetricvalidator.eu.pythonanywhere.com/). It is a web application that
+`QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_. It is a web application that
 allows to upload DXF file and check if it is properly parametrized. In the event of an error,
 the app will provide full debug report. Including place where the error occurred in the DXF file and the error message.
 
@@ -77,19 +77,19 @@ Widgets
    :alt: validation button
    :width: 20%
 
-- **set vars** - button that allows to set variables needed for the parametrization.
+- **Set vars** - button that allows to set variables needed for the parametrization.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/set_vars.png
    :alt: set vars button
    :width: 20%
 
-- **entities** - field that displays the number of entities in a DXF file that can be validated with the account.
+- **Entities** - field that displays the number of entities in a DXF file that can be validated with the account.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/entities.png
    :alt: entities field
    :width: 20%
 
-- **tokens** - field that displays the number of validations that can be performed with current entity limit. After
+- **Tokens** - field that displays the number of validations that can be performed with current entity limit. After
   each validation the number of tokens is decreased by one. When the number of tokens reaches zero, the user will revert
   to the default entity limit of 20 entities.
 
@@ -103,7 +103,7 @@ Widgets
    :alt: increase entities limit button
    :width: 20%
 
-- **question mark** - button that displays a tooltip with a help center.
+- **Question mark** - button that displays a tooltip with a help center.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/questionmark.png
    :alt: question mark button

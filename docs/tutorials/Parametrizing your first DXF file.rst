@@ -133,4 +133,7 @@ file, that you can
 `download <https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/DXF/tutorial.dxf>`_ from the
 `QSketchMetric repository <https://github.com/MadScrewdriver/qsketchmetric>`_.
 
+Lastly, we can check if the parametrization is correct by validating it. To do so, follow the
+:ref:`Validation your first DXF file <validator-tutorial>` tutorial.
+
 **Congratulation you created your first parametric DXF file!**

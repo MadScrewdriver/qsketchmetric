@@ -2,7 +2,7 @@
 Rendering a DXF file
 ====================
 
-1. If don't have already, create a :class:`ezdxf.document.Drawing` object to which the renderer
+0. Consider validating the DXF file before rendering it. This can be done by using the `QSketchMetric Validator <https://qsketchmetricvalidator.eu.pythonanywhere.com/>`_.
    will render::
 
     from ezdxf import new

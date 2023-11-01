@@ -15,3 +15,4 @@ Start here if you’re new to QSketchMetric.
    Semi-automatic parametrization of a DXF file
    Rendering a point
    Rendering a custom line style
+   Validating your first parametric DXF file
