@@ -62,10 +62,10 @@ place where the error occurred in the DXF file and the error message.
 <table>
 <tr style="border:none;">
 <td style="border:none;">
-<img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/success.gif" alt="success" width="50%"/>
+<img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/success.gif" alt="success" width="100%"/>
 </td>
 <td style="border:none;">
-<img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/error.gif" alt="error" width="50%"/>
+<img src="https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/error.gif" alt="error" width="100%"/>
 </td>
 </tr>
 </table>
