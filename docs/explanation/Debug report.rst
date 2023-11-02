@@ -14,6 +14,7 @@ with **handle** of problematic entity.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/verror.png
     :alt: Variables error
+    :width: 50%
 
     Variables error
 
@@ -22,6 +23,7 @@ with **handle** of problematic entity.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/eerror.png
    :alt: Entity error
+   :width: 50%
 
    Entity error
 
@@ -33,6 +35,7 @@ with **handle** of problematic entity.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/cerror.png
    :alt: Cohesion error
+   :width: 50%
 
    Cohesion error
 
@@ -41,6 +44,7 @@ with **handle** of problematic entity.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/lerror.png
    :alt: Limit error
+   :width: 50%
 
    Limit error
 
