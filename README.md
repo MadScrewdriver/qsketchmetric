@@ -52,7 +52,7 @@ We need to use it because it is the only software that supports adding custom da
 [**See docs to learn more...**](https://qsketchmetric.readthedocs.io/en/latest/how_to_guide/Manual%20parametrization.html)
 
 ## ✅ QSketchMetric Validator
-To verify the proper parametrization of a DXF file during parametrization process, you can use the 
+To verify the proper parametrization of a DXF file during parametrization process, use the 
 [**QSketchMetric Validator**](https://qsketchmetricvalidator.eu.pythonanywhere.com/). It is a web application that
 allows you to upload DXF file and check if it is properly parametrized. 
 In the event of an error, the app will give you full debug report. Including
