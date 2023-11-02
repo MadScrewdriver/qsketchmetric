@@ -9,7 +9,7 @@ Error messages
 If error is related to specific entity, debug report contains detailed error message
 with **handle** of problematic entity.
 
-- **Variables validation error** - Error occurs in various situations when parsing variables. For example:
+- **Variables validation error** - Error occurs in various situations when parsing variables. **For example:**
   wrong variable name, wrong variable type, undefined variable etc.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/verror.png
@@ -18,7 +18,7 @@ with **handle** of problematic entity.
 
     Variables error
 
-- **Entities validation error** - Error occurs when validating entities. For example: wrong entity type,
+- **Entities validation error** - Error occurs when validating entities. **For example:** wrong entity type,
   wrong QCAD description, zero length line etc.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/eerror.png
@@ -30,7 +30,7 @@ with **handle** of problematic entity.
 - **Cohesion validation error** - Error occurs when validating cohesion. By cohesion we mean that all entities
   are connected to each other. Either directly or indirectly using :ref:`VIRTUAL_LAYER`.
   It is crucial that all entities form one connected graph to be able to find relative
-  position of all entities. For example: line parametrized with '?' is not connected
+  position of all entities. **For example:** line parametrized with '?' is not connected
   on both ends.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/cerror.png
@@ -39,7 +39,7 @@ with **handle** of problematic entity.
 
    Cohesion error
 
-- **Limit validation error** - Error occurs when user exceeds his limit of entities. For example:
+- **Limit validation error** - Error occurs when user exceeds his limit of entities. **For example:**
   user has limit of 100 entities and his drawing has 150 entities. In this case see :ref:`Increase entities limit`.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/lerror.png
@@ -60,7 +60,7 @@ placed on **DEBUG** layer.
 
 
 In the case when more than one entity is problematic all those entities are placed on **DEBUG** layer and are
-highlighted with signature color. For example: if there is cohesion error such as there are two separate graphs,
+highlighted with signature color. **For example:** if there is cohesion error such as there are two separate graphs,
 both graphs are highlighted with different color.
 
 .. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/cohesion.png
