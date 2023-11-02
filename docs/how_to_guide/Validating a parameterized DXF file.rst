@@ -120,5 +120,11 @@ Widgets
    :alt: question mark button
    :width: 7%
 
+- **Logout** - button that logs out the user.
+
+.. figure:: https://qsketchmetric.readthedocs.io/en/latest/_static/Media/logout.png
+   :alt: logout button
+   :width: 7%
+
 
 
