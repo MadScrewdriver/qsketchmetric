@@ -9,14 +9,6 @@ Error messages
 If error is related to specific entity, debug report contains detailed error message
 with **handle** of problematic entity.
 
-
-        if not valid:
-            raise ValidationError(
-                f"Your DXF drawing has {entities_num} entities, which exceeds your current limit of "
-                f"{self.user.limit_entities}. "
-                f"To request an increased limit, please contact our support at franciszek@lajszczak.dev ."
-            )
-
 - **Variables validation error** - Error occurs in various situations when parsing variables. For example:
   wrong variable name, wrong variable type, undefined variable etc.
 
