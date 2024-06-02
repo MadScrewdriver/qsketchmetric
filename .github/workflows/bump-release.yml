@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # Grant write permissions
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
 
     steps:
       - name: Checkout code
@@ -24,21 +26,22 @@ jobs:
           git config --global user.email "f.lajszczak@gmail.com"
           git config --global user.name "Franciszek Łajszczak"
 
+
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: 3.9
+          python-version: 3.9 # Specify your desired Python version
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install bump2version
+      
+      
 
       - name: Bump version
         run: bumpversion patch --verbose --commit --no-tag
 
-      - name: Push changes
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+      - name: Commit changes
         run: |
-          git push "https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git" main
+          git push origin main
