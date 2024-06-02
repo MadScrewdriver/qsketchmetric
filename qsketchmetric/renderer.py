@@ -6,13 +6,13 @@ from random import choice
 from typing import Optional, Dict
 
 import ezdxf
-from ezdxf import units, bbox
+from ezdxf import bbox
 from ezdxf.addons import Importer
-from ezdxf.entities import DXFGraphic, Insert
+from ezdxf.document import Drawing
+from ezdxf.entities import DXFGraphic
 from ezdxf.layouts import Modelspace
 from ezdxf.math import Vec3
 from py_expression_eval import Parser  # type: ignore
-from ezdxf.document import Drawing
 
 
 class Renderer:
@@ -167,12 +167,13 @@ class Renderer:
                 else:
                     new_length = Parser().parse(constant_xdata).evaluate(self.variables)
 
-                e_data = {"layer": layer, "linetype": line_type}
+                e_data_start = {"layer": layer, "linetype": line_type, "start": True}
+                e_data_end = {"layer": layer, "linetype": line_type, "start": False}
 
-                self.graph[end] = self.graph.get(end, []) + [("LINE", start, new_length, e_data)]
-                self.graph[start] = self.graph.get(start, []) + [("LINE", end, new_length, e_data)]
-                self.visited_graph[end] = self.visited_graph.get(end, []) + [(e_data["layer"], start)]
-                self.visited_graph[start] = self.visited_graph.get(start, []) + [(e_data["layer"], end)]
+                self.graph[end] = self.graph.get(end, []) + [("LINE", start, new_length, e_data_end)]
+                self.graph[start] = self.graph.get(start, []) + [("LINE", end, new_length, e_data_start)]
+                self.visited_graph[end] = self.visited_graph.get(end, []) + [(layer, start)]
+                self.visited_graph[start] = self.visited_graph.get(start, []) + [(layer, end)]
 
             elif entity.dxftype() == "CIRCLE":
                 center = entity.dxf.center
@@ -273,11 +274,17 @@ class Renderer:
         for node, v in self.graph.items():
             for line in [l for l in v if
                          l[0] == "LINE" and l[2] == "?" and (l[3]["layer"], l[1]) in self.visited_graph[node]]:
-                self.new_entities.append(self.output_msp.add_line((
-                    self.new_points[node][0] + self.offset_x, self.new_points[node][1] + self.offset_y),
-                    (self.new_points[line[1]][0] + self.offset_x,
-                     self.new_points[line[1]][1] + self.offset_y),
-                    dxfattribs={"layer": line[3]["layer"], "linetype": line[3]["linetype"]}))
+                start = (self.new_points[node][0] + self.offset_x, self.new_points[node][1] + self.offset_y)
+                end = (self.new_points[line[1]][0] + self.offset_x, self.new_points[line[1]][1] + self.offset_y)
+                start, end = (start, end) if line[3]["start"] else (end, start)
+
+                self.new_entities.append(
+                    self.output_msp.add_line(
+                        start, end,
+                        dxfattribs={"layer": line[3]["layer"], "linetype": line[3]["linetype"]}
+                    )
+                )
+
                 self.visited_graph[line[1]].remove((line[3]["layer"], node))
                 self.visited_graph[node].remove((line[3]["layer"], line[1]))
 
@@ -318,10 +325,14 @@ class Renderer:
                     self.new_points[vector] = (vector.x + offset_x + new_offset_x, vector.y + offset_y + new_offset_y)
 
                     if data["layer"] != "VIRTUAL_LAYER":
+                        start = (node.x + offset_x + self.offset_x, node.y + offset_y + self.offset_y)
+                        end = (vector.x + offset_x + new_offset_x + self.offset_x,
+                               vector.y + offset_y + new_offset_y + self.offset_y)
+
+                        start, end = (start, end) if data["start"] else (end, start)
+
                         self.new_entities.append(self.output_msp.add_line(
-                            (node.x + offset_x + self.offset_x, node.y + offset_y + self.offset_y), (
-                                vector.x + offset_x + new_offset_x + self.offset_x,
-                                vector.y + offset_y + new_offset_y + self.offset_y),
+                            start, end,
                             dxfattribs={"layer": data["layer"], "linetype": data["linetype"]}))
 
                     self.visited_graph[node].remove((data["layer"], vector))
@@ -332,8 +343,10 @@ class Renderer:
             elif name == "INSERT":
                 self.new_entities.append(self.output_msp.add_blockref(data["name"], (
                     node.x + offset_x + self.offset_x, node.y + offset_y + self.offset_y),
-                    dxfattribs={"layer": data["layer"], "xscale": data["xscale"], "yscale": data["yscale"],
-                                "linetype": data["linetype"]}))
+                                                                      dxfattribs={"layer": data["layer"],
+                                                                                  "xscale": data["xscale"],
+                                                                                  "yscale": data["yscale"],
+                                                                                  "linetype": data["linetype"]}))
 
             elif name == "POINT":
                 self.points[data["name"]] = (node.x + offset_x, node.y + offset_y)
