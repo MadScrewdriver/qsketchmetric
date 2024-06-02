@@ -243,7 +243,7 @@ class SemiAutomaticParameterization:
             Draws the MTEXT entity.
         """
 
-        text = "Available variables: \P\P----- buld in -----\P\Pc: const\P?: undefined \P\P ----- custom -----\P\P"
+        text = "Available variables: \P\P----- build in -----\P\Pc: const\P?: undefined \P\P ----- custom -----\P\P"
         variable_text = self.input_msp.add_mtext(text, dxfattribs={"attachment_point": 8})
 
         variable_text.dxf.char_height = 10

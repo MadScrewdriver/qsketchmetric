@@ -57,21 +57,25 @@ class TestRenderer(unittest.TestCase):
 
         self.graph = {
             self.point1: [
-                ("LINE", self.point2, self.line1_length, {"layer": "VIRTUAL_LAYER", "linetype": "line_linetype"}),
-                ("LINE", self.point3, self.line2_length, {"layer": "line_layer", "linetype": "line_linetype"}),
+                ("LINE", self.point2, self.line1_length, {"layer": "VIRTUAL_LAYER", "linetype": "line_linetype",
+                                                          "start": True}),
+                ("LINE", self.point3, self.line2_length, {"layer": "line_layer", "linetype": "line_linetype",
+                                                          "start": True}),
                 ("ARC", self.point1, self.arc_radius, {"layer": "arc_layer", "linetype": "arc_linetype",
                                                        "radius": self.arc_radius, "start_angle": self.start_angle,
                                                        "end_angle": self.end_angle})],
 
-            self.point2: [("LINE", self.point3, "?", {"layer": "line_layer", "linetype": "line_linetype"}),
+            self.point2: [("LINE", self.point3, "?", {"layer": "line_layer", "linetype": "line_linetype",
+                                                      "start": True}),
                           ("LINE", self.point1, self.line1_length,
-                           {"layer": "VIRTUAL_LAYER", "linetype": "line_linetype"}),
+                           {"layer": "VIRTUAL_LAYER", "linetype": "line_linetype", "start": True}),
                           ("CIRCLE", self.point2, self.circle_radius,
                            {"layer": "circle_layer", "linetype": "circle_linetype", "radius": self.circle_radius})],
 
-            self.point3: [("LINE", self.point2, "?", {"layer": "line_layer", "linetype": "line_linetype"}),
+            self.point3: [("LINE", self.point2, "?", {"layer": "line_layer", "linetype": "line_linetype",
+                                                      "start": True}),
                           ("LINE", self.point1, self.line2_length,
-                           {"layer": "circle_layer", "linetype": "circle_linetype"}),
+                           {"layer": "circle_layer", "linetype": "circle_linetype", "start": True}),
                           ("POINT", self.point3, 0, {"name": "mock"}),
                           ("INSERT", self.point3, 0,
                           {"layer": "insert_layer", "linetype": "insert_linetype", "name": "insert",

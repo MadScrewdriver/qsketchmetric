@@ -35,7 +35,7 @@ To the text input field add the following text::
 
     Available variables:
 
-    ----- buld in -----
+    ----- build in -----
 
     c: const
     ?: undefined
@@ -45,7 +45,7 @@ To the text input field add the following text::
     ----- custom -----
 
 Where:
-    * '----- buld in -----': are the built-in variables it servers as a documentation for the user.
+    * '----- build in -----': are the built-in variables it servers as a documentation for the user.
       We added ``h`` variable to know what is the variable name for the chalice height.
     * '----- custom -----': are the helpers variables that we will add later.
 
