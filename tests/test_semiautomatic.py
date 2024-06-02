@@ -257,7 +257,7 @@ class TestSemiAutomaticParameterize(unittest.TestCase):
     @patch.object(SemiAutomaticParameterization, "_handle_output_path")
     @patch("ezdxf.readfile")
     def test_draw_variables(self, mock_readfile, mock_handle_output_path):
-        text = "Available variables: \P\P----- buld in -----\P\Pc: const\P?: undefined \P\P ----- custom -----\P\P"
+        text = "Available variables: \P\P----- build in -----\P\Pc: const\P?: undefined \P\P ----- custom -----\P\P"
 
         obj = SemiAutomaticParameterization(self.mock_input_dxf_path)
         obj.input_msp = Mock()

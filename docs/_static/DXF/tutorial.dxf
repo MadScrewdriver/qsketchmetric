@@ -4343,7 +4343,7 @@ AcDbMText
  72
      1
   1
-Available variables: \P\P----- buld in -----\P\Pc: const\P?: undefined \P\Ph: chalice_height\P\P----- custom -----\P\Pchalice_foot_radius: h * 1/5\Pchalice_bowl_radius: h * 2/5\Pchalice_ornament_radius: h * 1/10\P\P
+Available variables: \P\P----- build in -----\P\Pc: const\P?: undefined \P\Ph: chalice_height\P\P----- custom -----\P\Pchalice_foot_radius: h * 1/5\Pchalice_bowl_radius: h * 2/5\Pchalice_ornament_radius: h * 1/10\P\P
   7
 textstyle11
  73
