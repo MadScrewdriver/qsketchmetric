@@ -79,6 +79,9 @@ place where the error occurred in the DXF file and the error message.
 -  Support for parametrization of `LWPOLYLINE`, `POLYLINE`, `SPLINE`, `ELLIPSE`, `MTEXT`, `TEXT` **etc.** entities using `INSERT` entity.
 -  Open source and daily maintained
 
+## 📺 YouTube tutorials
+YouTube tutorials are available at [**Tutorials playlist**](https://youtube.com/playlist?list=PLpVxwQmtfqH4TpyFuB5yyvXj0Zwru7Nl8&feature=shared)
+
 ## 📚 Documentation
 Documentation is available at [**QSketchMetric docs**](https://qsketchmetric.readthedocs.io/en/latest/)
 
