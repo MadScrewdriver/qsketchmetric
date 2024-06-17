@@ -46,6 +46,7 @@ The most common case is the installation by [**pip package manager**](https://pi
 ```
 
 ##  📐 DXF Parametrization
+Examples of parametrized DXF files can be found in the [**examples**](https://github.com/MadScrewdriver/qsketchmetric/tree/main/examples) directory.
 Parametrization is done using [**QCAD Professional software**](https://qcad.org/en/download). 
 You can download the [**free trial**](https://qcad.org/en/download) version of the software and use it for parametrization of your DXF files.
 We need to use it because it is the only software that supports adding custom data to DXF entities. 
