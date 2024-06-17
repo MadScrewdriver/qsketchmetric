@@ -46,6 +46,7 @@ The most common case is the installation by [**pip package manager**](https://pi
 ```
 
 ##  📐 DXF Parametrization
+Examples of parametrized DXF files can be found in the [**examples**](https://github.com/MadScrewdriver/qsketchmetric/tree/main/examples) directory.
 Parametrization is done using [**QCAD Professional software**](https://qcad.org/en/download). 
 You can download the [**free trial**](https://qcad.org/en/download) version of the software and use it for parametrization of your DXF files.
 We need to use it because it is the only software that supports adding custom data to DXF entities. 
@@ -78,6 +79,9 @@ place where the error occurred in the DXF file and the error message.
 -  Explicit support for parametrization of `LINE`,`CIRCLE`,`ARC`, `POINT` entities
 -  Support for parametrization of `LWPOLYLINE`, `POLYLINE`, `SPLINE`, `ELLIPSE`, `MTEXT`, `TEXT` **etc.** entities using `INSERT` entity.
 -  Open source and daily maintained
+
+## 📺 YouTube tutorials
+YouTube tutorials are available at [**Tutorials playlist**](https://youtube.com/playlist?list=PLpVxwQmtfqH4TpyFuB5yyvXj0Zwru7Nl8&feature=shared)
 
 ## 📚 Documentation
 Documentation is available at [**QSketchMetric docs**](https://qsketchmetric.readthedocs.io/en/latest/)

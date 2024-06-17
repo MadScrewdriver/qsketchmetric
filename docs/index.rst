@@ -1,8 +1,3 @@
-gitp.. qsketchmetric documentation master file, created by
-   sphinx-quickstart on Sun Aug 20 14:22:12 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 
 .. image:: https://raw.githubusercontent.com/MadScrewdriver/qsketchmetric/main/docs/_static/Media/logo_QSM.png
 
